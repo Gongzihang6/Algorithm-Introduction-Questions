@@ -1,0 +1,15 @@
+# Visual Studio 目录
+.vs/
+**/\.vs/
+
+# VSCode 配置
+.vscode/
+
+# 编译文件
+*.exe
+*.obj
+*.pdb
+
+# 其他临时文件
+*.log
+*.tmp
