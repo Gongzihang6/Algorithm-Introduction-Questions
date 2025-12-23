@@ -1,0 +1,2206 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Gongzihang6.github.io/Algorithm-Introduction-Questions/3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E6%95%A3%E5%88%97%E8%A1%A8/">
+      
+      
+        <link rel="prev" href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%A0%86%E6%8E%92%E5%BA%8F/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E7%BA%A2%E9%BB%91%E6%A0%91/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>第十一章 散列表 - 算法导论题解</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="算法导论题解" class="md-header__button md-logo" aria-label="算法导论题解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            算法导论题解
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第十一章 散列表
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6/Algorithm-Introduction-Questions" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6/Algorithm-Introduction-Questions
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  算法导论题解 (Algorithm Introduction Questions)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="md-tabs__link">
+          
+  
+  
+  1、算法基础
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-tabs__link">
+          
+  
+  
+  2、排序和顺序统计量
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  3、数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%20%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90/" class="md-tabs__link">
+          
+  
+  
+  4、高级设计与分析技术
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20Van%20Emde%20Boas%E6%A0%91/" class="md-tabs__link">
+          
+  
+  
+  5、高级数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/" class="md-tabs__link">
+          
+  
+  
+  6、图算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/" class="md-tabs__link">
+          
+  
+  
+  7、算法问题选编
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+          
+  
+  
+  8、附录：数学基础知识
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="md-tabs__link">
+          
+  
+  
+  相关知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="算法导论题解" class="md-nav__button md-logo" aria-label="算法导论题解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    算法导论题解
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6/Algorithm-Introduction-Questions" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6/Algorithm-Introduction-Questions
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法导论题解 (Algorithm Introduction Questions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1、算法基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1、算法基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一章 算法在计算机中的作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%A2%9E%E9%95%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三章 函数的增长
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二章 算法基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A6%82%E7%8E%87%E5%88%86%E6%9E%90%E5%92%8C%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五章 概率分析和随机算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四章 分治策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2、排序和顺序统计量
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2、排序和顺序统计量
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七章 快速排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20%E4%B8%AD%E4%BD%8D%E6%95%B0%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第九章 中位数和顺序统计量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第八章 线性时间排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%A0%86%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六章 堆排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3、数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3、数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十一章 散列表
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十一章 散列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一章 散列表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十一章 散列表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E7%BA%A2%E9%BB%91%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十三章 红黑树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十二章 二叉搜索树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E6%89%A9%E5%BC%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十四章 数据结构的扩张
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC%E5%8D%81%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十章 基本数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4、高级设计与分析技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4、高级设计与分析技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%20%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十七章 摊还分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十五章 动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0%20%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十六章 贪心算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5、高级数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5、高级数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20Van%20Emde%20Boas%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二十章 Van Emde Boas树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二十章 用于不相交集合的数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E6%96%90%E6%B3%A2%E6%8B%89%E4%B8%94%E5%A0%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十九章 斐波拉且堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%20B%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十八章 B树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6、图算法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6、图算法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 图算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7、算法问题选编
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7、算法问题选编
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 算法问题选编
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8、附录：数学基础知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8、附录：数学基础知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第八部分 附录：数学基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相关知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    相关知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    卡特兰数 (Catalan numbers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第十一章 散列表
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第十一章 散列表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 11.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+  <h1>第十一章 散列表</h1>
+
+<h2 id="_1">第十一章 散列表</h2>
+<h3 id="111">练习 11.1</h3>
+<p>11.1-1 假设一动态集合 $<span class="arithmatex">\(S\)</span>$ 用一个长度为 $<span class="arithmatex">\(m\)</span>$ 的直接寻址表 $<span class="arithmatex">\(T\)</span>$ 来表示。请给出一个查找 $<span class="arithmatex">\(S\)</span>$ 中最大元素的过程。你所给的过程在最坏情况下的运行时间是多少？</p>
+<p>11.1-2 位向量 (bit vector) 是一个仅包含 0 和 1 的数组。长度为 $<span class="arithmatex">\(m\)</span>$ 的位向量所占空间要比包含 $<span class="arithmatex">\(m\)</span>$ 个指针的数组少得多。请说明如何用一个位向量来表示一个包含不同元素（无卫星数据）的动态集合。字典操作的运行时间应为 $<span class="arithmatex">\(O(1)\)</span>$。</p>
+<p>11.1-3 试说明如何实现一个直接寻址表，表中各元素的关键字不必都不相同，且各元素可以有卫星数据。所有三种字典操作 ($<span class="arithmatex">\(INSERT\)</span><span class="arithmatex">\(、\)</span><span class="arithmatex">\(DELETE\)</span>$ 和 $<span class="arithmatex">\(SEARCH\)</span>$) 的运行时间应为 $<span class="arithmatex">\(O(1)\)</span>$。（不要忘记 $<span class="arithmatex">\(DELETE\)</span>$ 要处理的是被删除对象的指针变量，而不是关键字。）</p>
+<p>*11.1-4 我们希望在一个非常大的数组上，通过利用直接寻址的方式来实现一个字典。开始时，该数组中可能包含一些无用信息，但要对整个数组进行初始化是不太实际的，因为该数组的规模太大。请给出在大数组上实现直接寻址字典的方案。每个存储对象占用 $<span class="arithmatex">\(O(1)\)</span>$ 空间；$<span class="arithmatex">\(SEARCH\)</span><span class="arithmatex">\(、\)</span><span class="arithmatex">\(INSERT\)</span>$ 和 $<span class="arithmatex">\(DELETE\)</span>$ 操作的时间均为 $<span class="arithmatex">\(O(1)\)</span>$；并且对数据结构初始化的时间为 $<span class="arithmatex">\(O(1)\)</span>$。（提示：可以利用一个附加数组，处理方式类似于栈，其大小等于实际存储在字典中的关键字数目，以帮助确定大数组中某个给定的项是否有效。）</p>
+<h3 id="112">练习 11.2</h3>
+<p>11.2-1 假设用一个散列函数 $<span class="arithmatex">\(h\)</span>$ 将 $<span class="arithmatex">\(n\)</span>$ 个不同的关键字散列到一个长度为 $<span class="arithmatex">\(m\)</span>$ 的数组 $<span class="arithmatex">\(T\)</span>$ 中。假设采用的是简单均匀散列，那么期望的冲突数是多少？更准确地，集合 $<span class="arithmatex">\(\{(k, l): k \neq l, \text{ 且 } h(k) = h(l)\}\)</span>$ 基的期望值是多少？</p>
+<p>11.2-2 对于一个用链接法解决冲突的散列表，说明将关键字 5, 28, 19, 15, 20, 33, 12, 17, 10 插入到该表中的过程。设该表中有 9 个槽位，并设其散列函数为 $<span class="arithmatex">\(h(k) = k \mod 9\)</span>$。</p>
+<p>11.2-3 Marley 教授做了这样一个假设，即如果将链模式改动一下，使得每个链表都能保持已排好序的顺序，散列的性能就可以有较大的提高。Marley 教授的改动对成功查找、不成功查找、插入和删除操作的运行时间有何影响？</p>
+<p>11.2-4 说明在散列表内部，如何通过将所有未占用的槽位链接成一个自由链表，来分配和释放元素所占的存储空间。假定一个槽位可以存储一个标志、一个元素加上一个或两个指针。所有的字典和自由链表操作均应具有 $<span class="arithmatex">\(O(1)\)</span>$ 的期望运行时间。该自由链表需要是双向链表吗？或者，是不是单链表就足够了呢？</p>
+<p>11.2-5 假设将一个具有 $<span class="arithmatex">\(n\)</span>$ 个关键字的集合存储到一个大小为 $<span class="arithmatex">\(m\)</span>$ 的散列表中。试说明如果这些关键字均源于全域 $<span class="arithmatex">\(U\)</span>$，且 $<span class="arithmatex">\(|U| &gt; nm\)</span>$，则 $<span class="arithmatex">\(U\)</span>$ 中还有一个大小为 $<span class="arithmatex">\(n\)</span>$ 的子集，其由散列到同一槽位中的所有关键字构成，使得链接法散列的查找时间最坏情况下为 $<span class="arithmatex">\(\Theta(n)\)</span>$。</p>
+<p>11.2-6 假设将 $<span class="arithmatex">\(n\)</span>$ 个关键字存储到一个大小为 $<span class="arithmatex">\(m\)</span>$ 且通过链接法解决冲突的散列表中，同时已知每条链的长度，包括其中最长链的长度 $<span class="arithmatex">\(L\)</span>$，请描述从散列表的所有关键字中均匀随机地选择某一元素并在 $<span class="arithmatex">\(O(L \cdot (1 + 1/\alpha))\)</span>$ 的期望时间内返回该关键字的过程。</p>
+<h3 id="113">练习 11.3</h3>
+<p>11.3-1 假设我们希望查找一个长度为 $<span class="arithmatex">\(n\)</span>$ 的链表，其中每一个元素都包含一个关键字 $<span class="arithmatex">\(k\)</span>$ 并具有散列值 $<span class="arithmatex">\(h(k)\)</span>$。每一个关键字都是长字符串。那么在表中查找具有给定关键字的元素时，如何利用各元素的散列值呢？</p>
+<p>11.3-2 假设将一个长度为 $<span class="arithmatex">\(r\)</span>$ 的字符串散列到 $<span class="arithmatex">\(m\)</span>$ 个槽中，并将其视为一个以 128 为基数的数，要求应用除法散列法。我们可以很容易地把数 $<span class="arithmatex">\(m\)</span>$ 表示为一个 32 位的机器字，但对长度为 $<span class="arithmatex">\(r\)</span>$ 的字符串，由于它被当做以 128 为基数的数来处理，就要占用若干个机器字。假设应用除法散列法来计算一个字符串的散列值，那么如何才能在除了该串本身占用的空间外，只利用常数个机器字？</p>
+<p>11.3-3 考虑除法散列法的另一种版本，其中 $<span class="arithmatex">\(h(k) = k \mod m, m = 2^p - 1\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(k\)</span>$ 为按基数 $<span class="arithmatex">\(2^p\)</span>$ 表示的字符串。试证明：如果串 $<span class="arithmatex">\(x\)</span>$ 可由串 $<span class="arithmatex">\(y\)</span>$ 通过其自身的字符置换排列导出，则 $<span class="arithmatex">\(x\)</span>$ 和 $<span class="arithmatex">\(y\)</span>$ 具有相同的散列值。给出一个应用的例子，其中这一特性在散列函数中是不希望出现的。</p>
+<p>11.3-4 考虑一个大小为 $<span class="arithmatex">\(m = 1000\)</span>$ 的散列表和一个对应的散列函数 $<span class="arithmatex">\(h(k) = \lfloor m(kA \mod 1) \rfloor\)</span>$，其中 $<span class="arithmatex">\(A = (\sqrt{5} - 1) / 2\)</span>$，试计算关键字 61、62、63、64 和 65 被映射到的位置。</p>
+<p>*11.3-5 定义一个从有限集合 $<span class="arithmatex">\(U\)</span>$ 到有限集合 $<span class="arithmatex">\(B\)</span>$ 上的散列函数簇 $<span class="arithmatex">\(\mathcal{H}\)</span>$ 为 $<span class="arithmatex">\(\varepsilon\)</span>$ 全域的，如果对 $<span class="arithmatex">\(U\)</span>$ 中所有的不同元素对 $<span class="arithmatex">\(k\)</span> 和 $$ l$$，都有</p>
+<div class="arithmatex">\[
+\operatorname{Pr}\{h(k) = h(l)\} \leqslant \varepsilon
+\]</div>
+<p>其中概率是相对从函数簇 $<span class="arithmatex">\(\mathscr{H}\)</span>$ 中随机抽取的散列函数 $<span class="arithmatex">\(h\)</span>$ 而言的。试证明：一个 $<span class="arithmatex">\(\varepsilon\)</span>$ 全域的散列函数簇必定满足：</p>
+<div class="arithmatex">\[
+\varepsilon \geqslant \frac{1}{|B|} - \frac{1}{|U|}
+\]</div>
+<p>*11.3-6 设 $<span class="arithmatex">\(U\)</span>$ 为由取自 $<span class="arithmatex">\(Z_p\)</span>$ 中的值构成的 $<span class="arithmatex">\(n\)</span>$ 元组集合，并设 $<span class="arithmatex">\(B = Z_p\)</span>$，其中 $<span class="arithmatex">\(p\)</span>$ 为素数。对于一个取自 $<span class="arithmatex">\(U\)</span>$ 的输入 $<span class="arithmatex">\(n\)</span>$ 元组 $<span class="arithmatex">\(\left\langle a_0, a_1, \cdots, a_{n-1}\right\rangle\)</span>$，定义其上的散列函数 $<span class="arithmatex">\(h_b: U \rightarrow B\left(b \in Z_p\right)\)</span>$ 为：</p>
+<div class="arithmatex">\[
+h_b\left(\left\langle a_0, a_1, \cdots, a_{n-1}\right\rangle\right) = \left(\sum_{j = 0}^{n-1} a_jb^j\right) \mod p
+\]</div>
+<p>并且设 $<span class="arithmatex">\(\mathcal{H} = \left\{h_b: b \in Z_p\right\}\)</span>$。根据练习 11.3-5 中 $<span class="arithmatex">\(\varepsilon\)</span>$ 全域的定义，证明 $<span class="arithmatex">\(\mathcal{H}\)</span>$ 是 $<span class="arithmatex">\(((n-1) / p)\)</span>$ 全域的。（提示：见练习 31.4-4。）</p>
+<h3 id="114">练习 11.4</h3>
+<p>11.4-1 考虑用开放寻址法将关键字 10、22、31、4、15、28、17、88、59 插入到一长度为 $<span class="arithmatex">\(m = 11\)</span>$ 的散列表中，辅助散列函数为 $<span class="arithmatex">\(h'(k) = k\)</span><span class="arithmatex">\(。试说明分别用线性探查、二次探查（\)</span><span class="arithmatex">\(c_1 = 1, c_2 = 3\)</span><span class="arithmatex">\(）和双重散列（\)</span><span class="arithmatex">\(h_1(k) = k, h_2(k) = 1 + (k \mod (m - 1))\)</span>$）将这些关键字插入散列表的过程。</p>
+<p>11.4-2 试写出 HASH-DELETE 的伪代码；修改 HASH-INSERT，使之能处理特殊值 DELETED。</p>
+<p>11.4-3 考虑一个采用均匀散列的开放寻址散列表。当装载因子为 $<span class="arithmatex">\(3/4\)</span>$ 和 $<span class="arithmatex">\(7/8\)</span>$ 时，试分别给出一次不成功查找和一次成功查找的探查期望数上界。</p>
+<p>*11.4-4 假设采用双重散列来解决冲突，即所用的散列函数为 $<span class="arithmatex">\(h(k, i) = (h_1(k) + i h_2(k)) \mod m\)</span>$。试证明：如果对某个关键字 $<span class="arithmatex">\(k\)</span><span class="arithmatex">\(，\)</span>m$ 和 $$ h_2(k)$$ 有最大公约数 $$ d \geqslant 1 $$，则在对关键字 $$ k $$ 的一次不成功查找中，在返回槽 $$ h(k)$$ 之前，要检查散列表中第 $<span class="arithmatex">\((1/d)\)</span>$ 个元素。于是，当 $$ d = 1 $$ 时，$$ m $$ 与 $$ h_2(k)$$ 互素，查找操作可能要检查整个散列表。（提示：见第 31 章。）</p>
+<p>*11.4-5 考虑一个装载因子为 $<span class="arithmatex">\(\alpha\)</span>$ 的开放寻址散列表。找出一个非零的 $<span class="arithmatex">\(\alpha\)</span>$ 值，使得一次不成功查找的探查期望数是一次成功查找的探查期望数的 2 倍。这两个探查期望数可以使用定理 11.6 和定理 11.8 中给定的上界。</p>
+<h3 id="115">练习 11.5</h3>
+<p>*11.5-1 假设采用了开放寻址法和均匀散列技术将 <span class="arithmatex">\(n\)</span> 个关键字插入到一个大小为 $ m $ 的散列表中。设 <span class="arithmatex">\(p(n, m)\)</span> 为没有冲突发生的概率。试证明：<span class="arithmatex">\(p(n, m) \leqslant e^{-n^2/m}\)</span> $。论证当 $ <span class="arithmatex">\(n\)</span> $ 超过 $ <span class="arithmatex">\(\sqrt{m}\)</span> 时，不发生冲突的概率快速趋于 0。</p>
+<h3 id="_2">思考题</h3>
+<p>11-1（微列最长探查的界）采用开放寻址法，用一个大小为 <span class="arithmatex">\(m\)</span> 的散列表来存储 $ n(n \leqslant m/2)$ 个数据项目。</p>
+<p>a. 假设采用均匀散列，证明：对于 $<span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>$，第 <span class="arithmatex">\(i\)</span> 次插入需要严格多于 $ k $ 次探查的概率至多为 <span class="arithmatex">\(2^{-k}\)</span>。</p>
+<p>b. 证明：对于 $<span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>$，第 <span class="arithmatex">\(i\)</span> 次插入需要多于 $$ 2 \lg n $$ 次探查的概率为 $$ O(1/n^2)$$。设随机变量 $$ X_i $$ 表示第 $ i $ 次插入所需的探查次数。在上面 (b) 中已证明 <span class="arithmatex">\(\operatorname{Pr}(X_i &gt; 2 \lg n) = O(1/n^2)\)</span> $。设随机变量 $ <span class="arithmatex">\(X = \max_{i \in Z^2} X_i\)</span> $ 表示 $ <span class="arithmatex">\(\pi\)</span> 次插入中所需探查数的最大值。</p>
+<p>e. 证明：$<span class="arithmatex">\(\operatorname{Pr}(X &gt; 2 \lg n) = O(1/n)\)</span>$。</p>
+<p>d. 证明：最长探查序列的期望长度为 $<span class="arithmatex">\(E[X] = O(\lg n)\)</span>$。</p>
+<p>11-2（链接法中槽大小的界）假设有一个含 <span class="arithmatex">\(\pi\)</span> 个槽的散列表，向表中插入 $\pi $ 个关键字，并用链接法来解决冲突问题。每个关键字被等可能地散列到每个槽中。所有关键字被插入后，设<span class="arithmatex">\(M\)</span> 是各槽中所含关键字数的最大值。读者的任务是证明 <span class="arithmatex">\(M\)</span> 的期望值 $ E [M] $ 的一个上界为 <span class="arithmatex">\(O(\lg n / \lg \lg n)\)</span>。</p>
+<p>a. 证明：正好有 <span class="arithmatex">\(k\)</span> 个关键字被散列到某一特定槽中的概率 <span class="arithmatex">\(Q_k\)</span> 为</p>
+<div class="arithmatex">\[
+Q_n = \left(\frac{1}{n}\right)^k \left(1 - \frac{1}{n}\right)^{n-k} \left(\frac{n}{n}\right)^k
+\]</div>
+<p>b. 设 <span class="arithmatex">\(P_1\)</span> 为 $$ M = k $$ 的概率，即包含最多关键字的槽中有 $ k $ 个关键字的概率。证明：$ <span class="arithmatex">\(P_1 \leqslant n Q_1\)</span>。</p>
+<p>c. 应用斯特林近似公式 (3.18) 来证明：$<span class="arithmatex">\(Q_k \leqslant e^2 / k^2\)</span>$。</p>
+<p>d. 证明：存在常数 <span class="arithmatex">\(c &gt; 1\)</span>，使得 $<span class="arithmatex">\(Q_k &lt; 1 / n^2\)</span>$ 对 $<span class="arithmatex">\(k_0 = c \lg n / \lg \lg n\)</span>$ 成立。并有结论：对 $<span class="arithmatex">\(k \geqslant k_0 = c \lg n / \lg \lg n\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(P_1 &lt; 1 / n^2\)</span>$ 成立。</p>
+<p>e. 证明：</p>
+<div class="arithmatex">\[
+E [M] \leqslant \operatorname{Pr}\left\{M &gt; \frac{c \lg n}{\lg n}\right\} \cdot n + \operatorname{Pr}\left\{M \leqslant \frac{c \lg n}{\lg n}\right\} \cdot \frac{c \lg n}{\lg n}
+\]</div>
+<p>并有结论：$<span class="arithmatex">\(E[M] = O(\lg n / \lg \lg n)\)</span>$。</p>
+<p>11-3（二次探查）假设要在一个散列表（表中的各个位置为 0, 1, …, m-1）中查找关键字 <span class="arithmatex">\(k\)</span>，并假设有一个散列函数 <span class="arithmatex">\(h\)</span> 将关键字空间映射到集合 <span class="arithmatex">\(\{0, 1, …, m-1\}\)</span> 上，查找方法如下：</p>
+<ol>
+<li>计算值 <span class="arithmatex">\(j = h(k)\)</span>，置 <span class="arithmatex">\(i = 0\)</span>。</li>
+<li>探查要找的关键字 <span class="arithmatex">\(k\)</span> 的位置 <span class="arithmatex">\(j\)</span>，或者找到了，或者该位置为空，并结束查找。</li>
+<li>置 <span class="arithmatex">\(i = i + 1\)</span>，如果 $<span class="arithmatex">\(i = m\)</span>$，则表已满，于是终止探查；否则，设 <span class="arithmatex">\(j = (i + j) \mod m\)</span>，返回到步骤 2。步骤 2。</li>
+</ol>
+<p>假设 $<span class="arithmatex">\(m\)</span>$ 是 2 的幂。</p>
+<p>a. 通过给出等式 (11.5) 中 <span class="arithmatex">\(c_1\)</span> 和 $<span class="arithmatex">\(c_1\)</span>$ 的适当值，来证明该方案是一般的“二次探查”法的一个实例。</p>
+<p>b. 证明：在最坏情况下，这个算法要检查表中的每一个位置。</p>
+<p>11-4（数列和认证）设 <span class="arithmatex">\(\mathscr{H}\)</span> 为一个散列函数类，其中的每个散列函数 <span class="arithmatex">\(h \in \mathscr{H}\)</span> 将关键字全域 <span class="arithmatex">\(U\)</span> 映射到 $<span class="arithmatex">\((0, 1, …, m-1)\)</span>$ 上。我们称 <span class="arithmatex">\(\mathscr{H}\)</span> 是 <span class="arithmatex">\(k\)</span> 全域的（universal），如果对每个由 <span class="arithmatex">\(k\)</span> 个不同的关键字 $<span class="arithmatex">\(\left(x^{(1)}, x^{(1)}, …, x^{(k)}\right)\)</span>$ 构成的固定序列，以及从 <span class="arithmatex">\(\mathscr{H}\)</span> 中随机选出的任意散列函数 <span class="arithmatex">\(h\)</span>，序列 $<span class="arithmatex">\(\left(h\left(x^{(1)}\right), h\left(x^{(2)}\right), …, h\left(x^{(k)}\right)\right)\)</span>$ 是 <span class="arithmatex">\(m^k\)</span> 个长度为 <span class="arithmatex">\(k\)</span> 的序列（其元素取自 $<span class="arithmatex">\(\{0, 1, …, m-1\}\)</span>$）中任意一个的可能性相同。</p>
+<p>a. 证明：如果数列函数簇 <span class="arithmatex">\(\mathscr{H}\)</span> 是 2 全域的，则它是全域的。</p>
+<p>b. 设全域 <span class="arithmatex">\(U\)</span> 为取自 <span class="arithmatex">\(Z_p = (0, 1, …, p-1)\)</span> 中数值的 <span class="arithmatex">\(n\)</span> 元组集合，此处 <span class="arithmatex">\(p\)</span> 为素数。考虑元 $<span class="arithmatex">\(x = (x_0, x_1, …, x_{n-1}) \in U\)</span>$，对于任意的 <span class="arithmatex">\(n\)</span> 元组 $<span class="arithmatex">\(a = (a_0, a_1, …, a_{n-1}) \in U\)</span>$，定义散列函数 <span class="arithmatex">\(h_{a}\)</span> 为</p>
+<div class="arithmatex">\[
+h_{a}(x) = \left(\sum_{j = 0}^{n} a_j x_j\right) \mod p
+\]</div>
+<p>并设 $<span class="arithmatex">\(\mathscr{H} = (h_{a})\)</span><span class="arithmatex">\(。证明：\)</span>\mathscr{H}$ 是全域的，但不是 2 全域的。（提示：寻找一个关键字，使得 <span class="arithmatex">\(\mathscr{H}\)</span> 中所有散列函数对其都得到相同的值。）</p>
+<p>c. 假设将 (b) 中的 <span class="arithmatex">\(\mathscr{H}\)</span> 略作修改；对任意的 <span class="arithmatex">\(a \in U\)</span> 和任意的 $<span class="arithmatex">\(b \in Z_0\)</span>$，定义</p>
+<div class="arithmatex">\[
+h^{\prime}{}_{a}(x) = \left(\sum_{j = 0}^{n} a_j x_j + b\right) \mod p
+\]</div>
+<p>$<span class="arithmatex">\(\mathscr{H}^{\prime} = (h^{\prime}{}_{ab})\)</span>$。论证 <span class="arithmatex">\(\mathscr{H}^{\prime}\)</span> 是 2 全域的。（提示：考虑固定的 <span class="arithmatex">\(n\)</span> 元组 <span class="arithmatex">\(x \in U\)</span> 和 <span class="arithmatex">\(y \in U\)</span>，对某个 <span class="arithmatex">\(i\)</span> 有 $<span class="arithmatex">\(x_i \neq y_i\)</span>$。当 <span class="arithmatex">\(a_1\)</span> 和 <span class="arithmatex">\(b_i\)</span> 包括 <span class="arithmatex">\(Z_p\)</span> $ 时，$ $h^{\prime}<em>{ab}(x) $ $ 和 $ $h^{\prime}</em>{ab}(y) $ 会如何？）</p>
+<p>d. 假设 Alice 和 Bob 悄悄地约定了一个取自 2 全域散列函数簇 <span class="arithmatex">\(\mathcal{H}\)</span> 中的散列函数 <span class="arithmatex">\(h\)</span>。每个 $<span class="arithmatex">\(h \in \mathcal{H}\)</span>$ 将关键字全域 <span class="arithmatex">\(U\)</span> 映射到 $<span class="arithmatex">\(Z_p\)</span>$ 上，此处 <span class="arithmatex">\(p\)</span> 为素数。后来，Alice 通过互联网向 Bob 发送了一个消息 $<span class="arithmatex">\(m\)</span>$，其中 $<span class="arithmatex">\(m \in U\)</span>$。她同时还通过发送一个认证标记 $<span class="arithmatex">\(t = h(m)\)</span>$ 来向 Bob 认证这一消息，而 Bob 则要检查他所接收到的 (m, t) 对是否确实满足 $<span class="arithmatex">\(t = h(m)\)</span>$。假设某一对手半路中截获了 (m, t)，并试图将该值对替换为另一值对 $<span class="arithmatex">\((m', t')\)</span>$ 来欺骗 Bob。论证无论该对手的计算机性能多好，他成功地欺骗 Bob 接受 $<span class="arithmatex">\((m', t')\)</span>$ 的概率至多为 $<span class="arithmatex">\(1/p\)</span>$，即使他知道所用的散列函数簇 $<span class="arithmatex">\(\mathcal{H}\)</span>$。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月23日 08:46:56 UTC">2025年12月23日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月23日 08:46:56 UTC">2025年12月23日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+  <script src="https://giscus.app/client.js"
+        data-repo="Gongzihang6/Algorithm-Introduction-Questions"
+        data-repo-id="R_kgDOOJYVMA"
+        data-category="General"
+        data-category-id="DIC_kwDOOJYVMM4C0KG2"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+                
+
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="Gongzihang6/Algorithm-Introduction-Questions"
+        data-repo-id="R_kgDOOJYVMA"
+        data-category="General"
+        data-category-id="DIC_kwDOOJYVMM4C0KG2"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Gongzihang6
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

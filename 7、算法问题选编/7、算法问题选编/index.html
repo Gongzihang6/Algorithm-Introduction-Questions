@@ -1,0 +1,4377 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Gongzihang6.github.io/Algorithm-Introduction-Questions/7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/7%E3%80%81%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98%E9%80%89%E7%BC%96/">
+      
+      
+        <link rel="prev" href="../../6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/">
+      
+      
+        <link rel="next" href="../../8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>第七部分 算法问题选编 - 算法导论题解</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="算法导论题解" class="md-header__button md-logo" aria-label="算法导论题解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            算法导论题解
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第七部分 算法问题选编
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6/Algorithm-Introduction-Questions" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6/Algorithm-Introduction-Questions
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  算法导论题解 (Algorithm Introduction Questions)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="md-tabs__link">
+          
+  
+  
+  1、算法基础
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-tabs__link">
+          
+  
+  
+  2、排序和顺序统计量
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E6%95%A3%E5%88%97%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  3、数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%20%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90/" class="md-tabs__link">
+          
+  
+  
+  4、高级设计与分析技术
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20Van%20Emde%20Boas%E6%A0%91/" class="md-tabs__link">
+          
+  
+  
+  5、高级数据结构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/" class="md-tabs__link">
+          
+  
+  
+  6、图算法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  7、算法问题选编
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+          
+  
+  
+  8、附录：数学基础知识
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="md-tabs__link">
+          
+  
+  
+  相关知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="算法导论题解" class="md-nav__button md-logo" aria-label="算法导论题解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    算法导论题解
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6/Algorithm-Introduction-Questions" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6/Algorithm-Introduction-Questions
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法导论题解 (Algorithm Introduction Questions)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1、算法基础
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1、算法基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一章 算法在计算机中的作用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%A2%9E%E9%95%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三章 函数的增长
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二章 算法基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A6%82%E7%8E%87%E5%88%86%E6%9E%90%E5%92%8C%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五章 概率分析和随机算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1%E3%80%81%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四章 分治策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2、排序和顺序统计量
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2、排序和顺序统计量
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七章 快速排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E4%B9%9D%E7%AB%A0%20%E4%B8%AD%E4%BD%8D%E6%95%B0%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第九章 中位数和顺序统计量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E5%85%AB%E7%AB%A0%20%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第八章 线性时间排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2%E3%80%81%E6%8E%92%E5%BA%8F%E5%92%8C%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%A0%86%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六章 堆排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3、数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3、数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E6%95%A3%E5%88%97%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十一章 散列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E7%BA%A2%E9%BB%91%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十三章 红黑树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十二章 二叉搜索树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E6%89%A9%E5%BC%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十四章 数据结构的扩张
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E7%AB%A0%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十章 基本数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4、高级设计与分析技术
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4、高级设计与分析技术
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%20%E6%91%8A%E8%BF%98%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十七章 摊还分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%20%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十五章 动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4%E3%80%81%E9%AB%98%E7%BA%A7%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF/%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0%20%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十六章 贪心算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5、高级数据结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5、高级数据结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20Van%20Emde%20Boas%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二十章 Van Emde Boas树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%20%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二十章 用于不相交集合的数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%20%E6%96%90%E6%B3%A2%E6%8B%89%E4%B8%94%E5%A0%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十九章 斐波拉且堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5%E3%80%81%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%20B%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第十八章 B树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6、图算法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6、图算法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/6%E3%80%81%E5%9B%BE%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 图算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7、算法问题选编
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7、算法问题选编
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 算法问题选编
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 算法问题选编
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十七章 多线程算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十七章 多线程算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十八章 矩阵运算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十八章 矩阵运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#283" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习 28.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十九章 线性规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十九章 线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#291" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#292" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#293" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#294" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#295" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十章 多项式与快速傅里叶变换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十章 多项式与快速傅里叶变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#301" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 30.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#302" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 30.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30-1（分治乘法）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十一章 数论算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十一章 数论算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#316" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#317" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#318" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#319" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十二章 字符串匹配
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十二章 字符串匹配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习 32.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十三章 计算几何学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十三章 计算几何学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 33.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习33.2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习33.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习33.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#np" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十四章 NP 完全性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十四章 NP 完全性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十五章 近似算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十五章 近似算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8、附录：数学基础知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8、附录：数学基础知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8%E3%80%81%E9%99%84%E5%BD%95%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第八部分 附录：数学基础知识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    相关知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    相关知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    卡特兰数 (Catalan numbers)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十七章 多线程算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十七章 多线程算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 27.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十八章 矩阵运算
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十八章 矩阵运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#283" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 28.3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习 28.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二十九章 线性规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二十九章 线性规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#291" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#292" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#293" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#294" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#295" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 29.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十章 多项式与快速傅里叶变换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十章 多项式与快速傅里叶变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#301" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 30.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#302" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 30.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30-1（分治乘法）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十一章 数论算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十一章 数论算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#316" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#317" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#318" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.8
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#319" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 31.9
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十二章 字符串匹配
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十二章 字符串匹配">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 32.4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习 32.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十三章 计算几何学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十三章 计算几何学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习 33.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习33.2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="练习33.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习33.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#np" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十四章 NP 完全性
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十四章 NP 完全性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习34.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三十五章 近似算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三十五章 近似算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习35.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        思考题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="_1">第七部分 算法问题选编</h1>
+<h2 id="_2">第二十七章 多线程算法</h2>
+<h3 id="271">练习 27.1</h3>
+<p>27.1-1 假设 P-FIB 中第 4 行派生调用 P-FIB($<span class="arithmatex">\(n-2\)</span>$)，而不是像原程序中使用普通调用的方法，则渐近工作量、持续时间和并行度各是多少？</p>
+<p>27.1-2 请画出运行 P-FIB(5) 的计算有向无环图。假设计算中的每个链消耗单位时间，则该计算的工作量、持续时间和并行度各是多少？如何在 3 个处理器上调度这个计算有向无环图，要求使用贪心调度并用执行中的时间步给每个链做标记。</p>
+<p>27.1-3 证明：贪心调度可以达到下面的时间界，该时间界稍微强于定理 27.1 给出的界：
+$$
+T_P \leq \frac{T_1 - T_\infty}{P} + T_\infty \qquad (27.5)
+$$</p>
+<p>27.1-4 构造一个计算有向无环图，使得在相同数目的处理器上，一个贪心调度器的一次执行时间是某个贪心调度器的另一次执行时间的几乎 2 倍。描述这两种执行是如何进行的。</p>
+<p>27.1-5 Karan 教授在处理器数为 4、10 和 64 的理想并行计算机上，使用一个贪心调度器分别测试了她的确定多线程算法，她的三次运行结果分别为 $<span class="arithmatex">\(T_4 = 80\)</span>$ 秒、$<span class="arithmatex">\(T_{10} = 42\)</span>$ 秒和 $<span class="arithmatex">\(T_{64} = 10\)</span>$ 秒。说明该教授是在说谎，还是实验不合适。（提示：使用工作量定律(27.2)、持续时间定律(27.3)，以及从练习 27.1-3 得到的不等式(27.5)。）</p>
+<p>27.1-6 请给出一个计算 $<span class="arithmatex">\(n \times n\)</span>$ 阶矩阵和 n 维向量相乘的多线程算法，要求并行度为 $<span class="arithmatex">\(\Theta\left(\frac{n^2}{\lg n}\right)\)</span>$，工作量为 $<span class="arithmatex">\(\Theta(n^2)\)</span>$。</p>
+<p>27.1-7 考虑下面原地完成 $<span class="arithmatex">\(n \times n\)</span>$ 阶矩阵转置的多线程伪代码：</p>
+<p><img alt="image-20250119213531342" src="F:\software\Typora\images\image-20250119213531342.png" /></p>
+<p>试分析这个算法的工作量、持续时间和并行度。</p>
+<p>27.1-8 假设将 P-TRANSPOSE(见练习 27.1-7)中第 3 行的 parallel for 循环替换成普通的 for 循环。试分析改变后算法的工作量、持续时间和并行度。</p>
+<p>27.1-9 假定 $<span class="arithmatex">\(T_P = T_1 / P + T_\infty\)</span>$，在多少个处理器的并行机上才能使国际象棋程序的两个版本的运行速度一样快？</p>
+<h3 id="272">练习 27.2</h3>
+<p>27.2-1 请画出在 $<span class="arithmatex">\(2 \times 2\)</span>$ 矩阵上计算 P-SQUARE-MATRIX-MULTIPLY 的计算有向无环图，并在图中标出与算法执行中的链相对应的所有顶点。使用习惯表示法：派生调用和普通调用的边指向下，连接边水平指向右，返回边指向上。假设每个链消耗单位时间，试分析该计算的工作量、持续时间和并行度。</p>
+<p>27.2-2 对 P-MATRIX-MULTIPLY-RECURSIVE 过程，重做一遍练习 27.2-1。</p>
+<p>27.2-3 请给出工作量为 $<span class="arithmatex">\(\Theta(n^3)\)</span>$，而持续时间仅为 $<span class="arithmatex">\(\Theta(\lg n)\)</span>$ 的两个 $<span class="arithmatex">\(n \times n\)</span>$ 矩阵相乘的多线程算法伪代码，并分析该算法。</p>
+<p>27.2-4 请给出 $<span class="arithmatex">\(p \times q\)</span>$ 矩阵和 $<span class="arithmatex">\(q \times r\)</span>$ 矩阵相乘的一个有效多线程算法的伪代码。即使任何 $<span class="arithmatex">\(p\)</span><span class="arithmatex">\(、\)</span><span class="arithmatex">\(q\)</span>$ 或 $<span class="arithmatex">\(r\)</span>$ 为 1，你的算法也要有好的并行性能。分析该算法。</p>
+<p>27.2-5 请给出原地转置 $<span class="arithmatex">\(n \times n\)</span>$ 矩阵的一个有效的多线程算法伪代码，使用分治法原地将 $<span class="arithmatex">\(n \times n\)</span>$ 矩阵递归地划分为 4 个 $<span class="arithmatex">\(n/2 \times n/2\)</span>$ 子矩阵。分析该算法。</p>
+<p>27.2-6 请给出 Floyd-Warshall 算法（见 25.2 节）的一个有效多线程实现的伪代码，该算法在带权图上计算所有点对间的最短路径。分析该算法。</p>
+<h3 id="273">练习 27.3</h3>
+<p>27.3-1 试解释如何加大 P-MERGE 基础情形的规模。</p>
+<p>27.3-2 与 P-MERGE 在较大数组中找一个中位数的方法不同，使用练习 9.3-8 的结果，请给出一个找出两个有序子数组中的所有元素的中位数的替代方法。再给出使用这个中位数查找方法的一个有效的多线程归并算法的伪代码。分析该算法。</p>
+<p>27.3-3 如 7.1 节中的 PARTITION 过程，请给出一个有效的多线程算法，用划分元划分一个数组。你不必原地划分数组；使你的算法尽可能多地并行。分析该算法。（提示：可能需要一个辅助数组，并可能需要对输入元素做多于一趟的处理。）</p>
+<p>27.3-4 请给出 30.2 节中的 RECURSIVE-FFT 的一个多线程版本，使实现尽可能多地并行。并分析该算法。</p>
+<p>*27.3-5 请给出 9.2 节中的 RANDOMIZED-SELECT 的一个多线程版本，使实现尽可能多地并行。分析该算法。（提示：使用练习 27.3-3 中的划分算法。）</p>
+<p>*27.3-6 如何实现 9.3 节的多线程 SELECT 算法，使实现尽可能多地并行。分析该算法。</p>
+<h3 id="_3">思考题</h3>
+<p>27-1 （使用嵌套并行实现并行循环）考虑下面对两个 $<span class="arithmatex">\(n\)</span>$ 个元素的数组 $<span class="arithmatex">\(A[1..n]\)</span>$ 和 $<span class="arithmatex">\(B[1..n]\)</span>$ 进行相加，并将结果存放在 $<span class="arithmatex">\(C[1..n]\)</span>$ 中的多线程算法。</p>
+<p><img alt="image-20250119214216480" src="F:\software\Typora\images\image-20250119214216480.png" /></p>
+<p>a. 按照 MAT-VEC-MAIN-LOOP 的样式，使用嵌套并行 (spawn 和 sync) 改写 SUM-ARRAYS 中的并行循环。分析你的实现的并行度。</p>
+<p>考虑下面并行循环的两种实现，哪种实现包含了一个指定的 grain-size 值：</p>
+<p><img alt="image-20250119214354583" src="F:\software\Typora\images\image-20250119214354583.png" /></p>
+<p>b. 假定置 grain-size = 1。以上实现的并行度是多少？</p>
+<p>c. 请给出一个用 $<span class="arithmatex">\(n\)</span>$ 和 grain-size 表示的 SUM-ARRAYS' 持续时间公式，并求出对应最大并行度的最佳 grain-size 值。</p>
+<p>27-2 （节省矩阵乘法中的临时空间）P-MATRIX-MULTIPLY-RECURSIVE 过程的缺点是它需要分配一个 $<span class="arithmatex">\(n \times n\)</span>$ 的临时矩阵 T，不利于 @ 记号中的常数因子。然而 P-MATRIX-MULTIPLY-RECURSIVE 过程有很高的并行度。例如，如果忽略符号 $<span class="arithmatex">\(\Theta\)</span>$ 中的常数因子，对于 1000×1000 的矩阵相乘，其并行度接近 $<span class="arithmatex">\(1000^3/10^2 = 10^7\)</span>$，因为 $<span class="arithmatex">\(\lg 1000 \approx 10\)</span>$。绝大多数并行计算机的处理器数目都远小于 1000 万。</p>
+<p>a. 描述一个多线程算法，该算法不需要临时矩阵 T 且持续时间以 $<span class="arithmatex">\(\Theta(n)\)</span>$ 增长。（提示：模仿 P-MATRIX-MULTIPLY-RECURSIVE 中的一般策略，计算 $<span class="arithmatex">\(C = C + AB\)</span>$，但可以并行初始化 C 并且要谨慎地在一个合适地方插入 sync 语句。）</p>
+<p>b. 给出并求解该算法的工作量和持续时间的递归式。</p>
+<p>c. 分析该算法的并行度。忽略符号 @ 中的常数因子，估算 $<span class="arithmatex">\(1000 \times 1000\)</span>$ 矩阵上的并行度。并与 P-MATRIX-MULTIPLY-RECURSIVE 的并行度比较。</p>
+<p>27-3 （多线程矩阵算法）
+a. 并行化 28.1 节中的 LU-DECOMPOSITION 过程，给出该算法的一个多线程版本的伪代码。使该算法尽可能多地并行，并分析它的工作量、持续时间和并行度。
+b. 同样做 28.1 节中的 LUP-DECOMPOSITION 过程。
+c. 同样做 28.1 节中的 LUP-SOLVE 过程。
+d. 同样做基于等式 (28.13) 的对称正定矩阵求逆的一个多线程算法。</p>
+<p>27-4 （多线程归约和前缀计算）一个数组 $<span class="arithmatex">\(x[1..n]\)</span>$ 的 ⊗ 归约 (⊗-reduction) 就是 $<span class="arithmatex">\(y = x[1] \otimes x[2] \otimes \cdots \otimes x[n]\)</span>$ 的值，其中 $<span class="arithmatex">\(\otimes\)</span>$ 是一个结合操作符。
+下面的程序串行计算了子数组 $<span class="arithmatex">\(x[i..j]\)</span>$ 的 ⊗ 归约：</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">REDUCE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="mf">1.</span><span class="w">  </span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="mf">2.</span><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">j</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="mf">3.</span><span class="w">      </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="err">⊗</span><span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="mf">4.</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">y</span>
+</span></code></pre></div>
+<p>a. 应用嵌套并行实现一个多线程算法 P-REDUCE，以工作量为 $<span class="arithmatex">\(\Theta(n)\)</span>$、持续时间为 $<span class="arithmatex">\(\Theta(\lg n)\)</span>$ 的代价实现上面同样的功能。并分析该算法。</p>
+<p>另一个相关问题是，在数组 $<span class="arithmatex">\(x[1..n]\)</span>$ 上求解一个 $<span class="arithmatex">\(\otimes\)</span>$ 前缀计算($<span class="arithmatex">\(\otimes\)</span>$-prefix computation)，有时候也称为 $<span class="arithmatex">\(\otimes\)</span>$ 扫描($<span class="arithmatex">\(\otimes\)</span>$-scan)，其中 $<span class="arithmatex">\(\otimes\)</span>$ 也是一个结合操作符。 $<span class="arithmatex">\(\otimes\)</span>$ 扫描产生了如下数组 $<span class="arithmatex">\(y[1..n]\)</span>$：</p>
+<div class="arithmatex">\[
+\begin{align*}
+ y [1] &amp;= x [1] \\
+ y [2] &amp;= x [1] \otimes x [2] \\
+ y [3] &amp;= x [1] \otimes x [2] \otimes x [3] \\
+ &amp; \vdots \\
+y [n] &amp; = x [1] \otimes x [2] \otimes x [3] \otimes \cdots \otimes x [n]
+\end{align*}
+\]</div>
+<p>也就是说，使用 $<span class="arithmatex">\(\otimes\)</span>$ 操作符的数组 $<span class="arithmatex">\(x\)</span>$ 的所有前缀“和”。下面的串行 SCAN 过程计算了一个 $<span class="arithmatex">\(\otimes\)</span>$ 前缀：</p>
+<p><img alt="image-20250119215243144" src="F:\software\Typora\images\image-20250119215243144.png" /></p>
+<p>遗憾的是，多线程 SCAN 不是直接可以得到的。例如，改 for 循环为 parallel for 循环会产生竞争，因为循环体的每一步迭代都依赖前一个迭代。下面的 P-SCAN-1 过程实现了 $<span class="arithmatex">\(\otimes\)</span>$ 前缀计算的并行，尽管十分低效：</p>
+<p><img alt="image-20250119215330921" src="F:\software\Typora\images\image-20250119215330921.png" /></p>
+<p>b. 分析 P-SCAN-1 过程的工作量、持续时间和并行度。 使用嵌套并行能得到一个更有效的 $<span class="arithmatex">\(\otimes\)</span>$ 前缀计算，其过程如下：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>P-SCAN-2(x)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>1 n = x.length
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>2 let y[1..n] be a new array
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>3 P-SCAN-2-AUX(x, y, 1, n)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>4 return y
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>P-SCAN-2-AUX(x, y, i, j)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>1 if i == j
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>2     y[i] = x[i]
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>3 else k = ⌊(i + j) / 2⌋
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>4     spawn P-SCAN-2-AUX(x, y, i, k)
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>5     P-SCAN-2-AUX(x, y, k + 1, j)
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>6     sync
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>7 parallel for l = k + 1 to j
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>8     y[l] = y[k] ⊗ y[l]
+</span></code></pre></div>
+<p>c. 论证 P-SCAN-2 是正确的，并分析它的工作量、持续时间和并行度。</p>
+<p>我们可以通过在数据上执行两趟不同的 $<span class="arithmatex">\(\otimes\)</span>$ 前缀计算来改进 P-SCAN-1 和 P-SCAN-2。第一趟，收集不同的连续子数组 $<span class="arithmatex">\(x\)</span>$ 的“和”项，存入到一个临时数组 $<span class="arithmatex">\(t\)</span>$ 中；第二趟，使用 $<span class="arithmatex">\(t\)</span>$ 中的“和”项来计算出最终的结果 $<span class="arithmatex">\(y\)</span>$。下面的伪代码实现了这种策略，但其中省去了一些表示：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>P-SCAN-3(x)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1 n = x.length
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>2 let y[1..n] and t[1..n] be new arrays
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>3 y[1] = x[1]
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>4 if n &gt; 1
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>5     P-SCAN-UP(x, t, 2, n)
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>6     P-SCAN-DOWN(x[1], x, t, y, 2, n)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>7 return y
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>P-SCAN-UP(x, t, i, j)
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>1 if i == j
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>2     return x[i]
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>3 else
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>4     k = ⌊(i + j) / 2 ⌋
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>5     t[k] = spawn P-SCAN-UP(x, t, i, k)
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>6     right = P-SCAN-UP(x, t, k + 1, j)
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>7     sync
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>8     return _____  // fill in the blank
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>P-SCAN-DOWN(v, x, t, y, i, j)
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>1 if i == j
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>2     y[j] = v ⊗ x[i]
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>3 else
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>4     k = ⌊(i + j) / 2 ⌋
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>5     spawn P-SCAN-DOWN(____, x, t, y, i, k)  // fill in the blank
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>6     P-SCAN-DOWN(____, x, t, y, k +1, j)  // fill in the blank
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>7     sync
+</span></code></pre></div>
+<p>d. 对 P-SCAN-UP 第 8 行、P-SCAN-DOWN 第 5 行和第 6 行中的三个缺省表示进行填空。填完空后，论证 P-SCAN-3 是正确的。（提示：证明值 $<span class="arithmatex">\(v\)</span> 传给 P-SCAN-DOWN($$ v, x, t, y, i, j $$)，满足 $$ v = x [1] ⊗ x [2] ⊗ \cdots ⊗ x [i-1]$$。）</p>
+<p>e. 分析 P-SCAN-3 的工作量、持续时间和并行度。</p>
+<p>27.5 （多线程一个简单的模板计算） 计算科学中存在很多这样一类的算法，这类算法对一个数组中的一些单元进行填值，所填值取决于已经计算好的邻近单元值，并且计算过程中这些信息一直不变。这种在计算期间邻近单元不发生改变的模式称为模板（stencil）计算。例如，15.4 节提供了一个计算最长公共子序列的模板算法，其中 $<span class="arithmatex">\(c[i, j]\)</span>$ 的值只取决于 <span class="arithmatex">\(c[i-1, j]\)</span>、<span class="arithmatex">\(c[i, j-1]\)</span> 和 $<span class="arithmatex">\(c[i-1, j-1]\)</span>$。</p>
+<p>c [i, j-1] 和 c [i-1, j-1] 以及两个给定输入串中的元素 $<span class="arithmatex">\(x_i\)</span>$ 和 $<span class="arithmatex">\(y_j\)</span>$。输入的序列是固定不变的，但算法在二维数组 c 中填写，使得在三个单元 c [i-1, j]、c [i, j-1] 和 c [i-1, j-1] 完成后才计算单元 c [i, j]。</p>
+<p>本题中，我们探讨如何在一个 $<span class="arithmatex">\(n \times n\)</span>$ 的数组 A 上使用嵌套并行来实现一个简单的模板计算，其中存入单元 $<span class="arithmatex">\(A[i, j]\)</span>$ 的值仅取决于 $<span class="arithmatex">\(A[i', j']\)</span>$，这里 $<span class="arithmatex">\(i' \leq i, j' \leq j\)</span>$（并且当然有 <span class="arithmatex">\(i' \neq i\)</span> 或者 <span class="arithmatex">\(j' \neq j\)</span>）。换句话说，一个单元的值只取决于它的上边值和左边单元的值，以及一些数组之外的静态信息。此外，整个过程中假设，一旦计算 A [i, j] 时所需要的单元都已填写完，就可以在 <span class="arithmatex">\(\Theta(1)\)</span> 的时间内填入 A [i, j]。（与 15.4 节中的 LCS-LENGTH 过程一样。）</p>
+<p>划分 $<span class="arithmatex">\(n \times n\)</span>$ 的数组 A 为 4 个 $<span class="arithmatex">\(n/2 \times n/2\)</span>$ 的子数组：</p>
+<div class="arithmatex">\[
+A = \left [ \begin{array}{cc} A_{11} &amp; A_{12} \\ A_{21} &amp; A_{22} \end{array} \right] \qquad (27.11)
+\]</div>
+<p>现在看到，可以递归地填入子数组 <span class="arithmatex">\(A_{11}\)</span> 中的单元，因为它并不依赖其他三个子数组中的单元。一旦 <span class="arithmatex">\(A_{11}\)</span> 完成，可以递归地并行填入 <span class="arithmatex">\(A_{12}\)</span> 和 <span class="arithmatex">\(A_{21}\)</span> 中的单元，这是因为它们都依赖于 $<span class="arithmatex">\(A_{11}\)</span>$ 但彼此之间不依赖。最后，递归地填入 <span class="arithmatex">\(A_{22}\)</span> 中的单元。</p>
+<p>a. 基于分解式(27.11)和上面的讨论，给出用分治算法 SIMPLE-STENCIL 来执行这个简单模板计算的多线程伪代码。（不用担心基础情形的处理，这取决于特定的模板。）给出并求解对应规模 n 的工作量和持续时间的递归式。并行度又是多少？</p>
+<p>b. 修改上面题(a)的解答，将 $<span class="arithmatex">\(n \times n\)</span>$ 的数组划分为 9 个 $<span class="arithmatex">\(n/3 \times n/3\)</span>$ 的子数组，递归下去使得尽可能得到更多的并行性。分析该算法。该算法与题(a)中的算法相比，并行度如何？</p>
+<p>c. 对照题(a)和(b)，按如下推广。选择一个整数 $<span class="arithmatex">\(b \geqslant 2\)</span>$。将一个 $<span class="arithmatex">\(n \times n\)</span>$ 数组划分为 $<span class="arithmatex">\(b^2\)</span>$ 个子数组，每个大小都为 $<span class="arithmatex">\(n/b \times n/b\)</span>$，递归下去使得尽可能得到更多的并行性。关于 n 和 b，该算法的工作量、持续时间和并行度各是多少？使用这种方法，证明：对任何选择的 $<span class="arithmatex">\(b \geqslant 2\)</span>$，其并行度一定是 <span class="arithmatex">\(o(n)\)</span>。（提示：最后一个问题，证明对于任何选择的 <span class="arithmatex">\(b \geqslant 2\)</span>，并行度是 n 的指数，其指数严格小于 1。）</p>
+<p>d. 给出一个求解这个简单模板问题的多线程算法的伪代码，使得并行度达到 $<span class="arithmatex">\(\Theta(n/\lg n)\)</span>$。使用工作量和持续时间概念，论证该问题事实上有 $<span class="arithmatex">\(\Theta(n)\)</span>$ 的固有并行度。然而，我们使用分治法的多线程伪代码，实际上达不到这个最大的并行度。用分治法的多线程伪代码，实际上达不到这个最大的并行度。</p>
+<p>27-6 （随机多线程算法）正如使用普通的串行算法一样，有时想要实现随机多线程算法。本题探讨如何修改各种性能度量来处理这些算法的期望行为。另外，要求设计并分析一个随机快速排序的多线程算法。</p>
+<p>a. 用期望的表示方法，如何修改工作量定律(27.2)、持续时间定律(27.3)和贪心调度界(27.4)，来处理 $<span class="arithmatex">\(T_{P}\)</span>、<span class="arithmatex">\(T_{1}\)</span> 和 $$ T_{\infty}$$ 都是随机变量的情形。</p>
+<p>b. 考虑一个随机多线程算法，它在 1% 的时间里有 $<span class="arithmatex">\(T_1 = 10^4\)</span>$ 和 $<span class="arithmatex">\(T_{10000} = 1\)</span>$，但在 99% 的时间里有 $<span class="arithmatex">\(T_1 = T_{10000} = 10^9\)</span>$。说明一个随机多线程算法的加速比应该被定义为 $<span class="arithmatex">\(E\left[T_1\right]/ E\left[T_P\right]\)</span>$，而不是 $<span class="arithmatex">\(E\left[T_1/ T_P\right]\)</span>$。</p>
+<p>c. 说明一个随机多线程算法的并行度应该被定义为 $<span class="arithmatex">\(E\left[T_1\right]/ E\left[T_{\infty}\right]\)</span>$。</p>
+<p>d. 使用嵌套并行，多线程化 7.3 节中的 RANDOMIZED-QUICKSORT 算法。（注意不是并行化 RANDOMIZED-PARTITION。）给出 P-RANDOMIZED-QUICKSORT 的伪代码。</p>
+<p>e. 分析给出的随机快速排序的多线程算法。（提示：回顾 9.2 节关于 RANDOMIZED-SELECT 的分析。）SELECT 的分析。</p>
+<h2 id="_4">第二十八章 矩阵运算</h2>
+<h3 id="281">练习 28.1</h3>
+<p>28.1-1 采用正向替换法求解下面方程组：
+$$
+\left [\begin{array}{ccc} 1 &amp; 0 &amp; 0 \ 4 &amp; 1 &amp; 0 \ -6 &amp; 5 &amp; 1 \end{array}\right] \left [\begin{array}{c} x_1 \ x_2 \ x_3 \end{array}\right] = \left [\begin{array}{c} 3 \ 14 \ -7 \end{array}\right]
+$$</p>
+<p>28.1-2 找到下面矩阵的一个 LU 分解：
+$$
+\begin{bmatrix} 4 &amp; -5 &amp; 6 \ 8 &amp; -6 &amp; 7 \ 12 &amp; -7 &amp; 12 \end{bmatrix}
+$$</p>
+<p>28.1-3 利用一个 LUP 分解来求解下面方程组：
+$$
+\left [\begin{array}{l} 1 &amp; 5 &amp; 4 \ 2 &amp; 0 &amp; 3 \ 5 &amp; 8 &amp; 2 \end{array}\right] \left [\begin{array}{l} x_1 \ x_2 \ x_3 \end{array}\right] = \left [\begin{array}{l} 12 \ 9 \ 5 \end{array}\right]
+$$</p>
+<p>28.1-4 请描述一个对角矩阵的 LUP 分解。</p>
+<p>28.1-5 请描述一个置换矩阵 A 的 LUP 分解，并证明它是唯一的。</p>
+<p>28.1-6 证明：对所有 $<span class="arithmatex">\(n \geqslant 1\)</span>$，存在一个 $<span class="arithmatex">\(n \times n\)</span>$ 奇异矩阵，它具有一个 LU 分解。</p>
+<p>28.1-7 在 LU-DECOMPOSITION 中，当 $<span class="arithmatex">\(k = n\)</span>$ 时，是否有必要执行最外层的 for 循环迭代？LUP-DECOMPOSITION 中情况又如何？</p>
+<h3 id="282">练习 28.2</h3>
+<p>28.2-1 设 <span class="arithmatex">\(M(n)\)</span> 是两个 <span class="arithmatex">\(n \times n\)</span> 矩阵相乘所需时间，<span class="arithmatex">\(S(n)\)</span> 表示求 <span class="arithmatex">\(n \times n\)</span> 矩阵平方所需时间。证明：</p>
+<p>求矩阵乘积与求矩阵平方实质上难度相同，即一个 <span class="arithmatex">\(M(n)\)</span> 时间的矩阵相乘算法意味着一个 <span class="arithmatex">\(O(M(n))\)</span> 时间的矩阵平方算法，一个 <span class="arithmatex">\(S(n)\)</span> 时间的矩阵平方算法意味着一个 <span class="arithmatex">\(O(S(n))\)</span> 时间的矩阵相乘算法。</p>
+<p>28.2-2 设 <span class="arithmatex">\(M(n)\)</span> 是两个 <span class="arithmatex">\(n \times n\)</span> 矩阵相乘所需时间，<span class="arithmatex">\(L(n)\)</span> 为计算一个 <span class="arithmatex">\(n \times n\)</span> 矩阵的 LUP 分解所需时间。证明：求矩阵乘积运算与计算矩阵 LUP 分解实质上难度相同，即一个 <span class="arithmatex">\(M(n)\)</span> 时间的矩阵相乘算法意味着一个 <span class="arithmatex">\(O(M(n))\)</span> 时间的矩阵 LUP 分解算法，一个 <span class="arithmatex">\(L(n)\)</span> 时间的矩阵 LUP 分解算法意味着一个 <span class="arithmatex">\(O(L(n))\)</span> 时间的矩阵相乘算法。</p>
+<p>28.2-3 设 <span class="arithmatex">\(M(n)\)</span> 是两个 <span class="arithmatex">\(n \times n\)</span> 矩阵相乘所需时间，<span class="arithmatex">\(D(n)\)</span> 表示求 <span class="arithmatex">\(n \times n\)</span> 矩阵行列式值所需时间。证明：求矩阵乘积运算与求行列式值实质上难度相同，即一个 <span class="arithmatex">\(M(n)\)</span> 时间的矩阵相乘算法意味着一个 <span class="arithmatex">\(O(M(n))\)</span> 时间的行列式算法，一个 <span class="arithmatex">\(D(n)\)</span> 时间的行列式算法意味着一个 <span class="arithmatex">\(O(D(n))\)</span> 时间的矩阵相乘算法。</p>
+<p>28.2-4 设 <span class="arithmatex">\(M(n)\)</span> 是两个 <span class="arithmatex">\(n \times n\)</span> 布尔矩阵相乘所需时间，<span class="arithmatex">\(T(n)\)</span> 为找出 <span class="arithmatex">\(n \times n\)</span> 布尔矩阵的传递闭包所需时间（见 25.2 节）。证明：一个 <span class="arithmatex">\(M(n)\)</span> 时间的布尔矩阵相乘算法意味着一个 <span class="arithmatex">\(O(M(n) \lg n)\)</span> 时间的传递闭包算法，一个 <span class="arithmatex">\(T(n)\)</span> 时间的传递闭包算法意味着一个 <span class="arithmatex">\(O(T(n))\)</span> 时间的布尔矩阵相乘算法。</p>
+<p>28.2-5 当矩阵元素属于整数模 2 所构成的域时，基于定理 28.2 的矩阵求逆算法是否仍然有效？请解释。</p>
+<p>*28.2-6 推广定理 28.2 的矩阵求逆算法，使之能处理复数矩阵的情形，并证明你所给出的推广是正确的。（提示：用 A 的共轭转置矩阵 (conjugate transpose)<span class="arithmatex">\(A^*\)</span> 来替代 A 的转置矩阵，把 A 中的每个元素用其共轭复数来替代就得到 <span class="arithmatex">\(A^*\)</span>。考虑用埃尔米特 (Hermitian) 矩阵来替代对称矩阵，埃尔米特矩阵就是满足 <span class="arithmatex">\(A = A^*\)</span> 的矩阵 <span class="arithmatex">\(A^*\)</span>）</p>
+<h3 id="283">练习 28.3</h3>
+<p>28.3-1 证明：一个对称正定矩阵对角线上的每一个元素都是正的。</p>
+<p>28.3-2 设 <span class="arithmatex">\(A = \begin{bmatrix} a &amp; b \\ b &amp; c \end{bmatrix}\)</span> 是一个 <span class="arithmatex">\(2 \times 2\)</span> 的对称正定矩阵。运用类似引理 28.5 证明过程中用过的“完全平方”来证明该行列式的值 <span class="arithmatex">\(ac - b^2\)</span> 是正的。</p>
+<p>28.3-3 证明：一个对称正定矩阵中值最大的元素在对角线上。</p>
+<p>28.3-4 证明：一个对称正定矩阵的每一个主子矩阵的行列式值都是正的。</p>
+<p>28.3-5 设 <span class="arithmatex">\(A_k\)</span> 表示对称正定矩阵 A 的第 k 个主子矩阵。证明：在 LU 分解过程中，<span class="arithmatex">\(\det(A_k)/\det(A_{k-1})\)</span> 是第 k 个主元，其中为方便起见，<span class="arithmatex">\(\det(A_0) = 1\)</span>。</p>
+<p>28.3-6 找出具有形式 <span class="arithmatex">\(F(x) = c_1 + c_2 x \lg x + c_3 e^x\)</span> 的函数，使其为下面数据点的最优最小二乘拟合：(1, 1), (2, 1), (3, 3), (4, 8)。</p>
+<p>28.3-7 请说明伪逆矩阵 <span class="arithmatex">\(A^+\)</span> 满足下面 4 个等式：
+$$
+\begin{align<em>}
+&amp; AA^+ A = A \
+&amp; A^+ AA^+ = A^+ \
+&amp; (AA^+)^T = AA^+ \
+&amp; (A^+ A)^T = A^+ A
+\end{align</em>}
+$$</p>
+<h4 id="_5">练习</h4>
+<p>28-1 （三对角线性方程组）考察三对角矩阵：</p>
+<div class="arithmatex">\[
+A = \left[\begin{array}{ccccccccc}
+1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\
+-1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 2
+\end{array}\right]
+\]</div>
+<p>a. 求出矩阵 A 的一个 LU 分解。</p>
+<p>b. 通过正向替换与反向替换求解方程 $<span class="arithmatex">\(Ax = (1 1 1 1 1 1)^T\)</span>$。</p>
+<p>c. 求 A 的逆矩阵。</p>
+<p>d. 请说明对任意的 $<span class="arithmatex">\(n \times n\)</span>$ 对称正定三对角矩阵 A 和任意 n 维向量 b，如何通过运用一个 LU 分解可在 <span class="arithmatex">\(O(n)\)</span> 时间内求解方程 $<span class="arithmatex">\(Ax = b\)</span>$。论证在最坏情况下，任何基于求 $<span class="arithmatex">\(A^{-1}\)</span>$ 的方法在渐近意义下要花费更多的时间。</p>
+<p>e. 请说明对任意 n×n 非奇异的三对角矩阵 A 和任意 n 维向量 b，如何运用一个 LUP 分解在 <span class="arithmatex">\(O(n)\)</span> 时间内求解方程 $<span class="arithmatex">\(Ax = b\)</span>$。</p>
+<p>28-2 （样条）把一组点插值到一条曲线中的一种实用方法是采用三次样条 (cubic spline)。已知 n+1 个点值对组成的集合 $<span class="arithmatex">\(\left\{(x_i, y_i) : i=0,1,\cdots, n\right\}\)</span>$，其中 $<span class="arithmatex">\(x_0 &lt; x_1 &lt; \cdots &lt; x_n\)</span>$。我们希望拟合出这些点的分段三次曲线 (样条) f(x)。也就是说，曲线 f(x) 由 n 个三次多项式 <span class="arithmatex">\(f_i(x) = a_i + b_i x + c_i x^2 + d_i x^3 (i=0,1, \cdots, n-1)\)</span> 组成，其中如果 x 落在区间 <span class="arithmatex">\(x_i \leqslant x \leqslant x_{i+1}\)</span>，那么曲线的值由 <span class="arithmatex">\(f(x) = f_i(x - x_i)\)</span> 给出。把三次多项式“粘和”在一起的点 x_i 称为结 (knot)。为了简单起见，假定对 <span class="arithmatex">\(i=0,1,\cdots, n\)</span>，有 <span class="arithmatex">\(x_i = i\)</span>。</p>
+<p>为了保证 f(x) 的连续性，我们要求当 <span class="arithmatex">\(i=0,1,\cdots, n-1\)</span> 时，</p>
+<div class="arithmatex">\[
+\begin{align*}
+f(x_i) &amp;= f_i(0) = y_i \\
+f(x_{i+1}) &amp;= f_i(1) = y_{i+1}
+\end{align*}
+\]</div>
+<p>为了保证 <span class="arithmatex">\(f(x)\)</span> 足够光滑，我们还要求当 <span class="arithmatex">\(i=0,1, \cdots, n-2\)</span> 时，在每个结的一阶导数是连续的：</p>
+<div class="arithmatex">\[
+f'(x_{i+1}) = f'_i(1) = f'_{i+1}(0)
+\]</div>
+<p>a. 假定当 <span class="arithmatex">\(i=0,1, \cdots, n\)</span> 时，我们不仅知道点值对 <span class="arithmatex">\(\left\{(x_i, y_i)\right\}\)</span>，而且知道每个结的一阶导数 <span class="arithmatex">\(D_i = f'(x_i)\)</span>。请用值 <span class="arithmatex">\(y_i、y_{i+1}、D_i\)</span> 和 <span class="arithmatex">\(D_{i+1}\)</span> 来表示每个系数 <span class="arithmatex">\(a_i、b_i、c_i\)</span> 和 <span class="arithmatex">\(d_i\)</span>。（记住 <span class="arithmatex">\(x_i = i\)</span>。）根据点值对和一阶导数计算出 <span class="arithmatex">\(4n\)</span> 个系数需要多少时间？</p>
+<p>如何选择 <span class="arithmatex">\(f(x)\)</span> 在每个结的一阶导数仍然是个问题。一种方法是要求当 <span class="arithmatex">\(i=0,1, \cdots, n-2\)</span> 时，二阶导数在每个结处连续：</p>
+<div class="arithmatex">\[
+f''(x_{i+1}) = f'_i(1) = f'_{i+1}(0)
+\]</div>
+<p>在第一个结和最后一个结，假设 <span class="arithmatex">\(f''(x_0) = f''(0) = 0\)</span> 以及 <span class="arithmatex">\(f''(x_n) = f_{n-1}'(1) = 0\)</span>；这些假设使 <span class="arithmatex">\(f(x)\)</span> 成为一个自然三次样条。</p>
+<p>b. 利用二阶导数的连续性限制，说明当 <span class="arithmatex">\(i=1,2,\cdots, n-1\)</span> 时，</p>
+<div class="arithmatex">\[
+D_{i-1} + 4D_i + D_{i+1} = 3(y_{i+1} - y_{i-1}) \tag {28.21}
+\]</div>
+<p>c. 请说明</p>
+<div class="arithmatex">\[
+2 D_0 + D_1 = 3(y_1 - y_0) \tag{28.22}
+\]</div>
+<div class="arithmatex">\[
+D_{n-1} + 2 D_n = 3(y_n - y_{n-1}) \tag {28.23}
+\]</div>
+<p>d. 重写等式 (28.21) ~ (28.23) 为包含未知量向量 <span class="arithmatex">\(D = (D_0, D_1, \cdots, D_n)\)</span> 的矩阵方程。你所给的方程中矩阵具有什么性质？</p>
+<p>e. 论证：运用自然三次样条可以在 <span class="arithmatex">\(O(n)\)</span> 时间内对一组 <span class="arithmatex">\(n+l\)</span> 个点值对进行插值（参见思考题 28-1）。</p>
+<p>f. 请说明当 <span class="arithmatex">\(x_i\)</span> 不一定等于 i 时，如何确定出一个自然三次样条对一组 n+l 个满足 <span class="arithmatex">\(x_0 &lt;  x_1 &lt; \cdots &lt; x_n\)</span> $  \text{的点}  $ <span class="arithmatex">\(\left(x_i, y_i\right)\)</span> 进行插值。你必须求解什么样的矩阵方程？你所给出的算法运行速度有多快</p>
+<h2 id="_6">第二十九章 线性规划</h2>
+<h3 id="291">练习 29.1</h3>
+<p>29.1-1 如果将式(29.24)～(29.28)中的线性规划表示成式(29.19)～(29.21)中的紧凑记号形式，则 n、m、A、b 和 c 分别是什么？</p>
+<p>29.1-2 请给出式(29.24)～(29.28)中线性规划的三个可行解。每个解的目标值是什么？</p>
+<p>29.1-3 在式(29.38)～(29.41)的松弛型中，N、B、A、b、c 和 v 是什么？</p>
+<p>29.1-4 将下面线性规划转换成标准型：
+最小化
+$$
+2 x_1 + 7 x_2 + x_3
+$$
+满足约束
+$$
+\begin{align<em>}
+&amp; x_1 - x_3 = 7 \
+&amp; 3 x_1 + x_2 \geq 24 \
+&amp; x_2 \geq 0 \
+&amp; x_3 \leq 0
+\end{align</em>}
+$$</p>
+<p>29.1-5 将下面线性规划转换成松弛型：
+最大化
+$$
+2 x_1 - 6 x_3
+$$
+满足约束
+$$
+\begin{align<em>}
+&amp; x_1 + x_2 - x_3 \leq 7 \
+&amp; 3 x_1 - x_2 \geq 8 \
+&amp; -x_1 + 2 x_2 + 3 x_3 \geq 0 \
+&amp; x_1, x_2, x_3 \geq 0
+\end{align</em>}
+$$</p>
+<p>其中基本变量和非基本变量是什么？</p>
+<p>29.1-6 说明下面线性规划是不可解的：
+最大化
+$$
+3 x_1 - 2 x_2
+$$
+满足约束
+$$
+x_1 + x_2 \leq 2
+$$</p>
+<p>29.1-7 说明下面线性规划是无界的：
+最大化
+$$
+x_1 - x_2
+$$
+满足约束
+$$
+\begin{align<em>}
+&amp; -2 x_1 + x_2 \leq -1 \
+&amp; -x_1 - 2 x_2 \leq -2 \
+&amp; x_1, x_2 \geq 0
+\end{align</em>}
+$$</p>
+<p>29.1-8 假设有一个 n 个变量和 m 个约束的一般线性规划，并且假设将其转换成标准型。请给出所得线性规划中变量和约束数目的一个上界。</p>
+<p>29.1-9 请给出一个线性规划的例子，其中可行区域是无界的，但最优目标值是有界的。</p>
+<h3 id="292">练习 29.2</h3>
+<p>29.2-1 请将单对最短路径线性规划从式(29.44)～(29.46)转换成标准型。</p>
+<p>29.2-2 请明确写出求图 24-2(a)中从结点 s 到结点 y 的最短路径的线性规划。</p>
+<p>29.2-3 在单源最短路径问题中，我们希望找出从源点 s 到所有顶点 $<span class="arithmatex">\(v\in V\)</span>$ 的最短路径权值。给定一个图 G，请写出一个线性规划，其解具有如下性质：对每个顶点 $<span class="arithmatex">\(v\in V\)</span>$，d_v 是从 s 到 v 的最短路径权值。</p>
+<p>29.2-4 请明确写出求图 26-1(a)中最大流的线性规划。</p>
+<p>29.2-5 请重写最大流式(29.47)～(29.50)的线性规划，使得它只使用 $<span class="arithmatex">\(O(V+E)\)</span>$ 个约束。</p>
+<p>29.2-6 请写出一个线性规划，给定一个二部图 $<span class="arithmatex">\(G=(V, E)\)</span>$，求解最大二分匹配问题。</p>
+<p>29.2-7 在最小费用多商品流问题中，给定有向图 $<span class="arithmatex">\(G=(V, E)\)</span>$，其中每条边(u, v)∈E 有一个非负的容量 $<span class="arithmatex">\(c(u, v)\geqslant 0\)</span>$ 和一个费用 $<span class="arithmatex">\(a(u, v)\)</span>$。与多商品流问题一样，我们已知 k 种不同的商品 $<span class="arithmatex">\(K_1, K_2, \cdots, K_k\)</span>$，其中用三元组 $<span class="arithmatex">\(K_i=(s_i, t_i, d_i)\)</span>$ 来详细说明商品 i。与多商品流问题一样，我们为商品 i 定义流 $<span class="arithmatex">\(f_i\)</span>$，在边(u, v)上定义汇聚流 $<span class="arithmatex">\(f_{uv}\)</span>$。一个可行流满足在每条边(u, v)上汇聚流不超过边(u, v)的容量。一个流的费用是 $<span class="arithmatex">\(\sum\limits_{u, v\in V} a(u, v) f_{uv}\)</span>$，目标是寻找具有最小费用的可行流。请将这个问题表示为一个线性规划。</p>
+<h3 id="293">练习 29.3</h3>
+<p>29.3-1 请完成引理 29.4 的证明，说明必有 $<span class="arithmatex">\(c=c^{\prime}\)</span>$ 和 $<span class="arithmatex">\(v=v^{\prime}\)</span>$。</p>
+<p>29.3-2 请说明在 SIMPLEX 的第 12 行对 PIVOT 的调用永远不会减小 v 的值。</p>
+<p>29.3-3 证明：对 PIVOT 过程给定的松弛型和该过程返回的松弛型是等价的。</p>
+<p>29.3-4 假设把一个标准型的线性规划(A, b, c)转换成松弛型。证明：基本解是可行的当且仅当对 $<span class="arithmatex">\(i=1,2,\cdots, m\)</span>$，有 $<span class="arithmatex">\(b_i\geqslant 0\)</span>$。</p>
+<p>29.3-5 采用 SIMPLEX 求解下面的线性规划：</p>
+<p>最大化 $<span class="arithmatex">\(18 x_1+12.5 x_2\)</span>$</p>
+<p>满足约束</p>
+<p>$$
+\begin{align<em>}
+x_1 + x_2 &amp;\leqslant 20 \
+x_1 &amp;\leqslant 12 \
+x_2 &amp;\leqslant 16 \
+x_1, x_2 &amp;\geqslant 0
+\end{align</em>}
+$$
+29.3-6 采用 SIMPLEX 求解下面的线性规划：</p>
+<p>最大化 $<span class="arithmatex">\(5 x_1-3 x_2\)</span>$</p>
+<p>满足约束</p>
+<p>$$
+\begin{align<em>}
+x_1 - x_2 &amp;\leqslant 1 \
+2 x_1 + x_2 &amp;\leqslant 2 \
+x_1, x_2 &amp;\geqslant 0
+\end{align</em>}
+$$
+29.3-7 采用 SIMPLEX 求解下面的线性规划：</p>
+<p>最小化 $<span class="arithmatex">\(x_1+x_2+x_3\)</span>$</p>
+<p>满足约束</p>
+<p>$$
+\begin{align<em>}
+2 x_1 + 7.5 x_2 + 3 x_3 &amp;\geqslant 10000 \
+20 x_1 + 5 x_2 + 10 x_3 &amp;\geqslant 30000 \
+x_1, x_2, x_3 &amp;\geqslant 0
+\end{align</em>}
+$$
+29.3-8 在引理 29.5 的证明中，我们声明至多存在 $<span class="arithmatex">\(\binom{m+n}{n}\)</span>$ 种方法来选取一个基本变量集合 B。给出一个线性规划的例子，其中有严格少于 $<span class="arithmatex">\(\binom{m+n}{n}\)</span>$ 种方法来选取此集合 B。</p>
+<h3 id="294">练习 29.4</h3>
+<p>29.4-1 给出练习 29.3-5 中线性规划的对偶问题。</p>
+<p>29.4-2 假设我们有一个线性规划不是标准型。我们需要先将其转换成标准型，然后才能转换为对偶。然而，如果能直接产生对偶，将更为方便。说明我们如何能够直接构造一个任意线性规划的对偶。</p>
+<p>29.4-3 对式(29.47)～(29.50)给出的最大流线性规划，构造其对偶。说明如何将此形式解释为一个最小割问题。</p>
+<p>29.4-4 对式(29.51)～(29.52)给出的最小费用流线性规划，构造其对偶。说明如何用图和流来解释这个问题。</p>
+<p>29.4-5 证明：一个线性规划对偶的对偶是原始线性规划。</p>
+<p>29.4-6 第 26 章哪一个结果可以被解释成最大流问题的弱对偶？</p>
+<h3 id="295">练习 29.5</h3>
+<p>29.5-1 写出详细的伪代码来实现 INITIALIZE-SIMPLEX 的第 5 行和第 14 行。</p>
+<p>29.5-2 请说明当 SIMPLEX 的主体循环部分被 INITIALIZE-SIMPLEX 运行时，永远不会返回“无界”。</p>
+<p>29.5-3 假设已知一个标准型的线性规划 L，并且假设对 L 与 L 的对偶问题，初始松弛型相应的基本解都是可行的。请说明 L 的最优目标值是 0。</p>
+<p>29.5-4 假设在一个线性规划中我们允许严格的不等式。请说明在这种情况下，线性规划基本定理不再成立。</p>
+<p>29.5-5 用 SIMPLEX 求解下面的线性规划：</p>
+<p>最大化 $<span class="arithmatex">\(x_1 + 3x_2\)</span>$</p>
+<p>满足约束</p>
+<p>29.5-7 用 SIMPLEX 求解下面的线性规划：</p>
+<p>最大化 $<span class="arithmatex">\(x_1 + 3x_2\)</span>$ 满足约束
+$$
+\begin{align<em>}
+-x_1 + x_2 &amp;\leqslant -1 \
+-x_1 - x_2 &amp;\leqslant -3 \
+-x_1 + 4x_2 &amp;\leqslant 2 \
+x_1, x_2 &amp;\geqslant 0
+\end{align</em>}
+$$
+29.5-8 求解式(29.6)～(29.10)给出的线性规划。</p>
+<p>29.5-9 考虑下面一个变量的线性规划，我们称为 P：</p>
+<p>最大化 $<span class="arithmatex">\(x\)</span>$</p>
+<p>满足约束
+$$
+\begin{align<em>}
+&amp; rx \leqslant s \
+&amp; x \geqslant 0
+\end{align</em>}
+$$
+其中 r、s 和 t 是任意的实数。设 D 是 P 的对偶。叙述对 r、s 和 t 的哪些值，可以做出如下断言：
+1. P 和 D 都具有有限目标值的最优解。
+2. P 是可行的，但 D 是不可行的。
+3. D 是可行的，但 P 是不可行的。
+4. P 和 D 都是不可行的。</p>
+<h3 id="_7">思考题</h3>
+<p>29-1（线性不等式的可行性）给定一个在 n 个变量 $<span class="arithmatex">\(x_1, x_2, \cdots, x_n\)</span>$ 上 m 个线性不等式的集合，线性不等式可行性问题关注是否有变量的一个设置，能够同时满足每个不等式。</p>
+<p>a. 证明：如果有一个线性规划的算法，那么可以利用它来解一个线性不等式可行性问题，在线性规划问题中，你用到的变量和约束的个数应该是 n 和 m 的多项式。</p>
+<p>b. 证明：如果有一个线性不等式可行性问题的算法，那么可以用它来求解线性规划问题。在线性不等式可行性问题中，你用到的变量和线性不等式的个数应该是 n 和 m 的多项式，即线性规划中变量和约束的数目。</p>
+<p>29-2 （互补松弛性）互补松弛性描述原始变量值和对偶约束，以及对偶变量值与原始约束之间的关系。设 $<span class="arithmatex">\(x\)</span>$ 表示式(29.16)～(29.18)中给出的原始线性规划的一个可行解，$<span class="arithmatex">\(y\)</span>$ 表示式(29.83)～(29.85)中给出的对偶线性规划的可行解。互补松弛阐述下面的条件是 $<span class="arithmatex">\(\bar{x}\)</span>$ 和 $<span class="arithmatex">\(\bar{y}\)</span>$ 为最优的充分必要条件：</p>
+<p>$$
+\sum_{i = 1}^{n} a_{ij}\bar{y}_i = c_j\text{或者}\bar{x}_j = 0, j = 1,2,\cdots, n
+$$
+以及</p>
+<p>$$
+\sum_{j = 1}^{m} a_{ij} x_j = b_i\text{或者} y_i = 0, i = 1,2,\cdots, m
+$$
+a. 对式(29.53)～(29.57)中的线性规划验证互补松弛性成立。</p>
+<p>b. 证明：对任意的原始线性规划和它相应的对偶，互补松弛性成立。</p>
+<p>c. 证明：式(29.16)～(29.18)中给出的原始线性规划的一个可行解 $<span class="arithmatex">\(\overline{x}\)</span>$ 是最优的，当且仅当存在值 $<span class="arithmatex">\(y=\left(y_1, y_2,\cdots, y_m\right)\)</span>$ 使得</p>
+<ol>
+<li>
+<p>$<span class="arithmatex">\(\bar{y}\)</span>$ 是式(29.83)～(29.85)中给出的对偶线性规划的一个可行解。</p>
+</li>
+<li>
+<p>对于所有的 j 有 $<span class="arithmatex">\(\sum_{i=1}^{n} a_{ij}\overline{y}_i=c_j\)</span>$，于是 $<span class="arithmatex">\(\overline{x}_i&gt;0\)</span>$，以及</p>
+</li>
+<li>
+<p>对于所有的 i 有 $<span class="arithmatex">\(y_i=0\)</span>$，于是 $<span class="arithmatex">\(\sum_{j=1}^{n} a_{ij} x_j&lt;b_i\)</span>$。</p>
+</li>
+</ol>
+<p>29-3 （整数线性规划）一个整数线性规划问题是一个线性规划问题，外加变量 x 必须取整数值的额外约束。练习 34.5-3 说明仅确定一个整数线性规划是否有可行解是 NP 难的，这意味着这个问题目前没有已知多项式时间的算法。</p>
+<p>a. 证明：弱对偶性（引理 29.8）对整数线性规划成立。</p>
+<p>b. 证明：对偶性（定理 29.10）对整数线性规划不总是成立。</p>
+<p>c. 给定一个标准型的原始线性规划，我们定义 P 为原始线性规划的最优目标值，D 为其对偶问题的最优目标值，IP 为整数版本的原始问题（即原始问题加上变量取整数值的约束）的最优目标值，ID 为整数版本的对偶问题的最优目标值。假设整数版本的原始线性规划和其整数版本的对偶线性规划都是可行的、有界的，请说明 $<span class="arithmatex">\(P \leqslant P=D \leqslant ID\)</span>$。</p>
+<p>29-4 （Farkas 引理）设 A 为一个 $<span class="arithmatex">\(m \times n\)</span>$ 矩阵，c 为一个 n 维向量。那么 Farkas 引理说明正好有一个系统</p>
+<p>$$
+\begin{align<em>}
+&amp; Ax\leqslant 0 \
+&amp; c^{T} x &gt; 0
+\end{align</em>}
+$$
+以及</p>
+<p>$$
+\begin{align<em>}
+&amp; A^{T} y = c \
+&amp; y\geqslant 0
+\end{align</em>}
+$$
+是可解的，其中 x 是一个 n 维向量，y 是一个 m 维向量。证明 Farkas 引理。</p>
+<p>29-5 （最小代价流通）这个问题中，我们考虑 29.2 节中最小代价流问题的一个变形，其中我们没有给定需求、一个源点，或者一个汇点。取而代之，我们像以前一样给定一个流网络和边的代价 $<span class="arithmatex">\(a(u, v)\)</span>$。如果一个流在每条边上满足容量限制，以及在每一个顶点上满足流量守恒条件，则称它是可行的。我们的目标是在所有可行流中，找到一个代价最小的。我们把这个问题称为最小代价流通问题。</p>
+<p>a. 把最小代价流通问题形式化为一个线性规划。</p>
+<p>b. 假设对于所有的边 $<span class="arithmatex">\((u, v)\in E\)</span>$，我们有 $<span class="arithmatex">\(a(u, v)&gt;0\)</span>$。描绘此最小代价流通问题的一个最优解。</p>
+<p>c. 把最大流问题形式化为一个最小代价流通问题的线性规划。也就是给定一个最大流问题的实例 $<span class="arithmatex">\(G=(V, E)\)</span>$，其中有源点 s、汇点 t 以及边上的容量限制 c，给定一个（可能不同）的网络 $<span class="arithmatex">\(G^{\prime}=(V^{\prime}, E^{\prime})\)</span>$，具有边上容量限制 $<span class="arithmatex">\(c^{\prime}\)</span>$，以及边上的代价 $<span class="arithmatex">\(a^{\prime}\)</span>$，使得你可以通过创建一个最小代价流通问题来得到最大流问题的一个解。</p>
+<p>d. 把单源最短路径问题形式化成一个最小代价流通问题的线性规划。</p>
+<h2 id="_8">第三十章 多项式与快速傅里叶变换</h2>
+<h3 id="301">练习 30.1</h3>
+<p>30.1-1 运用等式(30.1)和(30.2)把下列两个多项式相乘：$<span class="arithmatex">\(A(x)=7 x^3-x^2+x-10\)</span>$ 和 $<span class="arithmatex">\(B(x)=8 x^3-6 x+3\)</span>$。</p>
+<p>30.1-2 求一个次数界为 n 的多项式 $<span class="arithmatex">\(A(x)\)</span>$ 在某给定点 $<span class="arithmatex">\(x_0\)</span>$ 的值存在另外一种方法；把多项式 $<span class="arithmatex">\(A(x)\)</span>$ 除以多项式 $<span class="arithmatex">\((x-x_0)\)</span>$，得到一个次数界为 n-1 的商多项式 $<span class="arithmatex">\(q(x)\)</span>$ 和余项 r，满足 $<span class="arithmatex">\(A(x)=q(x)(x-x_0)+r\)</span><span class="arithmatex">\(。很明显，\)</span><span class="arithmatex">\(A(x_0)=r\)</span>$。请说明如何根据 $<span class="arithmatex">\(x_0\)</span>$ 和 A 的系数，在 $<span class="arithmatex">\(\Theta(n)\)</span>$ 的时间复杂度内计算出余项 r 以及 q(x) 的系数。</p>
+<p>30.1-3 从 $<span class="arithmatex">\(A(x)=\sum_{j=0}^{n-1} a_j x^j\)</span>$ 的点值表达推导出 $<span class="arithmatex">\(A^{\text{rev}}(x)=\sum_{j=0}^{n-1} a_{n-1-j} x^j\)</span>$ 的点值表达，假设没有一个点是 0。</p>
+<p>30.1-4 证明：为了唯一确定一个次数界为 n 的多项式，n 个相互不同的点值对是必需的，也就是说，如果给定少于 n 个不同点值对，则它们不能唯一确定一个次数界为 n 的多项式。（提示：利用定理 30.1，加入一个任意选择的点值对到一个已有 n-1 个点值对的集合，看看会发生什么？）</p>
+<p>30.1-5 说明如何利用等式(30.5)在 $<span class="arithmatex">\(\Theta(n^2)\)</span>$ 时间复杂度内进行插值运算。（提示：首先计算多项式 $<span class="arithmatex">\(\prod_j (x-x_j)\)</span>$ 的系数表达，然后把每个项的分子除以 $<span class="arithmatex">\((x-x_k)\)</span>$；参见练习 30.1-2。你可以在 $<span class="arithmatex">\(O(n)\)</span>$ 时间复杂度内计算 n 个分母中的每一个。）</p>
+<p>30.1-6 请解释在采用点值表达时，用“显然”的方法来进行多项式除法，哪里出现了错误，即除以相应的 y 值。请对除法有确定结果与无确定结果两种情况分别进行讨论。</p>
+<p>30.1-7 考虑两个集合 A 和 B，每个集合包含取值范围在 $<span class="arithmatex">\(0\sim 10n\)</span>$ 之间的 n 个整数。我们希望计算出 A 与 B 的笛卡儿和，定义如下：</p>
+<div class="arithmatex">\[C=\{x+y: x\in A, y\in B\}\]</div>
+<p>注意到，C 中整数值的范围在 0～20n 之间。我们希望找到 C 中的元素，并且求出 C 中的每个元素可表示为 A 中元素与 B 中元素和的次数。请在 $<span class="arithmatex">\(O(n \log n)\)</span>$ 的时间内解决这个问题。（提示：请用次数至多是 10n 的多项式来表示 A 和 B。）</p>
+<h3 id="302">练习 30.2</h3>
+<p>30.2-1 证明推论 30.4。</p>
+<p>30.2-2 计算向量 $<span class="arithmatex">\((0,1,2,3)\)</span>$ 的 DFT。</p>
+<p>30.2-3 采用运行时间为 $<span class="arithmatex">\(\Theta(n\lg n)\)</span>$ 的方案完成练习 30.1-1。</p>
+<p>30.2-4 写出伪代码，在 $<span class="arithmatex">\(\Theta(n \lg n)\)</span>$ 运行时间内计算出 $<span class="arithmatex">\(DFT_n^{-1}\)</span>$。</p>
+<p>30.2-5 请把 FFT 推广到 n 是 3 的幂的情形，写出运行时间的递归式并求解。</p>
+<p>*30.2-6 假设我们不是在复数域上执行 n 个元素的 FFT（其中 n 为偶数），而在整数模 m 生成的环 $<span class="arithmatex">\(Z_m\)</span>$ 上执行 FFT，其中 $<span class="arithmatex">\(m=2^{m/2}+1\)</span>$，且 t 是任意正整数。在模 m 的意义下，用 $<span class="arithmatex">\(\omega=2^{\prime}\)</span>$ 代替 $<span class="arithmatex">\(\omega_n\)</span>$ 作为主 n 次单位根。证明：在该系统中，DFT 与逆 DFT 定义是完备的。</p>
+<p>30.2-7 给定一组值 $<span class="arithmatex">\(z_0, z_1,\cdots, z_{n-1}\)</span>$（可能有重复），说明如何求出仅以 $<span class="arithmatex">\(z_0, z_1,\cdots, z_{n-1}\)</span>$（可能有重复）为零点的一个次数界为 $<span class="arithmatex">\(n+1\)</span>$ 的多项式 $<span class="arithmatex">\(P(x)\)</span>$ 的系数。你给出的过程运行时间应为 $<span class="arithmatex">\(O(n\lg^2 n)\)</span>$。（提示：当且仅当 $<span class="arithmatex">\(P(x)\)</span>$ 是 $<span class="arithmatex">\((x-z_j)\)</span>$ 的倍数时，多项式 $<span class="arithmatex">\(P(x)\)</span>$ 在 $<span class="arithmatex">\(z_j\)</span>$ 处值为 0。）</p>
+<p>*30.2-8 一个向量 $<span class="arithmatex">\(a=\left(a_0, a_1,\cdots, a_{n-1}\right)\)</span>$ 的线性调频变换(chirp transform)是向量 $<span class="arithmatex">\(y=\left(y_0, y_1,\cdots, y_{n-1}\right)\)</span>$，其中 $<span class="arithmatex">\(y_k=\sum_{j=0}^{n-1} a_j z^{kj}\)</span>$，z 是任意复数。因此，通过取 $<span class="arithmatex">\(z=\omega_n\)</span>$，DFT 是线性调频变换的一种特殊情形。对任意复数 z，请说明如何在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内求出线性调频变换的值。（提示：利用等式
+$$
+y_k = z^{k^2/2}\sum_{j = 0}^{n-1}\left(a_j z^{j^2/2}\right)\left(z^{-(k-j)^2/2}\right)
+$$
+可以把线性调频变换看做一个卷积。）</p>
+<h3 id="_9">练习</h3>
+<p>30.3-1 请说明如何用 ITERATIVE-FFT 计算出输入向量 $<span class="arithmatex">\((0,2,3,-1,4,5,7,9)\)</span>$ 的 DFT。</p>
+<p>30.3-2 请说明如何实现一个 FFT 算法，注意把位逆序置换放在计算的最后而不是在开始。（提示：考虑逆 DFT。）</p>
+<p>30.3-3 在每个阶段中，ITERATIVE-FFT 计算旋转因子多少次？重写 ITERATIVE-FFT，使其在阶段 s 中计算旋转因子 $<span class="arithmatex">\(2^{-1}\)</span>$ 次。</p>
+<p>*30.3-4 假设 FFT 电路的蝴蝶操作中加法器有时会发生错误：不论输入如何，它们的输出总是为 0。假设确有一个加法器失效，但你并不知道是哪一个。描述你如何能够通过给整个 FFT 电路提供输入值并观察其输出，找到那个失效的加法器。你的方法效率如何？</p>
+<h3 id="_10">思考题</h3>
+<h3 id="30-1">30-1（分治乘法）</h3>
+<p>a. 说明如何仅用三次乘法，就能求出线性多项式 $<span class="arithmatex">\(a x+b\)</span>$ 与 $<span class="arithmatex">\(c x+d\)</span>$ 的乘积。（提示：有一个乘法运算是 $<span class="arithmatex">\((a+b)\cdot(c+d)\)</span>$。）</p>
+<p>b. 试写出两种分治算法，求出两个次数界为 n 的多项式乘积，使其在 $<span class="arithmatex">\(\Theta(n^{k_3})\)</span>$ 运行时间内。第一个算法把输入多项式的系数分成高阶系数一半与低阶系数一半，第二个算法应该根据其系数下标的奇偶性来进行划分。</p>
+<p>c. 证明：请说明如何用 $<span class="arithmatex">\(O(n^{k_3})\)</span>$ 步计算出两个 n 位整数的乘积，其中每一步至多常数个 1 位的值进行操作。</p>
+<p>30-2（特普利茨 (Toeplitz) 矩阵）特普利茨矩阵是一个 n×n 矩阵 $<span class="arithmatex">\(A=(a_{ij})\)</span>$，其中对于 $<span class="arithmatex">\(i=2,3,\cdots, n\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(j=2,3,\cdots, n\)</span>$，满足 $<span class="arithmatex">\(a_{ij}=a_{i-1, j-1}\)</span>$。</p>
+<p>a. 两个特普利茨矩阵的和是否一定是特普利茨矩阵？乘积又如何？</p>
+<p>b. 试说明如何表示特普利茨矩阵才能在 $<span class="arithmatex">\(O(n)\)</span>$ 时间内求出两个 n×n 特普利茨矩阵的和。</p>
+<p>c. 请给出一个运行时间为 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的算法，能够计算出 n×n 特普利茨矩阵与一个 n 维向量的乘积。请运用 (b) 中的表示。</p>
+<p>d. 请给出一个高效算法计算出两个 n×n 特普利茨矩阵的乘积，并分析此算法的运行时间。</p>
+<p>30-3（多维快速傅里叶变换）我们可以将式 (30.8) 定义的一维离散傅里叶变换推广到 d 维上。这时输入是一个 d 维的数组 $<span class="arithmatex">\(A=(a_{j_1, j_2,\ldots, j_d})\)</span>$，维数分别为 $<span class="arithmatex">\(n_1, n_2,\cdots, n_d\)</span>$，其中 $<span class="arithmatex">\(n_1 n_2\cdots n_d=n\)</span>$。定义 d 维离散傅里叶变换如下：
+$$
+y_{k_1, k_2,\cdots, k_d}=\sum_{j_1 = 0}^{n_1-1}\sum_{j_2 = 0}^{n_2-1}\cdots\sum_{j_d = 0}^{n_d-1} a_{j_1, j_2,\cdots, j_d}\omega_{n_1}^{j_1 k_1}\omega_{n_2}^{j_2 k_2}\cdots\omega_{n_d}^{j_d k_d}
+$$
+其中 $<span class="arithmatex">\(0\leqslant k_1&lt;n_1, 0\leqslant k_2&lt;n_2,\cdots, 0\leqslant k_d&lt;n_d\)</span>$。</p>
+<p>a. 证明：我们可以依次在每个维度上计算一维的 DFT 来计算一个 d 维的 DFT。也就是说，首先沿着第 1 维计算 $<span class="arithmatex">\(n/n_1\)</span>$ 个独立的一维 DFT。然后，把沿着第 1 维的 DFT 结果作为输入，我们计算沿着第 2 维的 $<span class="arithmatex">\(n/n_2\)</span>$ 个独立的一维 DFT。利用这个结果作为输入，我们计算沿着第 3 维的 $<span class="arithmatex">\(n/n_3\)</span>$ 个独立的一维 DFT，如此下去，直到第 d 维。</p>
+<p>b. 证明：维度的次序并无影响，于是可以通过在 d 个维度的任意顺序中计算一维 DFT 来计算一个 d 维的 DFT。</p>
+<p>c. 证明：如果采用计算快速傅里叶变换计算每个一维的 DFT，那么计算一个 d 维的 DFT 的总时间是 $<span class="arithmatex">\(O(n\lg n)\)</span>$，与 d 无关。</p>
+<h3 id="_11">练习</h3>
+<p>30-4 (求一个多项式在某点的所有阶导数) 已知一个次数界为 n 的多项式 $<span class="arithmatex">\(A(x)\)</span>$，我们定义其 t 阶导数如下：</p>
+<div class="arithmatex">\[
+A^{(t)}(x)=\left\{
+\begin{array}{l}
+A(x) \quad \text{若 } t = 0 \\
+\frac{d}{dx} A^{(t-1)}(x) \quad \text{若 } 1 \leq t \leq n-1 \\
+0 \quad \text{若 } t \geq n
+\end{array}
+\right.
+\]</div>
+<p>从 $<span class="arithmatex">\(A(x)\)</span>$ 的系数表达 $<span class="arithmatex">\((a_0, a_1,\cdots, a_{n-1})\)</span>$ 和一个已知点 $<span class="arithmatex">\(x_0\)</span>$，我们希望确定 $<span class="arithmatex">\(A^{(t)}(x_0)\)</span>$，其中 $<span class="arithmatex">\(t=0,1,\cdots, n-1\)</span>$。</p>
+<p>a. 给定系数 $<span class="arithmatex">\((b_0, b_1,\cdots, b_{n-1})\)</span>$ 满足</p>
+<div class="arithmatex">\[
+A(x)=\sum_{i = 0}^{n-1} b_i(x-x_0)^i
+\]</div>
+<p>说明如何在 $<span class="arithmatex">\(O(n)\)</span>$ 时间内计算出 $<span class="arithmatex">\(A^{(t)}(x_0)\)</span>$，其中 $<span class="arithmatex">\(t=0,1,\cdots, n-1\)</span>$。</p>
+<p>b. 请解释如何在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内找到 $<span class="arithmatex">\(b_0, b_1,\cdots, b_{n-1}\)</span>$，已知 $<span class="arithmatex">\(A(x_0+a_k^k)\)</span>$，其中 $<span class="arithmatex">\(k=0,1,\cdots, n-1\)</span>$。</p>
+<p>c. 请证明：</p>
+<div class="arithmatex">\[
+A(x_0+a_k^k)=\sum_{r = 0}^{n-1}\left [\frac{a_k^{kr}}{r!}\sum_{j = 0}^{r-1} f(j) g(r-j)\right]
+\]</div>
+<p>其中，$<span class="arithmatex">\(f(j)=a_j \cdot j!\)</span>$，并且</p>
+<div class="arithmatex">\[
+g(l)=\left\{
+\begin{array}{l}
+x_0^{-l}/(-l)! \quad \text{若 } -(n-1) \leq l \leq 0 \\
+0 \quad \text{若 } 1 \leq l \leq n-1
+\end{array}
+\right.
+\]</div>
+<p>d. 请解释如何在 $<span class="arithmatex">\(O(n \lg n)\)</span>$ 时间内求出 $<span class="arithmatex">\(A(x_0+a_n^k)\)</span>$ 的值，其中 $<span class="arithmatex">\(k=0,1,\cdots, n-1\)</span>$。请总结说明：我们可以在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内，求出 $<span class="arithmatex">\(A(x)\)</span>$ 所有非平凡导数在 $<span class="arithmatex">\(x_0\)</span>$ 的值。</p>
+<p>30-5 (多项式在多个点的求值) 我们已经看到，运用霍纳法则，如何在 $<span class="arithmatex">\(O(n)\)</span>$ 时间内求出次数界为 n 的多项式在单个点的值。同时，我们也发现，运用 FFT 能在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内求出这样的一个多项式在所有 n 个单位复数根处的值。现在我们就来说明如何在 $<span class="arithmatex">\(O(n\lg^2 n)\)</span>$ 时间内，求出一个次数界为 n 的多项式在任意 n 个点的值。</p>
+<p>为了做到这一点，我们将假设下面未经证明的结论：当一个这样的多项式除以另一个多项式时，我们可以在 $<span class="arithmatex">\(O(n \lg n)\)</span>$ 时间内计算出该多项式的余式。例如，多项式 $<span class="arithmatex">\(3x^2+x^2-3x+1\)</span>$ 除以 $<span class="arithmatex">\(x^2+x+2\)</span>$，余式为</p>
+<div class="arithmatex">\[
+(3x^2+x^2-3x+1) \mod (x^2+x+2) = -7x+5
+\]</div>
+<p>给定一个多项式 $<span class="arithmatex">\(A(x)=\sum_{k=0}^{n-1} a_k x^k\)</span>$ 的系数表达和 n 个点 $<span class="arithmatex">\(x_0, x_1,\cdots, x_{n-1}\)</span>$，我们希望计算出 n 个值 $<span class="arithmatex">\(A(x_0), A(x_1),\cdots, A(x_{n-1})\)</span>$。对 $<span class="arithmatex">\(0 \leq i \leq j \leq n-1\)</span>$，定义多项式 $<span class="arithmatex">\(P_{ij}(x)=\prod_{k=i}^{j}(x-x_k)\)</span>$ 和多项式 $<span class="arithmatex">\(Q_{ij}(x)=A(x) \mod P_{ij}(x)\)</span><span class="arithmatex">\(。注意到，\)</span><span class="arithmatex">\(Q_{ij}(x)\)</span>$ 次数至多是 $<span class="arithmatex">\(j-i\)</span>$。</p>
+<p>a. 证明：对任意点 z，$<span class="arithmatex">\(A(x) \mod (x-z)=A(z)\)</span>$。</p>
+<p>b. 证明：$<span class="arithmatex">\(Q_i(x)=A(x_i)\)</span>$，以及 $<span class="arithmatex">\(Q_{n-1}(x)=A(x)\)</span>$。</p>
+<p>c. 证明：对 $<span class="arithmatex">\(i \leq k \leq j\)</span>$，我们有 $<span class="arithmatex">\(Q_{ik}(x)=Q_{ij}(x) \mod P_{ik}(x)\)</span>$，以及 $<span class="arithmatex">\(Q_{ij}(x)=Q_{jk}(x) \mod P_{kj}(x)\)</span>$。</p>
+<p>d. 给出一个运行时间为 $<span class="arithmatex">\(O(n\lg^2 n)\)</span>$ 的算法，以求出 $<span class="arithmatex">\(A(x_0), A(x_1),\cdots, A(x_{n-1})\)</span>$。</p>
+<p>30-6 (运用模算术的 FFT) 如定义所述，离散傅里叶变换 (DFT) 计算时需要用复数，这会由于舍入误差而导致精确度丢失。对某些问题而言，答案中仅包含整数，并且通过使用一种基于模算术的 FFT 的不同形式，我们可以保证计算的答案是准确的。一个此类问题的例子如下：求两个整系数多项式的乘积。练习 30.2-6 给出了一种解决方法，即运用一个长度为 $<span class="arithmatex">\(\Omega(n)\)</span>$ 位的模来处理 n 个点上的 DFT。下面给出了另一种方法，即用一个更为合理的长度为 $<span class="arithmatex">\(O(\lg n)\)</span>$ 的模；它要求你事先了解第 31 章的内容。设 n 为 2 的幂。</p>
+<p>a. 假定我们寻找最小的 k，使得 $<span class="arithmatex">\(p=kn+1\)</span>$ 是素数。请给出下列结论的简单而有启发性的理由：为什么我们希望 k 大约是 lnn。(k 的值可能比 lnn 大很多或者小很多，但是我们合理的期望，平均起来只需检查 $<span class="arithmatex">\(O(\lg n)\)</span>$ 个候选的 k 值。) 请问 p 的期望长度与 n 的长度相比如何？</p>
+<p>设 g 是 $<span class="arithmatex">\(Z_p^*\)</span>$ 的生成元，并设 $<span class="arithmatex">\(w=g^k \mod p\)</span>$。</p>
+<p>b. 说明 DFT 与逆 DFT 在模 p 的意义下是定义完备的逆运算，其中 w 是主 n 次单位根。</p>
+<p>c. 证明：在模 p 意义下，FFT 与其逆可在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内运行，其中长度为 $<span class="arithmatex">\(O(\lg n)\)</span>$ 位的字上操作需要单位时间，并假定算法已知 p 和 w。</p>
+<p>d. 请计算出向量 $<span class="arithmatex">\((0,5,3,7,7,2,1,6)\)</span>$ 在模 $<span class="arithmatex">\(p=17\)</span>$ 下的 DFT。注意，$<span class="arithmatex">\(g=3\)</span>$ 是 $<span class="arithmatex">\(Z_{17}^+\)</span>$ 的生成元。</p>
+<h2 id="_12">第三十一章 数论算法</h2>
+<h3 id="311">练习 31.1</h3>
+<p>31.1-1 证明：若 $<span class="arithmatex">\(a&gt;b&gt;c\)</span>$，且 $<span class="arithmatex">\(c=a+b\)</span>$，则 $<span class="arithmatex">\(c \mod a=b\)</span>$。</p>
+<p>31.1-2 证明有无穷多个素数。（提示：证明素数 $<span class="arithmatex">\(p_1, p_2,\cdots, p_k\)</span>$ 都不能整除 $<span class="arithmatex">\((p_1 p_2\cdots p_k)+1\)</span>$。）</p>
+<p>31.1-3 证明：如果 $<span class="arithmatex">\(a|b\)</span>$ 且 $<span class="arithmatex">\(b|c\)</span>$，则 $<span class="arithmatex">\(a|c\)</span>$。</p>
+<p>31.1-4 证明：如果 p 是素数并且 $<span class="arithmatex">\(0&lt;k&lt;p\)</span>$，则 $<span class="arithmatex">\(\gcd(k, p)=1\)</span>$。</p>
+<p>31.1-5 证明推论 31.5。</p>
+<p>31.1-6 证明：如果 p 是素数且 $<span class="arithmatex">\(0&lt;k&lt;p\)</span>$，则 $<span class="arithmatex">\(p\left|\binom{p}{k}\right.\)</span>$。证明对所有整数 a、b 和素数 p，有
+$$
+(a+b)^p\equiv a^p+b^p \pmod{p}
+$$
+31.1-7 证明：如果 a 和 b 是任意正整数，且满足 $<span class="arithmatex">\(a|b\)</span>$，则对任意 x，
+$$
+(x \mod b) \mod a = x \mod a
+$$
+在相同的假设下，证明对任意整数 x 和 y，如果 $<span class="arithmatex">\(x\equiv y \pmod{b}\)</span>$，则 $<span class="arithmatex">\(x\equiv y \pmod{a}\)</span>$。</p>
+<p>31.1-8 对任意整数 $<span class="arithmatex">\(k&gt;0\)</span>$，如果存在一个整数 a，满足 $<span class="arithmatex">\(a^k=n\)</span>$，则称整数 n 是一个 k 次幂。如果对于某个整数 $<span class="arithmatex">\(k&gt;1, n&gt;1\)</span>$ 是一个 k 次幂，则称 n 是非平凡幂。说明如何在关于 $<span class="arithmatex">\(\beta\)</span>$ 的多项式时间内判定一个 $<span class="arithmatex">\(\beta\)</span>$ 位整数 n 是否是非平凡幂。</p>
+<p>31.1-9 证明等式(31.6)～(31.10)。</p>
+<p>31.1-10 证明：最大公约数运算满足结合律，即证明对所有整数 a、b 和 c，
+$$
+\gcd(a,\gcd(b, c))=\gcd(\gcd(a, b), c)
+$$
+*31.1-11 证明定理 31.8。</p>
+<p>31.1-12 试写出计算 $<span class="arithmatex">\(\beta\)</span>$ 位整数除以短整数的高效算法，以及计算 $<span class="arithmatex">\(\beta\)</span>$ 位整数除以短整数的余数的高效算法。所给出的算法的运行时间应为 $<span class="arithmatex">\(\Theta(\beta^2)\)</span>$。</p>
+<p>31.1-13 写出一个高效算法，用于将 $<span class="arithmatex">\(\beta\)</span>$ 位二进制整数转化为相应的十进制表示。证明：如果长度至多为 $<span class="arithmatex">\(\beta\)</span>$ 的整数的乘法或除法运算所需时间为 $<span class="arithmatex">\(M(\beta)\)</span>$，则执行二进制到十进制转换所需的时间为 $<span class="arithmatex">\(\Theta(M(\beta)\lg\beta)\)</span>$。（提示：应用分治法，分别使用独立的递归计算结果的前段和后段。）</p>
+<h3 id="312">练习 31.2</h3>
+<p>31.2-1 证明：由式(31.11)和式(31.12)可推得式(31.13)。</p>
+<p>31.2-2 计算调用过程 EXTENDED-EUCLID(899, 493)的返回值为(d, x, y)。</p>
+<p>31.2-3 证明：对所有整数 a, k 和 n，
+$$
+\gcd(a, n)=\gcd(a+kn, n)
+$$
+31.2-4 仅用常数大小的存储空间(即仅存储常数个整数值)把过程 EUCLID 改写成迭代形式。</p>
+<p>31.2-5 如果 $<span class="arithmatex">\(a&gt;b\geqslant 0\)</span>$，证明：EUCLID(a, b)至多执行 $<span class="arithmatex">\(1+\log_4 b\)</span>$ 次递归调用。把这个界改进为 $<span class="arithmatex">\(1+\log_{s}(b/\gcd(a, b))\)</span>$。</p>
+<p>31.2-6 过程 EXTENDED-EUCLID $<span class="arithmatex">\((F_{k+1}, F_k)\)</span>$ 返回什么值？证明答案的正确性。</p>
+<p>31.2-7 利用递归等式 $<span class="arithmatex">\(\gcd(a_0, a_1,\cdots, a_n)=\gcd(a_0,\gcd(a_1,\cdots, a_n))\)</span>$ 定义多于两个变量的 gcd 函数。说明 gcd 函数的返回值与其参数次序无关。同时说明如何找出满足 $<span class="arithmatex">\(\gcd(a_0, a_1,\cdots, a_n)=a_0 x_0+a_1 x_1+\cdots+a_n x_n\)</span>$ 的整数 $<span class="arithmatex">\(x_0, x_1,\cdots, x_n\)</span>$。证明所给出的算法执行除法运算的次数为 $<span class="arithmatex">\(O(n+\lg(\max\{a_0, a_1,\cdots, a_n\}))\)</span>$。</p>
+<p>31.2-8 把 n 个整数 $<span class="arithmatex">\(a_1,\cdots, a_n\)</span>$ 的最小公倍数定义为 $<span class="arithmatex">\(\operatorname{lcm}(a_1, a_2,\cdots, a_n)\)</span>$，即每个 $<span class="arithmatex">\(a_i\)</span>$ 的倍数中的最小非负整数。说明如何使用(具有两个自变量的) gcd 函数作为子程序才能高效计算出 $<span class="arithmatex">\(\operatorname{lcm}(a_1, a_2,\cdots, a_n)\)</span>$。</p>
+<p>31.2-9 证明：$<span class="arithmatex">\(n_1, n_2, n_3\)</span>$ 和 $<span class="arithmatex">\(n_4\)</span>$ 是两两互质的当且仅当
+$$
+\gcd(n_1 n_2, n_3 n_4)=\gcd(n_1 n_3, n_2 n_4)= 1
+$$
+更一般地，证明：$<span class="arithmatex">\(n_1, n_2,\cdots, n_k\)</span>$ 两两互质，当且仅当从 $<span class="arithmatex">\(n_i\)</span>$ 中导出的 $<span class="arithmatex">\(\lfloor \lg k \rfloor\)</span>$ 对整数互为质数。</p>
+<h3 id="313">练习 31.3</h3>
+<p>31.3-1 画出群 $<span class="arithmatex">\((Z_4, +_4)\)</span>$ 和群 $<span class="arithmatex">\((Z_5^*, \cdot_5)\)</span>$ 的运算表。通过找这两个群的元素间的一一对应关系 $<span class="arithmatex">\(\alpha\)</span>$，满足 $<span class="arithmatex">\(a+b\equiv c \pmod{4}\)</span>$ 当且仅当 $<span class="arithmatex">\(\alpha(a)\cdot\alpha(b)\equiv\alpha(c) \pmod{5}\)</span>$，来证明这两个群是同构的。</p>
+<p>31.3-2 列举出 $<span class="arithmatex">\(Z_9\)</span>$ 和 $<span class="arithmatex">\(Z_{13}^*\)</span>$ 的所有子群。</p>
+<p>31.3-3 证明定理 31.14。</p>
+<p>31.3-4 证明：如果 p 是素数且 e 是正整数，则
+$$
+\phi(p^e)= p^{e-1}(p-1)
+$$
+31.3-5 证明：对任意 $<span class="arithmatex">\(n&gt;1\)</span>$ 和任意 $<span class="arithmatex">\(a\in Z_n^*\)</span>$，由式 $<span class="arithmatex">\(f_a(x)=ax \mod n\)</span>$ 所定义的函数 $<span class="arithmatex">\(f_a: Z_n^*\rightarrow Z_n^*\)</span>$ 是 $<span class="arithmatex">\(Z_n^*\)</span>$ 的一个置换。</p>
+<h3 id="314">练习 31.4</h3>
+<p>31.4-1 找出方程 $<span class="arithmatex">\(35x \equiv 10 \pmod{50}\)</span>$ 的所有解。</p>
+<p>31.4-2 证明：只要 $<span class="arithmatex">\(\gcd(a, n)=1\)</span>$，方程 $<span class="arithmatex">\(ax \equiv ay \pmod{n}\)</span>$ 就意味着 $<span class="arithmatex">\(x \equiv y \pmod{n}\)</span>$。通过一个 $<span class="arithmatex">\(\gcd(a, n)&gt;1\)</span>$ 情况下的反例，证明条件 $<span class="arithmatex">\(\gcd(a, n)=1\)</span>$ 是必要的。</p>
+<p>31.4-3 考察下列对过程 MODULAR-LINEAR-EQUATION-SOLVER 的第 3 行的修改：
+$<span class="arithmatex">\(3 \quad x_0 = x'(b/d) \mod (n/d)\)</span>$
+能否正确运行？解释能或者不能的原因。</p>
+<p>31.4-4 令 p 为一个素数，且 $<span class="arithmatex">\(f(x) \equiv f_0 + f_1 x + \cdots + f_t x^t \pmod{p}\)</span>$ 是一个 t 次多项式，其系数 $<span class="arithmatex">\(f_i\)</span>$ 是从 $<span class="arithmatex">\(Z_p\)</span>$ 得到的。如果 $<span class="arithmatex">\(f(a) \equiv 0 \pmod{p}\)</span>$，则将 $<span class="arithmatex">\(a \in Z_p\)</span>$ 称为 f 的零元。证明：如果 a 是 f 的一个零元，则对某个 t-1 次的多项式 $<span class="arithmatex">\(g(x)\)</span>$，有 $<span class="arithmatex">\(f(x) \equiv (x-a)g(x) \pmod{p}\)</span>$。通过对 t 进行归纳来证明：如果 p 是素数，t 次多项式 f(x) 对模 p 至多有 t 个不同的零元。</p>
+<h3 id="315">练习 31.5</h3>
+<p>31.5-1 找出所有解，使方程 $<span class="arithmatex">\(x\equiv 4 \pmod{5}\)</span>$ 和 $<span class="arithmatex">\(x\equiv 5 \pmod{11}\)</span>$ 同时成立。</p>
+<p>31.5-2 找出被 9, 8, 7 除时，余数分别为 1, 2, 3 的所有整数 x。</p>
+<p>31.5-3 论证：在定理 31.27 的定义下，如果 $<span class="arithmatex">\(\gcd(a, n)=1\)</span>$，则
+$$
+\left(a^{-1} \mod n\right)\leftrightarrow\left(\left(a_1^{-1} \mod n_1\right),\left(a_2^{-1} \mod n_2\right),\cdots,\left(a_k^{-1} \mod n_k\right)\right)
+$$
+31.5-4 在定理 31.27 的定义下，证明：对于任意的多项式 f，方程 $<span class="arithmatex">\(f(x)\equiv 0 \pmod{n}\)</span>$ 的根的个数等于 $<span class="arithmatex">\(f(x)\equiv 0 \left(\mod n_1\right), f(x)\equiv 0 \left(\mod n_2\right),\cdots, f(x)\equiv 0 \left(\mod n_k\right)\)</span>$ 中每个方程根的个数的积。</p>
+<h3 id="316">练习 31.6</h3>
+<p>31.6-1 画出一张表，展示 $<span class="arithmatex">\(Z_{11}^*\)</span>$ 中每个元素的阶。找出最小的原根 g，并画出一张表，对所有 $<span class="arithmatex">\(x\in Z_{11}^*\)</span>$，给出相应的 $<span class="arithmatex">\(\operatorname{ind}_{11, g}(x)\)</span>$ 的值。</p>
+<p>31.6-2 写出一个模取幂算法，要求该算法检查 b 的各位的顺序为从右向左，而非从左向右。</p>
+<p>31.6-3 假设已知 $<span class="arithmatex">\(\phi(n)\)</span>$，说明如何运用过程 MODULAR-EXPONENTIATION，对任意 $<span class="arithmatex">\(a\in Z_n^*\)</span>$，计算出 $<span class="arithmatex">\(a^{-1} \mod n\)</span>$ 的值。</p>
+<h3 id="317">练习 31.7</h3>
+<p>31.7-1 考虑一个 RSA 密钥集合，其中 $<span class="arithmatex">\(p=11, q=29, n=319, e=3\)</span>$。在密钥中用到的 d 值应当是多少？对消息 $<span class="arithmatex">\(M=100\)</span>$ 加密后得到什么消息？</p>
+<p>31.7-2 证明：如果 Alice 的公开指数 e 等于 3，并且对方获得了 Alice 的秘密指数 d，其中 $<span class="arithmatex">\(0&lt;d&lt;\phi(n)\)</span>$，则对方能够在关于 n 的位数的多项式时间内对 Alice 的模 n 进行分解。（尽管不用证明下列结论，但你也许会对下列事实感兴趣：即使条件 $<span class="arithmatex">\(e=3\)</span>$ 被去除，上述结论仍然成立。参见 Miller [255]。）</p>
+<p>31.7-3 证明：在如下意义中，RSA 是乘法的：
+$$
+P_A(M_1)P_A(M_2) \equiv P_A(M_1M_2) \pmod{n}
+$$
+利用这个事实证明：如果对方有一个过程，对 $<span class="arithmatex">\(Z_n\)</span>$ 中的用 $<span class="arithmatex">\(P_A\)</span>$ 加密的消息，它能够有效地解密出其中的百分之一，则他可以运用一种概率性算法，以较大概率为每一条用 $<span class="arithmatex">\(P_A\)</span>$ 加密的信息进行解密。</p>
+<h3 id="318">练习 31.8</h3>
+<p>31.8-1 证明：如果一个奇整数 $<span class="arithmatex">\(n&gt;1\)</span>$ 不是素数或素数的幂，则存在一个以 n 为模的 1 的非平凡平方根。</p>
+<p>31.8-2 可以把欧拉定理稍微加强为如下形式：对所有 $<span class="arithmatex">\(a\in Z_n^*\)</span>$，
+$$
+a^{\lambda(n)}\equiv 1 \pmod{n}
+$$
+其中 $<span class="arithmatex">\(n=p_1 p_2\cdots p_r^*\)</span>$，且 $<span class="arithmatex">\(\lambda(n)\)</span>$ 定义为</p>
+<p>$$
+\lambda(n)=\operatorname{lcm}\left(\phi\left(p_1^<em>\right),\cdots,\phi\left(p_r^</em>\right)\right)\tag{31.42}
+$$
+证明 $<span class="arithmatex">\(\lambda(n)|\phi(n)\)</span>$。如果 $<span class="arithmatex">\(\lambda(n)| n-1\)</span>$，则合数 n 为 Carmichael 数。最小的 Carmichael 数为 $<span class="arithmatex">\(561=3\cdot 11\cdot 17\)</span><span class="arithmatex">\(；这里，\)</span><span class="arithmatex">\(\lambda(n)=\operatorname{lcm}(2,10,16)=80\)</span>$，它可以整除 560。证明 Carmichael 数必须既是“无平方数”（不能被任何素数的平方所整除），又是至少三个素数的积。（因此，Carmichael 数不是很常见。）</p>
+<p>31.8-3 证明：如果 x 是以 n 为模的 1 的非平凡平方根，则 $<span class="arithmatex">\(\gcd(x-1, n)\)</span>$ 和 $<span class="arithmatex">\(\gcd(x+1, n)\)</span>$ 都是 n 的非平凡约数。</p>
+<h3 id="319">练习 31.9</h3>
+<p>31.9-1 在图 31-7(a)所示的执行过程中，过程 POLLARD-RHO 在何时输出 1387 的因子 73？</p>
+<p>31.9-2 假设给定函数 $<span class="arithmatex">\(f: Z_n\rightarrow Z_n\)</span>$ 和一个初值 $<span class="arithmatex">\(x_0\in Z_n\)</span>$。定义 $<span class="arithmatex">\(x_i=f(x_{i-1}), i=1,2,\cdots\)</span>$。令 t 和 <span class="arithmatex">\(u&gt;0\)</span> 是满足 $<span class="arithmatex">\(x_{i+t}=x_{i+u}(i=0,1,\cdots)\)</span>$ 的最小值。在 Pollard 的 rho 算法的术语中，t 为 rho 的尾的长度，u 是 rho 的回路的长度。试写出一个计算 t 和 u 的值的有效算法，并分析其运行时间。</p>
+<p>31.9-3 为了发现形如 $<span class="arithmatex">\(p^{\prime}\)</span>$ 的数（其中 p 是素数，<span class="arithmatex">\(e&gt;1\)</span>）的一个因子，POLLARD-RHO 要执行多少步？</p>
+<p>31.9-4 POLLARD-RHO 的缺点之一是，在其递归过程的每一步，都要计算一个 gcd。然而，可以对 gcd 的计算进行批处理：通过累计一行中数个连续的 $<span class="arithmatex">\(x_i\)</span>$ 的积，然后在 gcd 计算中使用该积而不是 <span class="arithmatex">\(x_i\)</span>。请详细描述如何实现这一思想，为什么它是可行的，以及在处理一个 <span class="arithmatex">\(\beta\)</span> 位数 n 时，所选取的最有效的批处理规模是多大？</p>
+<h3 id="_13">思考题</h3>
+<p>333-1（二进制的 gcd 算法）与计算余数的执行速度相比，大多数计算机执行减法运算、测试一个二进制整数的奇偶性运算以及折半运算的执行速度都要更快些。本题所讨论的二进制 gcd 算法中避免了欧几里得算法中对余数的计算过程。</p>
+<p>a. 证明：如果 a 和 b 都是偶数，则 $<span class="arithmatex">\(\gcd(a, b)=2\cdot \gcd(a/2, b/2)\)</span>$。</p>
+<p>b. 证明：如果 a 是奇数，b 是偶数，则 $<span class="arithmatex">\(\gcd(a, b)=\gcd(a, b/2)\)</span>$。</p>
+<p>c. 证明：如果 a 和 b 都是奇数，则 $<span class="arithmatex">\(\gcd(a, b)=\gcd((a-b)/2, b)\)</span>$。</p>
+<p>d. 设计一个有效的二进制 gcd 算法，输入整数为 a 和 $<span class="arithmatex">\(b(a\geqslant b)\)</span>，并且算法的运行时间为 $$ O(\lg a)$$。假定每个减法运算、测试奇偶性运算以及折半运算都能在单位时间内执行。</p>
+<p>31-2（对欧几里得算法中位操作的分析）</p>
+<p>a. 考虑用普通的“纸和笔”算法来实现长除法的运算：用 a 除以 b，得到商 q 和余数 r。证明：这种算法需要执行 $<span class="arithmatex">\(O\left((1+\lg q)\lg b\right)\)</span>$ 次位操作。</p>
+<p>b. 定义 $<span class="arithmatex">\(\mu(a, b)=(1+\lg a)(1+\lg b)\)</span>$。证明：过程 EUCLID 在把计算 $<span class="arithmatex">\(\gcd(a, b)\)</span>$ 的问题转化为计算 $<span class="arithmatex">\(\gcd(b, a\mod b)\)</span>$ 的问题时，所执行的位操作次数至多为 $<span class="arithmatex">\(c(\mu(a, b)-\mu(b, a\mod b))\)</span>$，其中 $<span class="arithmatex">\(c &gt; 0\)</span> 为某一个足够大的常数。</p>
+<p>c. 证明：EUCLID(a, b) 通常需要执行 $<span class="arithmatex">\(O\left(\mu(a, b)\right)\)</span>$ 次位操作；当其输入为两个 <span class="arithmatex">\(\beta\)</span> 位数时，需要执行的位操作次数为 $<span class="arithmatex">\(O\left(\beta^{2}\right)\)</span>$。</p>
+<p>31-3（关于斐波那契数的三个算法）在已知 n 的情况下，本题对计算第 n 个斐波那契数 $<span class="arithmatex">\(F_*\)</span>$ 的三种算法的效率进行了比较。</p>
+<p>假定两个数的加法、减法和乘法的代价都是 $<span class="arithmatex">\(O(1)\)</span>$，与数的大小无关。</p>
+<p>a. 证明：基于递归式(3.22)计算 $<span class="arithmatex">\(F_n\)</span>$ 的直接递归方法的运行时间为 n 的幂。（例如，27.1 节的 FIB 程序。）</p>
+<p>b. 试说明如何运用记忆法在 $<span class="arithmatex">\(O\left(n\right)\)</span>$ 的时间内计算 $<span class="arithmatex">\(F_{a}\)</span>$。</p>
+<p>c. 试说明如何仅用整数加法和乘法运算，就可以在 $<span class="arithmatex">\(O(\lg n)\)</span>$ 的时间内计算 $<span class="arithmatex">\(F_a\)</span>$。（提示：考虑矩阵</p>
+<p>$$
+\left [\begin{array}{ll} 0&amp; 1\ 1&amp; 1\end{array}\right]
+$$
+和它的幂。）</p>
+<p>d. 现在假设对两个 $<span class="arithmatex">\(\beta\)</span>$ 位数相加需要 $<span class="arithmatex">\(\Theta(\beta)\)</span>$ 时间，对两个 $<span class="arithmatex">\(\beta\)</span>$ 位数相乘需要 $<span class="arithmatex">\(\Theta\left(\beta^2\right)\)</span>$ 时间。如果这样更合理地估计基本算术运算的代价，这三种方法的运行时间又是多少？</p>
+<p>31-4（二次余数）设 p 是一个奇素数。如果关于未知量 x 的方程 $<span class="arithmatex">\(x^2=a(mod p)\)</span>$ 有解，则数 $<span class="arithmatex">\(a\in Z_i\)</span>$ 就是一个二次余数。</p>
+<p>a. 证明：对模 p，恰有 $<span class="arithmatex">\((p-1)/ 2\)</span>$ 个二次余数。</p>
+<p>b. 如果 p 是素数，对 $<span class="arithmatex">\(a\in Z_0^*\)</span>$，定义勒让德符号 $<span class="arithmatex">\(\left(\frac{a}{p}\right)\)</span>$，若 a 是对模 p 的二次余数，则它等于 1；否则它等于-1。证明：如果 $<span class="arithmatex">\(a\in Z_p^*\)</span>$，则</p>
+<p>$$
+\left(\frac{a}{p}\right)\equiv a^{(p-1)/2}(mod \  \ p)
+$$
+给出一个有效的算法，使其能确定一个给定的数 a 是否是对模 p 的二次余数。分析所给算法的效率。</p>
+<p>c. 证明：如果 p 是形如 4 k+3 的素数，且 a 是 Z; 中一个二次余数，则 $<span class="arithmatex">\(a^{k+1}\)</span>$ mod p 是对模 p 的 a 的平方根。找出一个以 p 为模的二次余数 a 的平方根需要多长时间？</p>
+<p>d. 试描述一个有效的随机算法，找出一个以任意素数 p 为模的非二次余数，也就是指 $<span class="arithmatex">\(Z_2^{*}\)</span>$ 中不是二次余数的成员。所给出的算法平均需要执行多少次算术运算？</p>
+<h2 id="_14">第三十二章 字符串匹配</h2>
+<h3 id="321">练习 32.1</h3>
+<p>32.1-1 试说明当模式 $<span class="arithmatex">\(P=0001\)</span>$，文本 $<span class="arithmatex">\(T=000010001010001\)</span>$ 时，朴素字符串匹配所执行的比较。</p>
+<p>32.1-2 假设在模式 P 中所有字符都不相同。试说明如何对一段 n 个字符的文本 T 加速过程 NAIVE-STRING-MATCHER 的执行速度，使其运行时间达到 $<span class="arithmatex">\(O(n)\)</span>$。</p>
+<p>32.1-3 假设模式 P 和文本 T 是长度分别为 m 和 n 的随机选取的字符串，其字符分别来自含有 d 个元素的字母表 $<span class="arithmatex">\(\Sigma_d=\{0,1,\cdots, d-1\}\)</span>$，其中 $<span class="arithmatex">\(d\geqslant 2\)</span>$。证明朴素算法第 4 行中隐含的循环所执行的字符比较的预计次数为：</p>
+<p>$$
+(n-m+1)\frac{1-d^{-m}}{1-d^{-1}}\leqslant 2(n-m+1)
+$$
+直到这次循环结束。（假设对于一个给定的偏移，当有一个字符不匹配或者整个模式已被匹配时，朴素算法将终止字符比较。）因此，对任意随机选取的字符串，朴素算法都是有效的。</p>
+<p>32.1-4 假设允许模式 P 中包含一个间隔符 $<span class="arithmatex">\(\diamond\)</span>$，它可以和任意字符串匹配（甚至可以和长度为 0 的字符串匹配）。例如，模式 $<span class="arithmatex">\(ab\diamond ba\diamond c\)</span>$ 在文本 cabccbacbacab 中的出现为</p>
+<p><img alt="image-20250119234422521" src="F:\software\Typora\images\image-20250119234422521.png" /></p>
+<p>注意，间隔符可以在模式中出现任意次，但是不能在文本中出现。给出一个多项式时间 算法，以确定这样的模式 P 是否在给定的文本 T 中出现，并分析算法的运行时间。</p>
+<h3 id="322">练习 32.2</h3>
+<p>32.2-1 如果模 $<span class="arithmatex">\(q=11\)</span>$，那么当 Rabin-Karp 匹配算法在文本 $<span class="arithmatex">\(T=3141592653589793\)</span>$ 中搜寻模式 $<span class="arithmatex">\(P=26\)</span>$ 时，会遇到多少个伪命中点？</p>
+<p>32.2-2 如何扩展 Rabin-Karp 算法，使其能解决如下问题：如何在文本字符串中搜寻出给定的 k 个模式中的任何一个出现？起初假设所有 k 个模式都是等长的，然后扩展你的算法以适用于不同长度的模式。</p>
+<p>32.2-3 试说明如何扩展 Rabin-Karp 算法用于处理以下问题：在一个 $<span class="arithmatex">\(n \times n\)</span>$ 的二维字符数组中搜索一个给定的 $<span class="arithmatex">\(m \times m\)</span>$ 的模式。（该模式可以在水平方向和垂直方向移动，但是不可以旋转。）</p>
+<p>32.2-4 Alice 有一份很长的 n 位文件复印件 $<span class="arithmatex">\(A=\left\langle a_{n-1}, a_{n-2},\cdots, a_0\right\rangle\)</span>$，Bob 也有一份类似的文件 $<span class="arithmatex">\(B=\left\langle b_{n-1}, b_{n-2},\cdots, b_0\right\rangle\)</span>$。Alice 和 Bob 都希望知道他们的文件是否一样。为了避免传送整个文件 A 或 B，他们运用下列快速的概率检查方法。他们共同选择一个素数 $<span class="arithmatex">\(q&gt;1000n\)</span>$，并从 $<span class="arithmatex">\(\{0,1,\cdots q-1\}\)</span>$ 中随机选取一个整数 x。然后，Alice 求出
+$$
+A(x)=\left(\sum_{i = 0}^{n-1} a_i x^i\right) \mod q
+$$
+的值，Bob 也用类似方法计算出 $<span class="arithmatex">\(B(x)\)</span>$。证明：如果 $<span class="arithmatex">\(A\neq B\)</span>$，则 $<span class="arithmatex">\(A(x)=B(x)\)</span>$ 的概率至多为 1/1000；如果两个文件相同，则 $<span class="arithmatex">\(A(x)\)</span>$ 的值必定等于 $<span class="arithmatex">\(B(x)\)</span>$ 的值。（提示：参见练习 31.4-4。）</p>
+<h3 id="323">练习 32.3</h3>
+<p>32.3-1 对模式 $<span class="arithmatex">\(P=aa bab\)</span>$ 构造出相应的字符串匹配自动机，并说明它在文本字符串 $<span class="arithmatex">\(T=aaababaabaababaab\)</span>$ 上的操作过程。</p>
+<p>32.3-2 对字母表 $<span class="arithmatex">\(\Sigma=\{a, b\}\)</span>$，画出与模式 $<span class="arithmatex">\(ababbabbabbabbabb\)</span>$ 对应的字符串匹配自动机的状态转换图。</p>
+<p>32.3-3 如果由 $<span class="arithmatex">\(P_k \sqsupset P_q\)</span>$ 导出 $<span class="arithmatex">\(k=0\)</span>$ 或 $<span class="arithmatex">\(k=q\)</span>$，则称模式 P 是不可重叠的。试描述与不可重叠模式相应的字符串匹配自动机的状态转换图。</p>
+<p>32.3-4 已知两个模式 P 和 $<span class="arithmatex">\(P'\)</span>$，试描述如何构造一个有限自动机，使之能确定其中任意一个模式的所有出现位置。尽量使自动机的状态数最小。</p>
+<p>32.3-5 给定一个包括间隔字符（参见练习 32.1-4）的模式 P，说明如何构造一个有限自动机，使其在 $<span class="arithmatex">\(O(n)\)</span>$ 的时间内找出 P 在文本 T 中的一次出现位置，其中 $<span class="arithmatex">\(n=|T|\)</span>$。</p>
+<h3 id="324">练习 32.4</h3>
+<p>32.4-1 计算对应于模式 $<span class="arithmatex">\(ababbabbabbabbabb\)</span>$ 的前缀函数 $<span class="arithmatex">\(\pi\)</span>$。</p>
+<p>32.4-2 给出关于 q 的函数 $<span class="arithmatex">\(\pi^*[q]\)</span>$ 的规模的上界。举例说明所给出的上界是严格的。</p>
+<p>32.4-3 试说明如何通过检查字符串 PT（由 P 和 T 连结形成的长度为 <span class="arithmatex">\(m+n\)</span> 的字符串）的 <span class="arithmatex">\(\pi\)</span> 函数来确定模式 P 在文本 T 中的出现位置。</p>
+<p>32.4-4 用聚合分析方法证明 KMP-MATCHER 的运行时间是 $<span class="arithmatex">\(\Theta(n)\)</span>$。</p>
+<p>32.4-5 用势函数证明 KMP-MATCHER 的运行时间是 $<span class="arithmatex">\(\Theta(n)\)</span>$。</p>
+<p>32.4-6 试说明如何通过以下方式对过程 KMP-MATCHER 进行改进：把第 7 行（不是第 12 行中）出现的 <span class="arithmatex">\(\pi\)</span> 替换为 $<span class="arithmatex">\(\pi^{\prime}\)</span>$，其中对于 <span class="arithmatex">\(q=1,2,\cdots, m-1\)</span>, <span class="arithmatex">\(\pi^{\prime}\)</span> 递归定义如下：
+$$
+\pi^{\prime}[q] =\left{
+\begin{array}{l}
+0，\quad\text{如果}\pi [q] = 0\
+\pi^{\prime}[\pi[q]]， \quad 如果 pi [q]\neq 0 且 [\pi[q]+1]= P [q+1] \
+\pi [q] ，\quad \pi [q]\neq 0 且 [\pi[q]+1]\neq P [q+1]
+\end{array}
+\right.
+$$</p>
+<p>试说明修改后的算法为什么是正确的，并说明在何种意义上，这一修改是对原算法的改进。</p>
+<p>32.4-7 写出一个线性时间的算法，以确定文本 <span class="arithmatex">\(T\)</span> 是否是另一个字符串 <span class="arithmatex">\(T'\)</span> 的循环旋转。例如 arc 和 car 是彼此的循环旋转。</p>
+<p>32.4-8 给出一个有效算法，计算出相应于某给定模式 P 的字符串匹配自动机的转移函数 $<span class="arithmatex">\(\delta\)</span>$。所给出的算法的运行时间应该是 $<span class="arithmatex">\(O(m|\Sigma|)\)</span>$。（提示：证明如果 <span class="arithmatex">\(q=m\)</span> 或 $<span class="arithmatex">\(P[q+1]\neq a\)</span>$，则 $<span class="arithmatex">\(\delta(q, a)=\delta(\pi[q], a)\)</span>$。）</p>
+<h4 id="_15">思考题</h4>
+<p>32-1（基于重复因子的字符串匹配）设 $<span class="arithmatex">\(y^{\prime}\)</span>$ 表示字符串 y 与其自身首尾相接 i 次所得的结果。例如 $<span class="arithmatex">\((ab)^3=ababab\)</span>$。如果对某个字符串 $<span class="arithmatex">\(y\in\Sigma^*\)</span>$ 和某个 $<span class="arithmatex">\(r&gt;0\)</span>$ 有 $<span class="arithmatex">\(x=y^r\)</span>$，则称字符串 $<span class="arithmatex">\(x\in\Sigma^*\)</span>$ 具有重复因子 r。设 <span class="arithmatex">\(\rho(x)\)</span> 表示使得 x 具有重复因子 r 的最大值。</p>
+<p>a. 写出一有效算法以计算出 $<span class="arithmatex">\(\rho(P_i)(i=1,2,\cdots, m)\)</span>$，算法的输入为模式 $<span class="arithmatex">\(P[1.. m]\)</span>$。算法的运行时间是多少？</p>
+<p>b. 对任何模式 $<span class="arithmatex">\(P[1.. m]\)</span>$，设 $<span class="arithmatex">\(\rho^*(P)\)</span>$ 定义为 $<span class="arithmatex">\(\max\limits_{1&lt;i&lt;m}\left(P_i\right)\)</span>$。证明：如果从长度为 m 的所有二进制字符串所组成的集合中随机地选择模式 <span class="arithmatex">\(P\)</span>，则 $<span class="arithmatex">\(\rho^*(P)\)</span>$ 的期望值是 $<span class="arithmatex">\(O(1)\)</span>$。</p>
+<p>c. 论证下列字符串匹配算法可以在 $<span class="arithmatex">\(O\left(\rho^*(P) n+m\right)\)</span>$ 的时间内正确地找出模式 P 在文本 T [1..n] 中的所有出现位置。</p>
+<p><img alt="image-20250120000008234" src="F:\software\Typora\images\image-20250120000008234.png" /></p>
+<p>该算法是 Galil 和 Seiferas 提出的。通过对这些设计思想进行大扯扩充，他们得到了一 个线性时间的字符串匹配算法，该算法除了 P 和 T 所要求的存储空间外，仅需 <span class="arithmatex">\(O(1)\)</span> 的存储空间。</p>
+<h2 id="_16">第三十三章 计算几何学</h2>
+<h3 id="331">练习 33.1</h3>
+<p>33.1-1 证明：若 $<span class="arithmatex">\(p_1\times p_2\)</span>$ 值为正，则相对于原点(0,0)，向量 $<span class="arithmatex">\(p_1\)</span>$ 位于向量 $<span class="arithmatex">\(p_2\)</span>$ 的顺时针方向；若叉积为负，则 $<span class="arithmatex">\(p_1\)</span>$ 在 $<span class="arithmatex">\(p_2\)</span>$ 的逆时针方向。</p>
+<p>33.1-2 van Pelt 教授提出，在过程 ON-SEGMENT 的第 1 行中，只需测试 x 坐标值。试说明教授错误的原因。</p>
+<p>33.1-3 一个点 $<span class="arithmatex">\(p_1\)</span>$ 相对于原点 $<span class="arithmatex">\(p_0\)</span>$ 的极角(polar angle)也就是向量 $<span class="arithmatex">\(p_1-p_0\)</span>$ 在常规极坐标系中的角度。例如，点(3,5)相对于(2,4)的极角即为向量(1,1)的极角，即 45 度或 $<span class="arithmatex">\(\pi/4\)</span>$ 弧度。</p>
+<p>点(3,3)相对于(2,4)的极角即为向量(1,-1)的极角，即 315 度或 $<span class="arithmatex">\(7\pi/4\)</span>$ 弧度。请编写一段伪代码，根据相对于某个给定原点 <span class="arithmatex">\(p_0\)</span> 的极角，对一个由 n 个点构成的序列 $$\langle p_1, p_2,\cdots, p_n\rangle $$ 进行排序。所给过程的运行时间应为 $$ O(n\lg n)$$，并要求用叉积来比较极角的大小。</p>
+<p>33.1-4 试说明如何在 $<span class="arithmatex">\(O\left(n^2\lg n\right)\)</span>$ 的时间内确定 n 个点中任意三点是否共线。</p>
+<p>33.1-5 多边形是平面上由一系列线段构成的闭合曲线。也就是说，它是由一系列直线段构成的首尾相连的曲线。这些直线段称为多边形的边。一个连接两条连续边的顶点称为多边形的顶点。如果多边形是简单的（一般情况下都会作此假设），那么它的内部不存在边交叉的情况。在平面上被简单多边形包围的点集组成了该多边形的内部(interior)，恰落在多边形上的点组成了多边形的边界(boundary)，而包围该多边形的点构成了多边形的外部(exterior)。对于一个简单多边形，如果给定任意两个位于其边界或内部的点，连接这两个点的线段上的所有点都在这个多边形的边界或内部，那么该多边形为凸多边形。一个凸多边形的顶点不能被表示成边界或内部任意两个顶点的凸组合。</p>
+<p>Amundsen 教授提出，对于由 n 个点组成的序列 $<span class="arithmatex">\(\langle p_0, p_1,\cdots, p_{n-1}\rangle\)</span>$，可以用下面的方法来确定它们能否形成一个凸多边形的连续顶点。若集合 $<span class="arithmatex">\(\left\{\angle p_i p_{i+1} p_{i+2}: i=0,1, \cdots, n-1\right\}\)</span>$（下标是模 n 排列的）不是既包含左转又包含右转，则输出“yes”；否则，输出“no”。试说明虽然这种方法的运行时间是线性的，但它不总是得出正确结果。对教授的方法做修改，使其总是能在线性时间内得出正确结果。</p>
+<p>33.1-6 已知一个点 $<span class="arithmatex">\(p_0=\left(x_0, y_0\right)\)</span>$，它的右水平射线(right horizontal ray)是顶点集合 <span class="arithmatex">\(\left\{p_i=\left(x_i, y_i\right)\right.\)</span>  : $$ x_i\geqslant x_0, y_i = y_0}$$，也就是说，它是 $$ p_0 $$ 正右方的点的集合，包括 $$ p_0 $$ 本身。试说明如何通过把问题转化为判断两条线段是否相交，从而在 $$ O(1)$$ 的时间内确定一个给定的从 $$ p_0 $$ 出发的右水平射线是否和线段 $$ p_1 p_2$$ 相交。</p>
+<p>33.1-7 要确定点 $<span class="arithmatex">\(p_0\)</span>$ 是否在简单多边形 P（不一定是凸多边形）内部，一种方法是检查由 $<span class="arithmatex">\(p_0\)</span>$ 发出的全部射线，看它们是否与 P 的边界相交奇数次，但是 $<span class="arithmatex">\(p_0\)</span>$ 本身不能位于边界上。试说明如何在 $<span class="arithmatex">\(\Theta(n)\)</span>$ 时间内计算出 $<span class="arithmatex">\(p_0\)</span>$ 是否在一个由 n 个顶点组成的多边形的内部。（提示：参考练习 3.1-6。确保当射线与多边形边界在顶点处相交，以及当射线遮盖住多边形的一条边时，算法的正确性。）</p>
+<p>33.1-8 试说明如何在 $<span class="arithmatex">\(\Theta(n)\)</span>$ 时间内计算一个具有 n 个顶点的简单多边形（不一定是凸多边形）的面积。（与多边形有关的定义见练习 3.1-5。）</p>
+<h3 id="332">练习33.2</h3>
+<p>33.2-1 试说明在 n 条线段的集合中，可能有 <span class="arithmatex">\(\Theta\left(n^2\right)\)</span>$$ 个交点。</p>
+<p>33.2-2 已知两条在 x 处可比的线段 a 和 b，试说明如何在 $<span class="arithmatex">\(O(1)\)</span>$ 时间内确定 $<span class="arithmatex">\(a\geqslant x b\)</span>$ 和 $<span class="arithmatex">\(b\geqslant x a\)</span>$ 中哪一个成立。假定这两条线段都不是垂直的。（提示：如果 a 和 b 不相交，利用叉积即可。如果 a 和 b 相交（当然也可以用叉积来确定），仍然可以只利用加、减、乘这几种运算，无需使用除法。当然，在应用 $<span class="arithmatex">\(\geqslant_x\)</span>$ 关系时，如果 a 和 b 相交，就可以停下来并声明已找到了一个交点。）</p>
+<p>333.2-3 Mason 教授建议修改过程 ANY-SEGMENTS-INTERSECT，使其不是找出一个交点后返回，而是输出相交的线段，再继续进行 for 循环的下一次迭代。他把这样得到的过程称为 PRINT-INTERSECTING-SEGMENTS，并声称该过程能够按照线段在集合中出现的次序，从左到右输出所有的交点。Dixon 教授不同意 Mason 教授，称其做法有误。哪位教授的说法是正确的？PRINT-INTERSECTING-SEGMENTS 所找出的第一个相交点总是最左边的交点吗？它总能找出所有的相交点吗？</p>
+<p>333.2-4 写出一个运行时间为 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的算法，以确定由 n 个顶点组成的多边形是否是简单多边形。</p>
+<p>333.2-5 写出一个运行时间为 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的算法，以确定总共有 n 个顶点的两个简单多边形是否相交。</p>
+<p>333.2-6 一个圆面是由一个圆加上其内部所组成，用圆心和半径表示。如果两个圆面有公共点，则称这两个圆面相交。写出一个运行时间为 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的算法，以确定 n 个圆面中是否有任何两个圆面相交。</p>
+<p>333.2-7 已知 n 条线段中共有 k 个相交点，试说明如何在 $<span class="arithmatex">\(O((n+k)\lg n)\)</span>$ 时间内输出全部 k 个交点。</p>
+<p>33.2-8 论证即使有三条或更多的线段相交于同一点，过程 ANY-SEGMENTS-INTERSECT 也能正确执行。</p>
+<p>33.2-9 证明：在有垂直线段的情况下，如果将某一垂直线段的底部端点当做是左端点，其顶部端点当做右端点，则过程 ANY-SEGMENTS-INTERSECT 也能正确执行。如果允许有垂直线段，对练习 33.2-2 的回答应如何修改？</p>
+<h4 id="_17">练习</h4>
+<p>33.3-1 证明：在过程 GRAHAM-SCAN 中，点 $<span class="arithmatex">\(p_1\)</span> 和 $<span class="arithmatex">\(p_m\)</span>$ 必定是 $<span class="arithmatex">\(CH(Q)\)</span>$ 的顶点。</p>
+<p>33.3-2 考虑一个能支持加法、比较和乘法运算的计算模型，用该模型对 n 个数进行排序时，其下界为 $<span class="arithmatex">\(\Omega(n\lg n)\)</span>$。证明：当在这样一个模型中有序地计算出由 n 个点组成的集合的凸包时，其下界为 $<span class="arithmatex">\(\Omega(n\lg n)\)</span>$。</p>
+<p>33.3-3 已知一个点集 Q，证明彼此相距最远的点对必定是 $<span class="arithmatex">\(CH(Q)\)</span> 中的顶点。</p>
+<p>33.3-4 对一个给定的多边形 P 和在其边界上的一个点 q，q 的投影是满足线段 qr 完全在 P 的边界上或内部的点 r 的集合。正如图 333-10 所示，如果在 P 的内部存在一个点 p，它处于 P 的边界上每个点的投影中，则多边形 P 是星形多边形。所有满足这种条件的点 p 的集合称为 P 的内核。给定一个 n 个顶点的星形多边形 P，它的各个顶点已按逆时针方向排序，试说明如何在 $<span class="arithmatex">\(O(n)\)</span>$ 的时间内计算出 $<span class="arithmatex">\(CH(Q)\)</span>$。</p>
+<p><img alt="image-20250120001124967" src="F:\software\Typora\images\image-20250120001124967.png" /></p>
+<p>33.3-5 在联机凸包问题(on-line convex-hull problem)中，每次只给出由 n 个点所组成的集合 Q 中的一个点。在接收到每个点后，就计算出当前所有点的凸包。显然，可以对每个点运行一次 Graham 扫描算法，总的运行时间为 $<span class="arithmatex">\(O\left(n^2\lg n\right)\)</span>$。试说明如何在 $<span class="arithmatex">\(O\left(n^2\right)\)</span>$ 时间内解决联机凸包问题。</p>
+<p>33.3-6 试说明如何实现增量法，以在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的时间内计算出 n 个点的凸包。</p>
+<h3 id="334">练习33.4</h3>
+<p>33.4-1 Williams 教授提出了一个方案，可以在最近点对算法中，只检查数组 $<span class="arithmatex">\(Y^{\prime}\)</span>$ 中每个点后面的 5 个点，其思想是，总是将直线 l 上的点放入集合 $<span class="arithmatex">\(P_L\)</span>$ 中。那么，直线 l 上就不可能有一个点属于 $<span class="arithmatex">\(P_L\)</span>$，另一个点属于 $<span class="arithmatex">\(P_R\)</span>$ 的重合点对。因此，至多可能有 6 个点处于 $<span class="arithmatex">\(\delta\times 2\delta\)</span>$ 的矩形内。这种方案的缺陷何在？</p>
+<p>33.4-2 试说明只检查数组 $<span class="arithmatex">\(Y^{\prime}\)</span>$ 中跟随在每个点后的 5 个数组位置就足够了。</p>
+<p>33.4-3 两点之间的距离除欧几里得距离外，还有其他定义方法。在平面上，点 $<span class="arithmatex">\(p_1\)</span>$ 和 $<span class="arithmatex">\(p_2\)</span>$ 之间的 $<span class="arithmatex">\(L_m\)</span>$ 距离由下式给出：$<span class="arithmatex">\((\left|x_1-x_2\right|^{m}+\left|y_1-y_2\right|^{m})^{1/ m}\)</span>$。因此，欧几里得距离实际上是 $<span class="arithmatex">\(L_2\)</span>$ 距离。修改最近点对算法，使其适用于 $<span class="arithmatex">\(L_1\)</span>$ 距离，也称为曼哈顿距离(Manhattan distance)。</p>
+<p>33.4-4 已知平面上的两个点 <span class="arithmatex">\(p_1\)</span> 和 <span class="arithmatex">\(p_2\)</span>，它们之间的 $<span class="arithmatex">\(L_{\infty}\)</span>$ 距离为 $<span class="arithmatex">\(\max\left(\left|x_1-x_2\right|,\left|y_1-y_2\right|\right)\)</span>$。修改最近点对算法，使其适用于 $<span class="arithmatex">\(L_{\infty}\)</span>$ 距离。</p>
+<p>33.4-5 假设最近点对算法里 <span class="arithmatex">\(\Omega(n)\)</span> 对点是共垂线的。试说明如何确定集合 <span class="arithmatex">\(P_L\)</span> 和 <span class="arithmatex">\(P_R\)</span> 以及如何确定 Y 中的每个点是在 $<span class="arithmatex">\(P_L\)</span>$ 还是 $<span class="arithmatex">\(P_R\)</span>$ 中，从而使最近点对算法的运行时间保持 $<span class="arithmatex">\(O(n\lg n)\)</span>$。</p>
+<p>33.4-6 对最近点对算法进行修改，使其能避免对数组 Y 进行预排序，但仍然能使算法的运行时间保持为 $<span class="arithmatex">\(O(n\lg n)\)</span>$。（提示：将已排序的数组 <span class="arithmatex">\(Y_L\)</span> 和 <span class="arithmatex">\(Y_R\)</span> 合并，以形成有序数组 $<span class="arithmatex">\(Y\)</span>$）</p>
+<h3 id="_18">思考题</h3>
+<p>33-1（凸层）已知平面上的点集 Q，我们用归纳法来定义 Q 的凸层(convex layer)。Q 的第一凸层是由 Q 中属于 $<span class="arithmatex">\(CH(Q)\)</span>$ 顶点的那些点组成。对 <span class="arithmatex">\(i&gt;1\)</span>，定义 Q 由把 Q 中所有在凸层 1, 2, <span class="arithmatex">\(\cdots\)</span>, i-1 中的点去除后所剩余的点构成。如果 $<span class="arithmatex">\(Q_i\neq\varnothing\)</span>$，那么 Q 的第 i 凸层为 <span class="arithmatex">\(CH(Q)\)</span>；否则，第 i 凸层无定义。</p>
+<p>a. 写出一个运行时间为 $<span class="arithmatex">\(O\left(n^2\right)\)</span>$ 的算法，以找出 n 个点所组成的集合的各凸层。</p>
+<p>b. 证明：在对 n 个实数进行排序所需时间为 $<span class="arithmatex">\(\Omega(n\lg n)\)</span>$ 的任何计算模型上，计算 n 个点的凸层需要 $<span class="arithmatex">\(\Omega(n\lg n)\)</span>$ 时间。</p>
+<p>33-2（最大层）设 Q 是平面上 n 个点所组成的集合。如果有 $<span class="arithmatex">\(x\geqslant x^{\prime}\)</span>$ 且 $<span class="arithmatex">\(y\geqslant y^{\prime}\)</span>$，则称点 <span class="arithmatex">\((x, y)\)</span> 支配点 <span class="arithmatex">\(\left(x^{\prime}, y^{\prime}\right)\)</span>。Q 中不被其中任何其他点支配的点称为最大点。注意，Q 可以包含许多最大点，可以把这些最大点组织成如下的最大层。第一最大层 <span class="arithmatex">\(L_1\)</span> 是 Q 中最大点构成的集合。对 <span class="arithmatex">\(i&gt;1\)</span>，第 i 最大层 <span class="arithmatex">\(L_i\)</span> 是 <span class="arithmatex">\(Q-\)</span> <span class="arithmatex">\(\bigcup\limits_{j=1}^{i-1} L_j\)</span> 中的最大点构成的集合。</p>
+<p>假设 Q 包含 k 个非空的最大层，并设 <span class="arithmatex">\(y_i\)</span> 是 $<span class="arithmatex">\(L_i\)</span>$ 中最左边点的 y 坐标 <span class="arithmatex">\((i=1, 2,\cdots, k)\)</span>，假定 Q 中没有两个点有相同的 x 坐标或 y 坐标。</p>
+<p>a. 证明 $<span class="arithmatex">\(y_1&gt;y_2&gt;\cdots&gt;y_k\)</span>$。</p>
+<p>考虑一个点 <span class="arithmatex">\((x, y)\)</span>，它在 Q 中任意点的左边，并且其 y 坐标与 Q 中任何点的 y 坐标都不相同。设 <span class="arithmatex">\(Q^{\prime}=Q\cup\{(x, y)\}\)</span>。</p>
+<p>b. 设 j 是满足 $<span class="arithmatex">\(y_j&lt;y\)</span>$ 的最小下标，除非 $<span class="arithmatex">\(y&lt;y_k\)</span>$，在这种情况下，令 $<span class="arithmatex">\(j=k+1\)</span>$。证明 $<span class="arithmatex">\(Q^{\prime}\)</span>$ 的最大层如下：</p>
+<ul>
+<li>
+<p>若 $<span class="arithmatex">\(j\leqslant k\)</span>$，则 $<span class="arithmatex">\(Q^{\prime}\)</span>$ 的最大层与 Q 的最大层相同，只是 $<span class="arithmatex">\(L_j\)</span>$ 也包含 <span class="arithmatex">\((x, y)\)</span> 作为其新的最左点。</p>
+</li>
+<li>
+<p>若 $<span class="arithmatex">\(j=k+1\)</span>$，则 $<span class="arithmatex">\(Q^{\prime}\)</span>$ 的前 k 个最大层与 Q 的相同，但此外，<span class="arithmatex">\(Q^{\prime}\)</span> 有一个非空的第 k+1 最大层 $<span class="arithmatex">\(L_{k+1}=\left\{(x, y)\right\}\)</span>$。</p>
+</li>
+</ul>
+<p>c. 描述一种时间为 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 的算法，用于计算出包含 n 个点的集合 Q 的各最大层。（提示：把一条扫除线从右向左移动。）</p>
+<p>d. 如果允许输入点有相同的 x 坐标或 y 坐标，会不会出现问题？如果会，提出一种方法来解决这一问题。</p>
+<p>33-3（巨人和鬼问题）有 n 个巨人正与 n 个鬼战斗。每个巨人的武器是一个质子包，它可以用一串质子流射中鬼来把鬼消灭。质子流沿直线行进，在击中鬼时就终止。巨人决定采取下列策略。他们各自寻找一个鬼形成 n 个巨人-鬼对，然后每个巨人同时向各自选取的鬼射出一串质子流。我们知道，质子流互相交叉是很危险的，因此，巨人选择的配对方式应该使质子流都不会交叉。</p>
+<p>假定每个巨人和每个鬼的位置都是平面上一个固定的点，并且没有三个位置共线。</p>
+<p>a. 论证存在一条通过一个巨人和一个鬼的直线，使得直线一边的巨人数与同一边的鬼数相等。试说明如何在 $<span class="arithmatex">\(O(n\lg n)\)</span>$ 时间内找出这样一条直线。</p>
+<p>b. 写出一个运行时间为 $<span class="arithmatex">\(O(n^2\lg n)\)</span>$ 的算法，使其以不会有质子流交叉为条件把巨人与鬼配对。</p>
+<p>33.4（拾取棍子问题）Charon 教授有 n 根小棍子，它们以某种方式互相叠放在一起。每根棍子都用其端点来指定，每个端点都是一个有序的三元组，其坐标 <span class="arithmatex">\((x,y,z)\)</span> 已知。所有棍子都不是垂直的。他希望拾取所有的棍子，但要满足如下条件：一次一根地挑起棍子，当一根棍子上面没有压着其他棍子时，该棍子才可以被挑起。</p>
+<p>a. 给出一个过程，取两根棍子 a 和 b 作为参数，返回 a 是在 b 的上面、下面还是与 b 无关。</p>
+<p>b. 给出一个有效的算法，用于确定是否有可能拾取所有的棍子。如果能，提供一个拾取所有棍子的合法顺序。</p>
+<p>33.5（稀疏包分布）考虑计算平面上点集的凸包问题，但这些点是根据某已知的随机分布取得的。有时，从这样一种分布中取得的 n 个点凸包的期望规模为 $<span class="arithmatex">\(O(n^{1-\epsilon})\)</span>$，其中 <span class="arithmatex">\(\epsilon\)</span> 为某个大于 0 的常数。称这样的分布为稀疏包分布。稀疏包分布包括以下几种：</p>
+<ul>
+<li>点是均匀地从一个单位半径的圆面中取得的，凸包的期望规模为 $<span class="arithmatex">\(\Theta\left(n^{1/3}\right)\)</span>$。</li>
+<li>点是均匀地从一个具有 k 条边的凸多边形内部取得的 (k 为任意常数)。凸包的期望规模为 $<span class="arithmatex">\(\Theta(\lg n)\)</span>$。</li>
+<li>点是根据二维正态分布取得的。凸包的期望规模为 $<span class="arithmatex">\(\Theta(\sqrt{\lg n})\)</span>$。</li>
+</ul>
+<p>a. 已知两个分别有 $<span class="arithmatex">\(n_1\)</span>$ 和 $<span class="arithmatex">\(n_2\)</span>$ 个顶点的凸多边形，说明如何在 $<span class="arithmatex">\(O(n_1+n_2)\)</span>$ 时间内计算出全部 $<span class="arithmatex">\(n_1+n_2\)</span>$ 个点的凸包 (多边形可以重叠)。</p>
+<p>b. 证明：对于根据稀疏包分布独立取得的一组 n 个点，其凸包可以在 <span class="arithmatex">\(O(n)\)</span> 的期望时间内计算出来。（提示：采用递归方法分别求出前 <span class="arithmatex">\(n/2\)</span> 个点和后 <span class="arithmatex">\(n/2\)</span> 个点的凸包，然后再对结果进行合并。）</p>
+<h2 id="np">第三十四章 NP 完全性</h2>
+<h3 id="341">练习34.1</h3>
+<p>34.1-1 定义最优化问题 LONGEST-PATH-LENGTH 为一个关系，它将一个无向图的每个实例、两个顶点与这两个顶点间的一条最长简单路径中所包含的边数联系了起来。定义判定问题 <span class="arithmatex">\(LONGEST-PATH = {&lt;G, u, v, k&gt;}: G=(V, E)\)</span> 为一个无向图, <span class="arithmatex">\(u, v∈V\)</span>, <span class="arithmatex">\(k≥0\)</span> 是一个整数，且 G 中存在着一条从 u 到 v 的简单路径，它至少包含 <span class="arithmatex">\(k\)</span> 条边}。证明：最优化问题 LONGEST-PATH-LENGTH 可以在多项式时间内解决，当且仅当 <span class="arithmatex">\(LONGEST-PATH∈P\)</span>。</p>
+<p>34.1-2 对于在无向图中寻找最长简单回路这一问题，给出其形式化的定义并给出其相关的判定问题。另外，给出与该判定问题对应的语言。</p>
+<p>34.1-3 给出一种形式化的编码，它利用邻接矩阵的表示形式，将有向图编码为二进制串。另外，再给出利用邻接表表示的编码。论证这两种表示形式是多项式相关的。</p>
+<p>34.1-4 练习 16.2-2 中曾要求读者给出的 0-1 背包问题的“动态规划算法”，它是一个多项式时间的算法吗？解释你的答案。</p>
+<p>34.1-5 证明：对于一个多项式时间的算法，当它调用一个多项式时间的子例程时，如果至多调用常数次，则此算法以多项式时间运行，但是，当进行多项式次的子例程调用时，此算法就可能变成一个指数时间的算法。</p>
+<p>34.1-6 证明：类 P 在被看做是一个语言集合时，在并集、交集、连结、补集和 Kleene 星运算下是封闭的。也就是说，如果 $<span class="arithmatex">\(L_1, L_2\in P\)</span>$，则 $<span class="arithmatex">\(L_1\cup L_2\in P\)</span><span class="arithmatex">\(，\)</span>L_1\cap L_2\in P$<span class="arithmatex">\(，L_1 L_2\in P\)</span>，<span class="arithmatex">\(\overline{L}_1\in P\)</span>, <span class="arithmatex">\(L_1^*\in P\)</span>。</p>
+<h3 id="342">练习34.2</h3>
+<p>34.2-1 考虑语言 <span class="arithmatex">\(GRAPH-ISOMORPHISM= \{&lt;G1, G2&gt;: G1 和 G2 是同构图\}\)</span>。通过描述一个可以在多项式时间内验证该语言的算法，来证明 GRAPH-ISOMORPHISME NP。</p>
+<p>34.2-2 证明：如果 G 是一个有奇数个顶点的无向二分图，则 G 是非哈密顿图。</p>
+<p>34.2-3 证明：如果 HAM-CYCLE P，则按序列出一条哈密顿回路中各个顶点的问题是多项式时间可解的。</p>
+<p>34.2-4 证明：由语言构成的 NP 类在并集、空集、连结和 Kleene 是运算下封闭的，讨论一下 NP 在补集运算下的封闭性。</p>
+<p>34.2-5 证明：对某个常数 k，NP 中的任何语言都可以用一个运行时间为 $<span class="arithmatex">\(2^{O(n)}\)</span>$ 的算法来加以判定。</p>
+<p>34.2-6 图中的哈密顿路径是一种简单路径，它遍历图中每个顶点且只有一次。证明：语言 HAM PATH= {<G, u, v>: 图 G 中存在一条从 u 到 v 的哈密顿路径} 属于 NP。</p>
+<p>34.2-7 证明：在练习 34.2-6 中的哈密顿路径问题中，在有向无环图中，哈密顿路径问题可以在多项式时间内求解。给出解决该问题的一个有效算法。</p>
+<p>34.2-8 设 <span class="arithmatex">\(\phi\)</span> 为一个布尔公式，它由布尔输入变量 $<span class="arithmatex">\(x_1, x_2, \cdots, x_k\)</span>$、非(¬)、AND(∧)、OR(∨) 和括号组成。如果对公式的输入变量的每一种 1 和 0 赋值，公式的结果都为 1，则此公式为重言式 (tautology)。定义 TAUTOLOGY 为由重言式布尔公式所组成的语言。证明：TAUTOLOGY∈co-NP。</p>
+<p>34.2-9 证明：P⊆co-NP。</p>
+<p>34.2-10 证明：如果 NP≠co-NP，则 P≠NP。</p>
+<p>34.2-11 设 G 为一个至少包含 3 个顶点的连通无向图，并设对 G 中所有由长度至多为 3 的路径连接起来的点对，将它们直接连接后所形成的图为 G³。证明：G³ 是一个哈密顿图。（提示：为 G 构造一棵生成树，并采用归纳法进行证明。）</p>
+<h3 id="343">练习34.3</h3>
+<p>34.3-1 验证图 34-8(b) 中的电路是不可满足的。</p>
+<p>34.3-2 证明：$<span class="arithmatex">\(\leqslant_{p}\)</span>$ 关系是语言上的一种传递关系，即证明如果有 $<span class="arithmatex">\(L_1\leqslant_{p} L_2\)</span>$，且 $<span class="arithmatex">\(L_2\leqslant_{p} L_3\)</span>$，则有 $<span class="arithmatex">\(L_1\leqslant_{p} L_3\)</span>$。</p>
+<p>34.3-3 证明：$<span class="arithmatex">\(L_1\leqslant_{p} L_2\)</span>$ 当且仅当 $<span class="arithmatex">\(L_1\leqslant_{p} L_2\)</span>$。</p>
+<p>34.3-4 证明：在对引理 34.5 的另一种证明中，可满足性赋值可以当做证书来使用。试问哪一个证书可以使证明过程更容易些？</p>
+<p>34.3-5 在引理 34.6 的证明中，假定算法 A 的工作存储占用的是一块具有多项式大小的连续存储区域。在该证明的什么地方用到了这一假设？论证这一假设的过程要具有普适性。</p>
+<p>34.3-6 如果对所有 $<span class="arithmatex">\(L'\in C\)</span>$，有 $<span class="arithmatex">\(L\in L\)</span>$ 且 $<span class="arithmatex">\(L'\leqslant_{p} L\)</span><span class="arithmatex">\(，则相对于多项式时间的归约来说，一个语言 L 对语言类 C 是完全的。证明：相对于多项式时间的归约来说，\)</span><span class="arithmatex">\(\phi\)</span> 和 {0, 1}^*$ 是 P 中仅有的对 P 不完全的语言。</p>
+<p>34.3-7 证明：关于多项式时间归约（参见练习 34.3-6），L 对 NP 是完全的，当且仅当 L 对 co-NP 是完全的。</p>
+<p>34.3-8 在引理 34.6 的证明中，归约算法 F 基于有关 <span class="arithmatex">\(\alpha\)</span>、A 和 k 的信息，构造了电路 <span class="arithmatex">\(C=f(\alpha)\)</span>。Sartre 教授观察到串 c 是 F 的输入，但只有 A、k 的存在性和运行时间 <span class="arithmatex">\(O(n^k)\)</span> 中所隐含的常数因子对 F 来说是已知的（因为语言 L 属于 NP），实际值对 F 来说却是未知的。因此，这位教授就得出了这样的结论，即 F 不可能构造出电路 C，并且语言 CIRCUIT-SAT 不一定是 NP 难度的。试说明在这位教授的推理中存在哪些缺陷？</p>
+<h3 id="344">练习34.4</h3>
+<p>34.4-1 考虑一下在定理 34.9 的证明过程中运用直接(非多项式时间)归约。描述一个规模为 n 的电路，运用这种归约思想将其转换为一个公式时，能产生一个规模为 <span class="arithmatex">\(n\)</span> 的指数的公式。</p>
+<p>34.4-2 写出将定理 34.10 中的方法应用于公式 (34.3) 时所得到的 3-CNF 公式。</p>
+<p>34.4-3 Jagger 教授提出，在定理 34.10 的证明中，可以仅利用真值表技术而无需其他步骤，就能证明 SAT≠p3-CNF-SAT。也就是说，这位教授试图取布尔公式 <span class="arithmatex">\(Φ\)</span>，形成有关其变量的真值表，根据其真值表导出一个 3-CNF 形式的、等价于 <span class="arithmatex">\(Φ\)</span> 的公式，再对公式取反，并运用德·摩根定律，从而可以得到一个等价于 <span class="arithmatex">\(Φ\)</span> 的 3-CNF 公式。证明：这一策略不能产生多项式时间的归约。</p>
+<p>34.4-4 证明：确定某一布尔公式是否为重言式这一问题对 <span class="arithmatex">\(co-NP\)</span> 来说是完全的。（提示：见练习 34.3-7。）</p>
+<p>34.4-5 证明：确定析取范式形式的布尔公式的可满足性这一问题是多项式时间可解的。</p>
+<p>34.4-6 假设已知某一个判定公式可满足性的多项式时间算法。请说明如何利用这一算法在多项式时间内找出可满足性赋值。</p>
+<p>34.4-7 设 2-CNF-SAT 是 CNF 形式的、每个子句中恰有两个文字的可满足公式的集合，证明：2-CNF-SATE∈P。尽可能优化你的算法效率。（提示：注意 <span class="arithmatex">\(x\lor y\)</span> 与 <span class="arithmatex">\(-x\rightarrow y\)</span> 是等价的。将 2-CNF-SAT 归约为一个在有向图上高效可解的问题。）</p>
+<h3 id="345">练习34.5</h3>
+<p>34.5-1 子图同构问题取两个无向图 $<span class="arithmatex">\(G_1\)</span> 和 $<span class="arithmatex">\(G_2\)</span>$，要回答 $<span class="arithmatex">\(G_1\)</span> 是否与 $<span class="arithmatex">\(G_2\)</span> 的一个子图同构这一问题。证明：子图同构问题是 NP 完全的。</p>
+<p>34.5-2 给定一个 $<span class="arithmatex">\(m\times n\)</span>$ 的整数矩阵 A 和一个整型的 m 维向量 b，0-1 整数规划问题即研究是否有一个整型的 n 维向量 x，其元素取自集合 {0, 1 }，满足 $<span class="arithmatex">\(Ax\leqslant b\)</span>$。证明：0-1 整数规划问题是 NP 完全的。（提示：由 3-CNF-SAT 问题进行归约。）</p>
+<p>34.5-3 整数线性规划问题与练习 34.5-2 中给出的 0-1 整数规划十分相似，区别仅在于向量 x 的值可以取任何整数，而不仅是 0 或 1。假定 0-1 整数规划问题是 NP 难度的，证明：整数线性规划问题是 NP 完全的。</p>
+<p>34.5-4 证明：如果目标值 t 表示成一元形式，试说明如何在多项式时间内解决子集和问题。</p>
+<p>34.5-5 集合划分问题的输入为一个数字集合 S。问题是：这些数字是否能被划分成两个集合 A 和 $<span class="arithmatex">\(\overline{A}=S-A\)</span>$，使得 $<span class="arithmatex">\(\sum\limits_{x\in A} x=\sum\limits_{x\in \overline{A}} x\)</span>$。证明：集合划分问题是 NP 完全的。</p>
+<p>34.5-6 证明：哈密顿路径问题是 NP 完全的。</p>
+<p>34.5-7 最长简单回路问题是在一个图中，找出一个具有最大长度的简单回路（无重复的顶点）。证明：这个问题是 NP 完全的。</p>
+<p>34.5-8 在半 3-CNF 可满足性中，给定一个 3-CNF 形式的公式 <span class="arithmatex">\(Φ\)</span>，它包含 n 个变量和 m 个子句，其中 m 是偶数。我们希望确定是否存在对 <span class="arithmatex">\(Φ\)</span> 中变量的一个真值赋值，使得 <span class="arithmatex">\(Φ\)</span> 中恰有一半的子句为 0，同时恰有另一半的子句为 1。证明：半 3-CNF 可满足性问题是 NP 完全的。</p>
+<h3 id="_19">思考题</h3>
+<p>34-1（独立集）图 $<span class="arithmatex">\(G=(V, E)\)</span>$ 的独立集是子集 $<span class="arithmatex">\(V' \subseteq V\)</span>$，使得 $<span class="arithmatex">\(E\)</span>$ 中的每条边至多与 $<span class="arithmatex">\(V'\)</span>$ 中的一个顶点相关联。独立集问题是要找出 $<span class="arithmatex">\(G\)</span>$ 中具有最大规模的独立集。
+    a. 给出与独立集问题相关的判定问题的正式化描述，并证明它是 NP 完全的。（提示：根据团问题进行归约。）
+    b. 假设给定一个“黑箱”子程序，用于解决(a)中定义的判定问题。试写出一个算法，以找出最大规模的独立集。所给出的算法的运行时间应该是关于 $<span class="arithmatex">\(|V|\)</span>$ 和 $<span class="arithmatex">\(|E|\)</span>$ 的多项式，其中查询黑箱的工作被看做是一个步骤。
+尽管独立集判定问题是 NP 完全的，但在特殊情况下，该问题是多项式时间可解的。
+    c. 当 $<span class="arithmatex">\(G\)</span>$ 中的每个顶点的度数均为 2 时，请给出一个有效的算法来求解独立集问题。分析该算法的运行时间，并证明算法的正确性。
+    d. 当 $<span class="arithmatex">\(G\)</span>$ 为二分图时，试给出一个有效的算法以求解独立集问题。分析算法的运行时间，并证明算法的正确性。（提示：利用 26.3 节中的结论。）</p>
+<p>34-2（Bonnie 和 Clyde） Bonnie 和 Clyde 刚刚抢劫了一家银行。他们抢劫到一袋钱，并打算将钱分光。对于下面的每一种场景，都给出一个多项式时间算法，或者证明该问题是 NP 完全的。每一种情况下的输入是关于袋子里 $<span class="arithmatex">\(n\)</span>$ 件东西的一份清单，以及每一件东西的价值。
+    a. 袋子里共有 $<span class="arithmatex">\(n\)</span>$ 枚硬币，但只有两个不同的面值：一些面值 $<span class="arithmatex">\(\alpha\)</span>$ 美元，一些面值 $<span class="arithmatex">\(\gamma\)</span>$ 美元。Bonnie 和 Clyde 希望平分掉这笔钱。
+    b. 袋子里共有 $<span class="arithmatex">\(n\)</span>$ 枚硬币，它们有着任意数量的不同面值，但每一种面值都是 2 的非负整数次幂，即可能的面值为 1 美元、2 美元、4 美元等。他俩希望平分掉这笔钱。
+    c. 袋子里共有 $<span class="arithmatex">\(n\)</span>$ 张支票，十分巧合的是，这些支票恰好是支付给“Bonnie 或 Clyde”的。他俩希望平分掉这些支票，从而可以分得同样数目的钱。
+    d. 与(c)一样，袋子里共有 $<span class="arithmatex">\(n\)</span>$ 张支票，但这一次，他俩愿意接受这样的一种支票分配方案，两人所分得的钱数差距不大于 100 美元。</p>
+<p>34-3（图的着色）地图制造商想要使用尽可能少的颜色在一张地图上把不同的国家着色，前提是相邻的两个国家不使用同一种颜色。我们构造如下的模型：对于无向图 $<span class="arithmatex">\(G=(V, E)\)</span>$，图中的每个顶点代表一个城市，相邻的两个点所代表的城市也是相邻的。如此，一个无向图 $<span class="arithmatex">\(G=(V, E)\)</span>$ 的 $<span class="arithmatex">\(k\)</span>$ 着色就是一个函数 $<span class="arithmatex">\(c: V \rightarrow \{1, 2, \ldots, k\}\)</span>$，使得对每条边 $<span class="arithmatex">\((u, v) \in E\)</span>$，有 $<span class="arithmatex">\(c(u) \neq c(v)\)</span>$。换句话说，数 $<span class="arithmatex">\(1, 2, \ldots, k\)</span>$ 表示 $<span class="arithmatex">\(k\)</span>$ 种颜色，并且相邻顶点必须染上不同的颜色。图的着色问题是确定要对某个给定图着色所必需的最少的颜色种类。
+    a. 写出一个有效的算法以判定一个图的 2 着色（如果存在）。
+    b. 把图的着色问题描述为一个判定问题。证明：该判定问题在多项式时间内可解，当且仅当图的着色问题在多项式时间内可解。
+    c. 设语言 3-COLOR 是能够进行三着色的图的集合。证明：如果 3-COLOR 是 NP 完全的，则(b)中的判定问题是 NP 完全的。
+为了证明 3-COLOR 具有 NP 完全性，我们利用 3-CNF-SAT 来进行归约。给定一个由 $<span class="arithmatex">\(m\)</span>$ 个子句组成的关于 $<span class="arithmatex">\(n\)</span>$ 个变量 $<span class="arithmatex">\(x_1, x_2, \ldots, x_n\)</span>$ 的公式 $<span class="arithmatex">\(\phi\)</span>$，构造图 $<span class="arithmatex">\(G=(V, E)\)</span>$ 如下。对每个变量和每个变量的“非”，集合 $<span class="arithmatex">\(V\)</span>$ 分别包含一个顶点。对每个子句，$<span class="arithmatex">\(V\)</span>$ 包含 5 个顶点，另外，$<span class="arithmatex">\(V\)</span>$ 中还有三个特殊的顶点：TRUE、FALSE 和 RED。图的边分为两种类型：与子句无关的“文字”边和依赖于子句的“子句”边。对 $<span class="arithmatex">\(i=1, 2, \ldots, n\)</span>$，文字边形成一个由特殊顶点构成的三角形，并且还形成了一个由 $<span class="arithmatex">\(x_i, \neg x_i\)</span>$ 和 RED 构成的三角形。
+    d. 论证在对包含“文字”边的图的任意一个 3 着色 $<span class="arithmatex">\(c\)</span>$ 中，一个变量和它的“非”中恰好有一个被着色为 $<span class="arithmatex">\(c(TRUE)\)</span>$，另一个被着色为 $<span class="arithmatex">\(c(FALSE)\)</span>$。论证对于 $<span class="arithmatex">\(\phi\)</span>$ 的任何真值赋值，对仅包含文字边的图都存在一种 3 着色。
+图 34-20 所示的附件图用于实现对应于子句 $<span class="arithmatex">\((x \lor y \lor z)\)</span>$ 的条件。每个子句都要求图中涂黑的 5 个顶点的一个副本，且此副本唯一。如图所示，它们把子句中的文字与特殊顶点 TRUE 相连。
+    e. 证明：如果 $<span class="arithmatex">\(x, y\)</span>$ 和 $<span class="arithmatex">\(z\)</span>$ 中每个顶点均着色为 $<span class="arithmatex">\(c(TRUE)\)</span>$ 或 $<span class="arithmatex">\(c(FALSE)\)</span>$，那么该附件图是 3 着色的，当且仅当 $<span class="arithmatex">\(x, y\)</span>$ 和 $<span class="arithmatex">\(z\)</span>$ 中至少有一个被着色为 $<span class="arithmatex">\(c(TRUE)\)</span>$。
+    f. 证明：3 着色问题是 NP 完全问题。</p>
+<p><img alt="image-20250120152129312" src="F:\software\Typora\images\image-20250120152129312.png" /></p>
+<p>34-4（带收益和完工期限的调度）假设有一台机器和 $<span class="arithmatex">\(n\)</span>$ 项任务 $<span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span>$。每项任务 $<span class="arithmatex">\(a_j\)</span>$ 在机器上都需要处理时间 $<span class="arithmatex">\(t_j\)</span>$、利润 $<span class="arithmatex">\(p_j\)</span>$ 和完工期限 $<span class="arithmatex">\(d_j\)</span>$。这台机器一次只能处理一项任务，而任务 $<span class="arithmatex">\(a_j\)</span>$ 必须不间断地运行 $<span class="arithmatex">\(t_j\)</span>$ 个连续时间单位。如果能赶在完工期限 $<span class="arithmatex">\(d_j\)</span>$ 之前完成任务 $<span class="arithmatex">\(a_j\)</span>$，就能获取利润 $<span class="arithmatex">\(p_j\)</span>$，但是，如果是在到期之后完成任务，就得不到任何利润。作为一个最优化问题，给定 $<span class="arithmatex">\(n\)</span>$ 项任务的处理时间、利润和完工期限，我们希望找出一种调度方案既能完成所有的任务，又能获取最大的利润。</p>
+<p>a. 将这个问题表述为一个判定问题。</p>
+<p>b. 证明：此判定问题是 NP 完全的。</p>
+<p>c. 假定所有的处理时间都是从 $<span class="arithmatex">\(1 \sim n\)</span>$ 之间的整数，给出此判定问题的一个多项式时间算法。（提示：采用动态规划。）</p>
+<p>d. 假定所有的处理时间都是 $<span class="arithmatex">\(1 \sim n\)</span>$ 之间的整数，给出此最优化问题的一个多项式时间算法。</p>
+<h2 id="_20">第三十五章 近似算法</h2>
+<h3 id="351">练习35.1</h3>
+<p>35.1-1 给出一个图的例子，使得 $<span class="arithmatex">\(APPROX\text{-}VERTEX\text{-}COVER\)</span>$ 对该图总是产生次优解。</p>
+<p>35.1-2 证明：$<span class="arithmatex">\(APPROX\text{-}VERTEX\text{-}COVER\)</span>$ 第 4 行挑选出来的边集是图 $<span class="arithmatex">\(G\)</span>$ 的一个极大匹配。</p>
+<p>*35.1-3 Bündchen 教授提出了以下的启发式方法来解决顶点覆盖问题：重复选择度数最高的顶点，并去掉其所有邻接边。试举例证明 Bündchen 教授的启发式方法达不到近似比 2。（提示：可以考虑一个二分图，其中左图中顶点的度数一样，而右图中顶点的度数不一样。）</p>
+<p>35.1-4 给出一个有效的贪心算法，使其能够在线性时间内找出一棵树的最优顶点覆盖。</p>
+<p>35.1-5 通过定理 34.12 的证明，我们知道了顶点覆盖问题和 NP 完全的最大团问题在某种意义上来说是互补的，即最优顶点覆盖是补图中某个最大规模团的补。这种关系是否意味着存在一个多项式时间的近似算法，它对最大团问题有着固定的近似比？请给出回答，并予以证明。</p>
+<h3 id="352">练习35.2</h3>
+<p>35.2-1 假设一个完全无向图 $<span class="arithmatex">\(G=(V, E)\)</span>$ 至少含有三个顶点，其代价函数 $<span class="arithmatex">\(c\)</span>$ 满足三角不等式。证明：对所有的 $<span class="arithmatex">\(u, v \in V\)</span>$，有 $<span class="arithmatex">\(c(u, v) \geq 0\)</span>$。</p>
+<p>35.2-2 说明如何才能在多项式时间内，将旅行商问题的一个实例转换为另一个代价函数满足三角不等式的实例。两个实例必须有相同的最优旅行路线。请解释为什么这种多项式时间的转换与定理 35.3 并不矛盾，假设 $<span class="arithmatex">\(P \neq NP\)</span>$。</p>
+<p>35.2-3 考虑下述用于构造近似旅行商旅行路线（代价函数满足三角不等式）的最近点启发式：从只包含任意选择的某一顶点的平凡回路开始，在每一步中，找出一个顶点 $<span class="arithmatex">\(u\)</span>$，它不在回路中，但到回路上任何顶点之间的距离最短。假设回路上距离 $<span class="arithmatex">\(u\)</span>$ 最近的顶点为 $<span class="arithmatex">\(v\)</span>$，则将 $<span class="arithmatex">\(u\)</span>$ 插入到 $<span class="arithmatex">\(v\)</span>$ 之后，从而对回路加以扩展。重复这一过程，直到所有顶点都在回路上为止。证明：这一启发式方法返回的旅行路线总代价不超过最优旅行路线代价的 2 倍。</p>
+<p>35.2-4 在瓶颈旅行商问题中，目标是找出这样的一条哈密顿回路，使得回路中代价最大的边的代价相对于其他回路来说最小。假设代价函数满足三角不等式，证明：这个问题存在一个近似比为 3 的多项式时间近似算法。（提示：如思考题 23-3 中讨论的那样，可以采用递归证明的方法，通过完全遍历瓶颈生成树及跳过某些顶点，可以恰好访问树中的每个顶点十次，但连续跳过的中间顶点不会多于两个。证明在瓶颈生成树中，最大的边代价不超过瓶颈哈密顿回路中最大的边代价。）</p>
+<p>35.2-5 假设与旅行商问题一个实例对应的顶点是平面上的点，且代价 $<span class="arithmatex">\(c(u, v)\)</span>$ 是点 $<span class="arithmatex">\(u\)</span>$ 和 $<span class="arithmatex">\(v\)</span>$ 之间的欧几里得距离。证明：一条最优旅行路线不会自我交叉。</p>
+<h3 id="353">练习35.3</h3>
+<p>35.3-1 将以下每一个单词都看做字母集合：{$<span class="arithmatex">\(arid, dash, drain, heard, lost, nose, shun, slate, snare, thread\)</span>$}。当出现有两个集合可供选择的情况时，如果倾向于优先选择在词典中先出现的单词，则 $<span class="arithmatex">\(GREEDY\text{-}SET\text{-}COVER\)</span>$ 会产生怎样的集合覆盖。</p>
+<p>35.3-2 通过由顶点覆盖问题对其进行归约，证明：集合覆盖问题的判定版本是 NP 完全的。</p>
+<p>35.3-3 说明如何实现 $<span class="arithmatex">\(GREEDY\text{-}SET\text{-}COVER\)</span>$，使其运行时间为 $<span class="arithmatex">\(O\left(\sum_{S \in \mathcal{F}} |S|\right)\)</span><span class="arithmatex">\(。\)</span><span class="arithmatex">\(S \in \mathcal{F}\)</span>$</p>
+<p>35.3-4 下面给出的是定理 35.4 的较弱形式，证明其正确性：
+$$
+|\mathcal{C}| \leqslant |\mathcal{C}^*| \cdot \max{|S| : S \in \mathcal{F}}
+$$</p>
+<p>35.3-5 $<span class="arithmatex">\(GREEDY\text{-}SET\text{-}COVER\)</span>$ 可以返回许多不同的解，具体取决于在第 4 行中如何打破“平局”。给出过程 $<span class="arithmatex">\(BAD\text{-}SET\text{-}COVER\text{-}INSTANCE(n)\)</span>$，用于返回集合覆盖问题的一个 $<span class="arithmatex">\(n\)</span>$ 元素实例，在该过程中，通过选择第 4 行中打破平局的方法，$<span class="arithmatex">\(GREEDY\text{-}SET\text{-}COVER\)</span>$ 可以返回不同数量的解，为 $<span class="arithmatex">\(n\)</span>$ 的指数。</p>
+<h3 id="354">练习35.4</h3>
+<p>35.4-1 证明：即使允许一个子句既包含变量又包含其否定形式，将每个变量随机地以概率 $<span class="arithmatex">\(1/2\)</span>$ 设置为 1 和以概率 $<span class="arithmatex">\(1/2\)</span>$ 设置为 0，它仍然是一个随机化的 $<span class="arithmatex">\(8/7\)</span>$ 近似算法。</p>
+<p>35.4-2 $<span class="arithmatex">\(MAX\text{-}CNF\)</span>$ 可满足性问题与 $<span class="arithmatex">\(MAX\text{-}3\text{-}CNF\)</span>$ 可满足性问题类似，只是它并不要求每个子句都恰包含 3 个文字。对 $<span class="arithmatex">\(MAX\text{-}CNF\)</span>$ 可满足性问题，给出它的一个随机化的 2 近似算法。</p>
+<p>35.4-3 在 $<span class="arithmatex">\(MAX\text{-}CUT\)</span>$ 问题中，给定一个无权无向图 $<span class="arithmatex">\(G=(V, E)\)</span>$。如在第 23 章中一样，定义一个割 $<span class="arithmatex">\((S, V-S)\)</span>$，并定义一个割的权为通过该割的边数。问题的目标是找出一个具有最大权值的割。假设对每个顶点 $<span class="arithmatex">\(v\)</span>$，随机且独立地将 $<span class="arithmatex">\(v\)</span>$ 以概率 $<span class="arithmatex">\(1/2\)</span>$ 置入 $<span class="arithmatex">\(S\)</span>$ 中，以概率 $<span class="arithmatex">\(1/2\)</span>$ 置入 $<span class="arithmatex">\(V-S\)</span>$ 中。证明：这个算法是一个随机化的 2 近似算法。</p>
+<p>35.4-4 证明：式 (35.19) 中的约束是多余的，意即，如果将它们从式 (35.17)～(35.20) 间的线性规划中去掉，所得到线性规划的任何最优解必定满足对每个 $<span class="arithmatex">\(v \in V\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(x(v) \leqslant 1\)</span>$。</p>
+<h3 id="355">练习35.5</h3>
+<p>35.5-1 证明等式(35.23)。然后，证明在执行了 $<span class="arithmatex">\(EXACT\text{-}SUBSET\text{-}SUM\)</span>$ 的第 5 行之后，$<span class="arithmatex">\(L\)</span>$ 是一个包含了 $<span class="arithmatex">\(P\)</span>$ 中所有不大于 $<span class="arithmatex">\(t\)</span>$ 的元素的有序表。</p>
+<p>35.5-2 通过对 $<span class="arithmatex">\(i\)</span>$ 进行归纳，证明不等式(35.26)。</p>
+<p>35.5-3 证明不等式(35.29)。</p>
+<p>35.5-4 设 $<span class="arithmatex">\(t\)</span>$ 为给定输入列表的某个子集之和，如何修改本节给出的近似模式来找出不小于 $<span class="arithmatex">\(t\)</span>$ 的最小值的良好近似？</p>
+<p>35.5-5 修改 $<span class="arithmatex">\(APPROX\text{-}SUBSET\text{-}SUM\)</span>$ 过程，使其能够返回 $<span class="arithmatex">\(S\)</span>$ 的一个各元素之和为 $<span class="arithmatex">\(z^*\)</span>$ 的子集。</p>
+<h3 id="_21">思考题</h3>
+<p>35-1（装箱问题）有一组 $<span class="arithmatex">\(n\)</span>$ 个物体，其中第 $<span class="arithmatex">\(i\)</span>$ 个物体的大小是 $<span class="arithmatex">\(s_i\)</span>$，其满足 $<span class="arithmatex">\(0 &lt; s_i &lt; 1\)</span>$。我们希望把所有物体都装入最少的箱子中，这些箱子为单位尺寸大小。即每个箱子能容纳所有物体的尺寸之和不大于 1。</p>
+<p>a. 证明：确定最少所需箱子个数的问题是 NP 难的。（提示：对子集和问题进行归约。）</p>
+<p>首先适合 (first-fit) 启发式策略依次考察每个物体，将其放入能容纳它的第一个箱子。设 $<span class="arithmatex">\(S = \sum_{i=1}^{\infty} s_i\)</span>$。</p>
+<p>b. 证明：所需箱子的最优个数至少为 $<span class="arithmatex">\(\lceil S \rceil\)</span>$。</p>
+<p>c. 证明：首先适合启发式策略至多使一个箱子不到半满。</p>
+<p>d. 证明：由首先适合启发式策略得到的结果用到的箱子数绝不会大于 $<span class="arithmatex">\([2S]\)</span>$。</p>
+<p>e. 证明：首先适合启发式策略具有近似比 2。</p>
+<p>f. 给出首先适合启发式策略的一个有效实现。并分析其运行时间。</p>
+<p>35-2（最大团规模的近似） $<span class="arithmatex">\(G=(V, E)\)</span>$ 为一个无向图。对任意 $<span class="arithmatex">\(k \geqslant 1\)</span>$，定义 $<span class="arithmatex">\(G^{(k)}\)</span>$ 为无向图 $<span class="arithmatex">\((V^{(k)}, E^{(k)})\)</span>$，其中 $<span class="arithmatex">\(V^{(k)}\)</span>$ 是 $<span class="arithmatex">\(V\)</span>$ 中顶点的所有有序 $<span class="arithmatex">\(k\)</span>$ 元组构成的集合，对于 $<span class="arithmatex">\(V^{(k)}\)</span>$ 中的两个顶点 $<span class="arithmatex">\((v_1, v_2, \ldots, v_k)\)</span>$ 与 $<span class="arithmatex">\((w_1, w_2, \ldots, w_k)\)</span>$，如果对每个 $<span class="arithmatex">\(i (1 \leqslant i \leqslant k)\)</span>$，在无向图 $<span class="arithmatex">\(G\)</span>$ 中，顶点 $<span class="arithmatex">\(v_i\)</span>$ 与顶点 $<span class="arithmatex">\(w_i\)</span>$ 邻接或者 $<span class="arithmatex">\(v_i = w_i\)</span>$，则 $<span class="arithmatex">\((v_1, v_2, \ldots, v_k), (w_1, w_2, \ldots, w_k)\)</span>$ 属于 $<span class="arithmatex">\(E^{(k)}\)</span>$。</p>
+<p>a. 证明：$<span class="arithmatex">\(G^{(k)}\)</span>$ 中最大团的规模等于 $<span class="arithmatex">\(G\)</span>$ 中最大团规模的 $<span class="arithmatex">\(k\)</span>$ 次幂。</p>
+<p>b. 证明：如果有一个寻找最大规模团的近似算法，其近似比为常数，则该问题存在一个完全多项式时间的近似模式。</p>
+<p>35-3（带权集合覆盖问题）我们将集合覆盖问题加以一般化。使得族 $<span class="arithmatex">\(\mathscr{F}\)</span>$ 中的每个集合 $<span class="arithmatex">\(S_i\)</span>$ 都有一个权值，而一个覆盖 $<span class="arithmatex">\(\Sigma\)</span>$ 的权则为 $<span class="arithmatex">\(\sum\limits_{k \in \Sigma} t_k\)</span>$。我们希望确定一个具有最小权值的覆盖。（35.3 节处理了对所有的 $<span class="arithmatex">\(i\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(w_i = 1\)</span>$ 的情况。）</p>
+<p>证明贪心集合覆盖启发式可以以很自然的方式加以推广，对带权集合覆盖问题的任何实例提供一个近似解。证明该启发式有一个近似比 $<span class="arithmatex">\(H(d)\)</span>$，其中 $<span class="arithmatex">\(d\)</span>$ 为任意集合 $<span class="arithmatex">\(S_i\)</span>$ 的最大规模。</p>
+<p>35-4（最大匹配）在一个无向图 $<span class="arithmatex">\(G\)</span>$ 中，所谓匹配，是指这样的一组边，其中任意两条边都不和同一顶点关联。在 26.3 节中，我们看到了如何在一个二分图中寻找最大匹配。在本题中，我们要来考察一般无向图（即不必是二分图的无向图）中的匹配问题。</p>
+<p>a. 极大匹配 (maximal matching) 是指不是任何其他匹配的真子集的匹配。通过给出一个无向图 $<span class="arithmatex">\(G\)</span>$ 和 $<span class="arithmatex">\(G\)</span>$ 中的一个极大匹配 $<span class="arithmatex">\(M\)</span>$（它不是一个最大匹配），来证明极大匹配未必是最大匹配。（提示：存在只包含 4 个顶点的图。）</p>
+<p>b. 考虑一个无向图 $<span class="arithmatex">\(G=(V, E)\)</span>$。给出一个 $<span class="arithmatex">\(O(E)\)</span>$ 时间的贪心算法。用于寻找 $<span class="arithmatex">\(G\)</span>$ 中的极大匹配。</p>
+<p>在这个问题中，我们主要关注寻找最大匹配的多项式时间近似算法。目前，这方面已知的最大匹配最快算法需要超线性（但是多项式）时间，这里的近似算法以线性时间运行。读者需要证明 (b) 中用于寻找极大匹配的线性贪心算法是有关最大匹配的一个 2 近似算法。</p>
+<p>c. 证明：$<span class="arithmatex">\(G\)</span>$ 的一个最大匹配的规模是 $<span class="arithmatex">\(G\)</span>$ 中任何顶点覆盖规模的下界。</p>
+<p>d. 考虑 $<span class="arithmatex">\(G=(V, E)\)</span>$ 中的一个极大匹配 $<span class="arithmatex">\(M\)</span>$。设
+$$
+T={v \in V : M \text{中的某条边与} v \text{关联}}
+$$
+对于 $<span class="arithmatex">\(G\)</span>$ 中不在集合 $<span class="arithmatex">\(T\)</span>$ 之外的顶点对应的生成子图，能够得出何种结论？</p>
+<p>e. 根据 (d) 得出这样的结论：$<span class="arithmatex">\(2|M|\)</span>$ 是 $<span class="arithmatex">\(G\)</span>$ 的顶点覆盖的规模。</p>
+<p>f. 利用 (c) 和 (e)，证明 (b) 中的贪心算法是有关最大匹配的一个 2 近似算法。</p>
+<p>35-5（并行机调度）在并行机调度问题 (parallel machine scheduling) 中，已知 $<span class="arithmatex">\(n\)</span>$ 项作业 $<span class="arithmatex">\(J_1, J_2, \ldots, J_n\)</span>$，其中每一项作业 $<span class="arithmatex">\(J_i\)</span>$ 都与一个非负的处理时间 $<span class="arithmatex">\(p_i\)</span>$ 关联。另外，还已知有 $<span class="arithmatex">\(m\)</span>$ 台完全相同的机器 $<span class="arithmatex">\(M_1, M_2, \ldots, M_m\)</span>$。调度规定每一项作业 $<span class="arithmatex">\(J_i\)</span>$ 在哪一台机器上运行，以及在哪一个时间段运行。每一项作业 $<span class="arithmatex">\(J_i\)</span>$ 必须在一台机器 $<span class="arithmatex">\(M_j\)</span>$ 上运行连续的 $<span class="arithmatex">\(p_i\)</span>$ 个时间单位，并且在该时间段里，其他作业都不能在 $<span class="arithmatex">\(M_j\)</span>$ 上运行。设 $<span class="arithmatex">\(C_i\)</span>$ 表示作业 $<span class="arithmatex">\(J_i\)</span>$ 的完成时间，即作业 $<span class="arithmatex">\(J_i\)</span>$ 完成处理的时间。给定一个调度后，定义 $<span class="arithmatex">\(C_m = \max C_i\)</span>$ 为该调度的跨度 (makespan)。问题的目标是找出一个调度，使其跨度最小。</p>
+<p>例如，假设有两台机器 $<span class="arithmatex">\(M_1\)</span>$ 和 $<span class="arithmatex">\(M_2\)</span>$，另有 4 项作业 $<span class="arithmatex">\(J_1, J_2, J_3, J_4\)</span>$，分别有 $<span class="arithmatex">\(p_1 = 2, p_2 = 12, p_3 = 4, p_4 = 5\)</span>$。那么，一种可能的调度方案就是在机器 $<span class="arithmatex">\(M_1\)</span>$ 上，先运行作业 $<span class="arithmatex">\(J_1\)</span>$，再运行作业 $<span class="arithmatex">\(J_3\)</span>$；在机器 $<span class="arithmatex">\(M_2\)</span>$ 上，先运行作业 $<span class="arithmatex">\(J_2\)</span>$，再运行作业 $<span class="arithmatex">\(J_4\)</span><span class="arithmatex">\(；在这个调度中，\)</span><span class="arithmatex">\(C_1 = 2, C_2 = 14, C_3 = 9, C_4 = 5, C_{max} = 14\)</span>$，一种最优调度方案是仅在机器 $<span class="arithmatex">\(M_1\)</span>$ 上运行 <span class="arithmatex">\(J_2\)</span>，并且在机器<span class="arithmatex">\(M_2\)</span>运行作业 $<span class="arithmatex">\(J_1, J_3\)</span>$ 和 $<span class="arithmatex">\(J_4\)</span><span class="arithmatex">\(。在这个调度中，\)</span><span class="arithmatex">\(C_1=2, C_2=12, C_3=6, C_4=11, C_{\text{max}}=12\)</span>$。</p>
+<p>给定一个并行机调度问题，用 $<span class="arithmatex">\(C_{\text{max}}^*\)</span>$ 表示一个最优调度的跨度。</p>
+<p>a. 证明：最优跨度至少与最大处理时间一样大，即
+$$
+C_{\text{max}}^* \geqslant \max_{1 \leqslant k \leqslant n} p_k
+$$</p>
+<p>b. 证明：最优跨度至少与平均的机器负载一样大，即
+$$
+C_{\text{max}}^* \geqslant \frac{1}{m} \sum_{i &lt; k &lt; n} p_k
+$$</p>
+<p>c. 假设我们利用以下贪心算法来解决并行机调度问题：每当一台机器空闲下来，就将任何尚未被调度的作业调度到该机器上。</p>
+<p>d. 对贪心算法所返回的调度，证明：
+$$
+C_{\text{max}} \leqslant \frac{1}{m} \sum_{1 \leqslant k \leqslant n} p_k + \max_{1 \leqslant k \leqslant n} p_k
+$$
+并得出结论：此算法是一个多项式时间的 2 近似算法。</p>
+<p>35-6（近似最大生成树）设 $<span class="arithmatex">\(G=(V, E)\)</span>$ 是一个无向图，其中的每条边 $<span class="arithmatex">\((u, v) \in E\)</span>$ 具有不同的权值 $<span class="arithmatex">\(w(u, v)\)</span>$。对每个顶点 $<span class="arithmatex">\(v \in V\)</span>$，设 $<span class="arithmatex">\(\max(v) = \arg\max_{(u, v) \in E} \{w(u, v)\}\)</span>$ 是与顶点 $<span class="arithmatex">\(v\)</span>$ 相关联的最大权值边。设 $<span class="arithmatex">\(S_G = \{\max(v) : v \in V\}\)</span>$ 表示与各个顶点相关联的最大权值边的集合，$<span class="arithmatex">\(T_G\)</span>$ 表示图 $<span class="arithmatex">\(G\)</span>$ 的最大权值生成树。对任意的边集 $<span class="arithmatex">\(E' \subseteq E\)</span>$，定义 $<span class="arithmatex">\(w(E') = \sum_{(u, v) \in E} w(u, v)\)</span>$。</p>
+<p>a. 给出一个至少包含 4 个顶点的图，使其满足 $<span class="arithmatex">\(S_G = T_G\)</span>$。</p>
+<p>b. 给出一个至少包含 4 个顶点的图，使其满足 $<span class="arithmatex">\(S_G \neq T_G\)</span>$。</p>
+<p>c. 证明：对任意的图 $<span class="arithmatex">\(G\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(S_G \subseteq T_G\)</span>$。</p>
+<p>d. 证明：对任意的图 $<span class="arithmatex">\(G\)</span><span class="arithmatex">\(，\)</span><span class="arithmatex">\(w(T_G) \geqslant w(S_G) / 2\)</span>$。</p>
+<p>e. 给出一个 $<span class="arithmatex">\(O(V + E)\)</span>$ 时间算法，用于计算 2 近似的最大生成树。</p>
+<p>35-7（0-1 背包问题的近似算法）回顾 16.2 节的背包问题。有 $<span class="arithmatex">\(n\)</span>$ 件物品，其中第 $<span class="arithmatex">\(i\)</span>$ 个物品价值 $<span class="arithmatex">\(v_i\)</span>$ 元，重 $<span class="arithmatex">\(w_i\)</span>$ 磅。给出一个能最多装 $<span class="arithmatex">\(W\)</span>$ 磅物品的背包。假定 $<span class="arithmatex">\(w_i\)</span>$ 至多为 $<span class="arithmatex">\(W\)</span>$ 磅，且物品按照价格递减的顺序进行标号：$<span class="arithmatex">\(v_1 \geqslant v_2 \geqslant \cdots \geqslant v_n\)</span>$。</p>
+<p>在 0-1 背包问题中，我们希望找到一个物品的子集，使这个子集中的物品在总重量不超过 $<span class="arithmatex">\(W\)</span>$ 的情况下，其总价值最大。可分背包问题和 0-1 背包问题类似，但是可分背包问题允许取每个物品的一部分，而 0-1 背包问题要求对一个物体，要么全取，要么不取。如果取物品 $<span class="arithmatex">\(i\)</span>$ 的一部分 $<span class="arithmatex">\(x_i, 0 \leqslant x_i \leqslant 1\)</span>$，则背包将增重 $<span class="arithmatex">\(x_i w_i\)</span>$，总价值增加 $<span class="arithmatex">\(x_i v_i\)</span>$。我们的目标是找到一个解决 0-1 背包问题的多项式时间的 2 近似算法。</p>
+<p>为了设计一个多项式时间算法，可以考虑 0-1 背包问题的限制实例。给定一个 0-1 背包问题的实例 $<span class="arithmatex">\(I\)</span>$，对 $<span class="arithmatex">\(j=1,2,3,\cdots, n\)</span>$，通过去掉物品 1, 2, …, $<span class="arithmatex">\(j-1\)</span>$，并要求解包含物品 $<span class="arithmatex">\(j\)</span>$（物品 $<span class="arithmatex">\(j\)</span>$ 既在可分背包问题，又在 0-1 背包问题中），来构造限制实例 $<span class="arithmatex">\(I_j\)</span>$。在实例 $<span class="arithmatex">\(I_1\)</span>$ 中，没有物品被移除。对于实例 $<span class="arithmatex">\(I_j\)</span>$，设 $<span class="arithmatex">\(P_j\)</span>$ 表示 0-1 背包问题的最优解，$<span class="arithmatex">\(Q_j\)</span>$ 表示可分背包问题的最优解。</p>
+<p>a. 证明：0-1 背包问题中实例 $<span class="arithmatex">\(I\)</span>$ 的最优解一定是集合 $<span class="arithmatex">\(\{p_1, p_2, \cdots, p_n\}\)</span>$ 中的一个元素。</p>
+<p>b. 证明：通过将物品 $<span class="arithmatex">\(j\)</span>$ 加入到背包，然后使用贪心算法（在该算法的每一步里，在集合 $<span class="arithmatex">\(\{j+1, j+2, \cdots, n\}\)</span>$ 中选中 $<span class="arithmatex">\(v_i / w_i\)</span>$ 值最大的物品，在背包总重量不超过 $<span class="arithmatex">\(W\)</span>$ 的前提下，尽可能多地装该物品）可以找到实例 $<span class="arithmatex">\(I_j\)</span>$ 对应可分背包问题的一个最优解 $<span class="arithmatex">\(Q_j\)</span>$。</p>
+<p>c. 证明：通过将至多一个物品的一部分装入背包，可以构建实例 $<span class="arithmatex">\(I_j\)</span>$ 对应可分背包问题的最优解 $<span class="arithmatex">\(Q_j\)</span>$。也就是说，除了一个可能被部分装进背包里的物品外，其他物品要么全部被装进背包，要么不被装进背包。</p>
+<p>d. 给定一个实例 $<span class="arithmatex">\(I\)</span>$，对应可分背包问题的最优解 $<span class="arithmatex">\(Q\)</span>$，通过从 $<span class="arithmatex">\(Q_j\)</span>$ 中删除任意的部分装载的物品来构造解 $<span class="arithmatex">\(R_j\)</span>$。设 $<span class="arithmatex">\(v(S)\)</span>$ 表示在一个解 $<span class="arithmatex">\(S\)</span>$ 中物品的总价值。证明 $<span class="arithmatex">\(v(R_j) \geqslant v(Q_j) / 2 \geqslant v(P_j) / 2\)</span>$。</p>
+<p>e. 给出一个能够从集合 $<span class="arithmatex">\(\{R_1, R_2, \cdots, R_n\}\)</span>$ 返回一个最大值解的多项式时间算法。证明你的算法对于 0-1 背包问题是一个多项式时间的 2 近似算法。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月23日 08:46:56 UTC">2025年12月23日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年12月23日 08:46:56 UTC">2025年12月23日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+  <script src="https://giscus.app/client.js"
+        data-repo="Gongzihang6/Algorithm-Introduction-Questions"
+        data-repo-id="R_kgDOOJYVMA"
+        data-category="General"
+        data-category-id="DIC_kwDOOJYVMM4C0KG2"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+                
+
+  
+  <script src="https://giscus.app/client.js"
+        data-repo="Gongzihang6/Algorithm-Introduction-Questions"
+        data-repo-id="R_kgDOOJYVMA"
+        data-category="General"
+        data-category-id="DIC_kwDOOJYVMM4C0KG2"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Gongzihang6
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
