@@ -1,0 +1,81 @@
+site_name: 算法导论题解
+site_url: https://Gongzihang6.github.io/Algorithm-Introduction-Questions/
+repo_url: https://github.com/Gongzihang6/Algorithm-Introduction-Questions
+repo_name: Gongzihang6/Algorithm-Introduction-Questions
+edit_uri: edit/main/docs/
+
+theme:
+    name: material
+    custom_dir: overrides # 告诉 mkdocs 去这里找自定义模板
+    language: zh # 中文界面
+    features:
+        - navigation.tabs # 顶部导航栏模式
+        - navigation.sections # 侧边栏分组
+        - navigation.top # 返回顶部按钮
+        - search.suggest # 搜索建议
+        - search.highlight # 搜索高亮
+        - content.code.copy # 代码块复制按钮
+    palette:
+        - scheme: default # 亮色模式
+          primary: blue grey
+          accent: purple
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+        - scheme: slate # 暗色模式
+          primary: teal
+          accent: lime
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
+
+# 必须的扩展：数学公式与代码增强
+markdown_extensions:
+    - admonition
+    - pymdownx.details # 支持折叠详情块
+    - pymdownx.superfences # 支持复杂的代码块嵌套
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.arithmatex: # 数学公式支持
+          generic: true
+
+# 引入 MathJax 用于渲染公式
+extra_javascript:
+    - javascripts/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2024 Gongzihang6
+
+# 插件配置
+plugins:
+    - search
+    - git-revision-date-localized:
+          type: date
+          enable_creation_date: true
+
+extra:
+    # analytics:
+    #   provider: google # ...你的谷歌分析配置
+
+    # 评论系统配置
+    comments:
+        provider: giscus
+        repo: Gongzihang6/Algorithm-Introduction-Questions
+        repo_id: R_kgDOOJYVMA 
+        category: General 
+        category_id: DIC_kwDOOJYVMM4C0KG2 
+        mapping: pathname 
+        reactions_enabled: 1 
+        emit_metadata: 0
+        input_position: top # 对应 input-position="top"，评论框在评论列表上方
+        lang: zh-CN # 对应 data-lang="zh-CN"
+        # theme: preferred_color_scheme # 主题会自动跟随网站的日间/夜间模式，不用手动设
+
+# 注册自定义 CSS 文件
+extra_css:
+    - stylesheets/extra.css

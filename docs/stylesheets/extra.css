@@ -1,0 +1,42 @@
+/* ==========================================================================
+   页脚美化专用 CSS (Author: Gemini)
+   ========================================================================== */
+
+/* 1. 针对整个页脚容器 (最外层) */
+footer.md-footer {
+    background-color: #ffffff !important; /* 强制背景变白 */
+    color: #333333 !important;            /* 强制文字变深灰 */
+}
+
+/* 2. 针对最底部的版权/Meta信息条 (就是你觉得丑的那个黑条) */
+.md-footer__meta {
+    background-color: #f9f9f9 !important; /* 使用极浅的灰色，与正文做微弱区分，或者直接写 #ffffff */
+    color: #555555 !important;            /* 文字颜色 */
+    border-top: 1px solid #e0e0e0;        /* 顶部加一条细线，增加精致感 */
+}
+
+/* 3. 针对上一页/下一页的导航区域背景 */
+.md-footer__inner {
+    background-color: #ffffff !important; 
+}
+
+/* 4. 修复链接颜色 (关键步骤) 
+   因为原来的背景是黑的，链接是浅色的；
+   现在背景变白了，必须把链接颜色改深，否则会看不见。
+*/
+.md-footer__meta a, 
+.md-footer__inner a {
+    color: #009485 !important; /* 使用你主题的主色调 (Teal) */
+    font-weight: bold;
+}
+
+.md-footer__meta a:hover,
+.md-footer__inner a:hover {
+    color: #007a6e !important; /* 鼠标悬停加深 */
+    text-decoration: underline;
+}
+
+/* 5. (可选) 如果你只想保留自己的 Copyright，想隐藏 "Made with Material for MkDocs" */
+.md-footer-copyright__highlight {
+    display: none !important;
+}
