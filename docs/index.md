@@ -6,7 +6,7 @@ hide:
 # 算法导论题解 (Algorithm Introduction Questions)
 
 [![GitHub stars](https://img.shields.io/github/stars/Gongzihang6/Algorithm-Introduction-Questions?style=social)](https://github.com/Gongzihang6/Algorithm-Introduction-Questions)
-[![Build Status](https://github.com/Gongzihang6/Algorithm-Introduction-Questions/actions/workflows/ci.yml/badge.svg)](https://github.com/Gongzihang6/Algorithm-Introduction-Questions/actions)
+[![ci](https://github.com/Gongzihang6/Algorithm-Introduction-Questions/actions/workflows/ci.yml/badge.svg)](https://github.com/Gongzihang6/Algorithm-Introduction-Questions/actions/workflows/ci.yml)
 
 欢迎来到 **Algorithm Introduction Questions** 项目主页。
 
@@ -18,7 +18,7 @@ hide:
 
 本站点使用 **MkDocs** 配合 **Material for MkDocs** 主题构建，针对算法学习场景进行了以下优化配置：
 
-### 1. 数学公式完美渲染 ($\LaTeX$)
+### 1. 数学公式完美渲染 (LaTeX)
 
 利用 MathJax 支持复杂的数学推导，这对于分析时间复杂度和证明算法正确性至关重要。
 
@@ -107,7 +107,9 @@ $$
 
 请通过左侧侧边栏或下方链接浏览具体章节：
 
-- [第 1 章：基础知识 (Foundations)](chapter1.md) *（示例链接，需创建对应文件）*
+第一部分 算法基础
+
+- [第 1 章: 算法在计算机中的作用](1、算法基础\第一章-算法在计算机中的作用.md) 
 - [第 2 章：排序和顺序统计量](chapter2.md)
 - [第 3 章：数据结构](chapter3.md)
 - [第 4 章：高级设计和分析技术](chapter4.md)

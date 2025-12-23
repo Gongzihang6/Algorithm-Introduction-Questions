@@ -32,16 +32,19 @@ theme:
 # 必须的扩展：数学公式与代码增强
 markdown_extensions:
     - admonition
-    - pymdownx.details # 支持折叠详情块
-    - pymdownx.superfences # 支持复杂的代码块嵌套
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.tabbed: # <--- 之前漏掉了这个关键配置！
+          alternate_style: true # 开启现代化样式
     - pymdownx.highlight:
           anchor_linenums: true
           line_spans: __span
           pygments_lang_class: true
     - pymdownx.inlinehilite
     - pymdownx.snippets
-    - pymdownx.arithmatex: # 数学公式支持
+    - pymdownx.arithmatex:
           generic: true
+    - sane_lists
 
 # 引入 MathJax 用于渲染公式
 extra_javascript:
@@ -66,11 +69,11 @@ extra:
     comments:
         provider: giscus
         repo: Gongzihang6/Algorithm-Introduction-Questions
-        repo_id: R_kgDOOJYVMA 
-        category: General 
-        category_id: DIC_kwDOOJYVMM4C0KG2 
-        mapping: pathname 
-        reactions_enabled: 1 
+        repo_id: R_kgDOOJYVMA
+        category: General
+        category_id: DIC_kwDOOJYVMM4C0KG2
+        mapping: pathname
+        reactions_enabled: 1
         emit_metadata: 0
         input_position: top # 对应 input-position="top"，评论框在评论列表上方
         lang: zh-CN # 对应 data-lang="zh-CN"
